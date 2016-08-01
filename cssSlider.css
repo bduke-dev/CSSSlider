@@ -8,7 +8,8 @@ html, body{
 	vertical-align: baseline;
 }
 
-@keyframes slider {  
+/*animation timer*/
+keyframes slider {  
     0% { left: 0; opacity: 1; }
     10% { left: 0; opacity: 1; }
     16.6% { left: -100vw; opacity: 1; } 
@@ -24,26 +25,27 @@ html, body{
     100% { left: 0; opacity: 1; }
 }
 
-body { background: #000; } 
-
+/*don't show the other images*/
 #cssSlider { 
   position: relative; 
   overflow: hidden; 
-  background: #000 
 }
+
+/*the size of the responsixe slider, 
+just replace your value based on the ratio equation*/
 #cssSlider { 
-  /*width: 100vw;
-  height: 43.95vh; */
   padding-bottom: 43.95%;/*to find % aspect ratio, (height/width)100*/
   height: 0;
 }
 
+/*size of the images*/
 #cssSlider img {  
   width: 100vw;
   height: 100%; 
   float: left;
 }
 
+/*transitioning the images*/
 #sliderImages { 
   position: absolute; 
   width:600vw;  
@@ -53,6 +55,7 @@ body { background: #000; }
   animation-iteration-count:infinite;
 }
 
+/*pause on hover, hover effects*/
 #sliderImages:hover { 
   animation-play-state:paused; }
 }
