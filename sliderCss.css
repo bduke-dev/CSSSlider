@@ -26,25 +26,25 @@ html, body{
 
 body { background: #000; } 
 
-div#slidercontainer { 
+#cssSlider { 
   position: relative; 
   overflow: hidden; 
   background: #000 
 }
-div#slidercontainer { 
+#cssSlider { 
   /*width: 100vw;
   height: 43.95vh; */
   padding-bottom: 43.95%;/*to find % aspect ratio, (height/width)100*/
   height: 0;
 }
 
-div#slidercontainer img {  
+#cssSlider img {  
   width: 100vw;
   height: 100%; 
   float: left;
 }
 
-div#css3slider { 
+#sliderImages { 
   position: absolute; 
   width:600vw;  
   animation-name:slider;
@@ -53,26 +53,26 @@ div#css3slider {
   animation-iteration-count:infinite;
 }
 
-div#css3slider:hover { 
+#sliderImages:hover { 
   animation-play-state:paused; }
 }
 
-div#css3slider img { 
+#sliderImages img { 
   float: right; 
 }
 
-div#slidercontainer:after { 
+#cssSlider:after { 
   content: "❚❚"; 
   font-size: 8em; 
   position: absolute; 
   z-index: 12; 
-  color: rgba(255,255,255, 0); 
+  color: rgba(0,0,0, 0); 
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   transition: 1s all ease-in-out; 
 }
 
-div#slidercontainer:hover:after { 
-  color: rgba(255,255,255, 0.6);  
+#cssSlider:hover:after { 
+  color: rgba(0,0,0,1);  
 }
