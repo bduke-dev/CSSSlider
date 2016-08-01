@@ -104,6 +104,7 @@ just replace your value based on the ratio equation*/
   animation-iteration-count:infinite;
 }
 
+/*pause on hover*/
 #sliderImages:hover > .slideText { 
   animation-play-state:paused;
 }
