@@ -79,3 +79,18 @@ just replace your value based on the ratio equation*/
 #cssSlider:hover:after { 
   color: rgba(0,0,0,1);  
 }
+
+/*text*/
+.slideText{
+    position: absolute;
+    bottom: 0;
+    padding: 1em;
+    margin: 1em;
+    background-color: yellow;
+    border-radius: 1em;
+}
+.slideText p{
+    padding: 0;
+    margin: 0;
+    font-size: 3em;
+}
