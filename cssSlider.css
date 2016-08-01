@@ -82,6 +82,14 @@ just replace your value based on the ratio equation*/
   opacity: 1;  
 }
 
+/*FOR MOBILE, DON'T DISPLAY WORDS*/
+@media screen and (max-width: 1000px){
+    .slideText{
+        display: none;
+    }
+}
+
+/*FOR DESKTOP, DISPLAY WORDS*/
 /*text*/
 .slideText{
     position: absolute;
