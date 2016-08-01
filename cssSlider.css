@@ -104,10 +104,9 @@ just replace your value based on the ratio equation*/
   animation-iteration-count:infinite;
 }
 
-0% { transform:translateY(-50%); opacity: 0; }
-
-    2% { transform:translateY(10%); opacity: 1; }
-    4% { transform:translateY(0%); opacity: 1; }
+#sliderImages:hover > .slideText { 
+  animation-play-state:paused;
+}
 
 /*animation timer*/
 @keyframes textBounce {  
