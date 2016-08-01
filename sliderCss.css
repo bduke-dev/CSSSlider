@@ -1,0 +1,78 @@
+/*CSS RESET*/
+html, body{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+@keyframes slider {  
+    0% { left: 0; opacity: 1; }
+    10% { left: 0; opacity: 1; }
+    16.6% { left: -100vw; opacity: 1; } 
+    26.6% { left: -100vw; opacity: 1; }
+    33.2% { left: -200vw; opacity: 1; }
+    43.2% { left: -200vw; opacity: 1; }
+    49.8% { left: -300vw; opacity: 1; }
+    59.8% { left: -300vw; opacity: 1; }
+    66.4% { left: -400vw; opacity: 1; }
+    76.4% { left: -400vw; opacity: 1; }
+    86.4% { left: -500vw; opacity: 1; }
+    96.4% { left: -500vw; opacity: 1; }
+    100% { left: 0; opacity: 1; }
+}
+
+body { background: #000; } 
+
+div#slidercontainer { 
+  position: relative; 
+  overflow: hidden; 
+  background: #000 
+}
+div#slidercontainer { 
+  /*width: 100vw;
+  height: 43.95vh; */
+  padding-bottom: 43.95%;/*to find % aspect ratio, (height/width)100*/
+  height: 0;
+}
+
+div#slidercontainer img {  
+  width: 100vw;
+  height: 100%; 
+  float: left;
+}
+
+div#css3slider { 
+  position: absolute; 
+  width:600vw;  
+  animation-name:slider;
+  animation-duration: 40s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
+}
+
+div#css3slider:hover { 
+  animation-play-state:paused; }
+}
+
+div#css3slider img { 
+  float: right; 
+}
+
+div#slidercontainer:after { 
+  content: "❚❚"; 
+  font-size: 8em; 
+  position: absolute; 
+  z-index: 12; 
+  color: rgba(255,255,255, 0); 
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s all ease-in-out; 
+}
+
+div#slidercontainer:hover:after { 
+  color: rgba(255,255,255, 0.6);  
+}
