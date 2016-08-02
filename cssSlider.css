@@ -81,7 +81,7 @@ anywhere else breaks the slider*/
     z-index: 13;
 }
 #cssSlider:after { 
-  content: "❚❚"; 
+  content: "\275A \275A"; 
   font-size: 8em; 
   position: absolute; 
   z-index: 12; 
@@ -98,7 +98,7 @@ anywhere else breaks the slider*/
 }
 
 .playPause:checked ~ #cssSlider:after{
-    content: "►"; 
+    content: "\25BA"; 
 }
 
 /*pause the show*/
