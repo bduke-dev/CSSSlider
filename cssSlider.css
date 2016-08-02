@@ -94,7 +94,6 @@ anywhere else breaks the slider*/
 }
 
 #cssSlider:hover:after { 
-  color: #000;
   opacity: 1;  
 }
 
