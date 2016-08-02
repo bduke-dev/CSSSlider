@@ -8,23 +8,7 @@ html, body{
 	vertical-align: baseline;
 }
 
-/*animation timer*/
-@keyframes slider {  
-    0% { left: 0; opacity: 1; }
-    10% { left: 0; opacity: 1; }
-    16.6% { left: -100vw; opacity: 1; } 
-    26.6% { left: -100vw; opacity: 1; }
-    33.2% { left: -200vw; opacity: 1; }
-    43.2% { left: -200vw; opacity: 1; }
-    49.8% { left: -300vw; opacity: 1; }
-    59.8% { left: -300vw; opacity: 1; }
-    66.4% { left: -400vw; opacity: 1; }
-    76.4% { left: -400vw; opacity: 1; }
-    86.4% { left: -500vw; opacity: 1; }
-    96.4% { left: -500vw; opacity: 1; }
-    100% { left: 0; opacity: 1; }
-}
-
+/**********IMAGE/SLIDER STYLING**********/
 /*don't show the other images*/
 #cssSlider { 
   position: relative; 
@@ -45,7 +29,7 @@ just replace your value based on the ratio equation*/
   float: left;
 }
 
-/*transitioning the images*/
+/*transition slider size*/
 #sliderImages { 
   position: absolute; 
   width:600vw;  
@@ -54,35 +38,16 @@ just replace your value based on the ratio equation*/
   animation-timing-function: ease-in-out;
   animation-iteration-count:infinite;
 }
-
-/*pause on hover, hover effects*/
-#sliderImages:hover { 
-  animation-play-state:paused; }
-}
+} /*this extra } has to be here or slider is broken, 
+idk why, have spent hourstrying to figure out why. 
+It has to be exactly after this block of code, 
+anywhere else breaks the slider*/
 
 #sliderImages img { 
   float: right; 
 }
 
-#cssSlider:after { 
-  content: "❚❚"; 
-  font-size: 8em; 
-  position: absolute; 
-  z-index: 12; 
-  color: #000;
-  opacity: 0;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: 1s all ease-in-out; 
-}
-
-#cssSlider:hover:after { 
-  color: #000;
-  opacity: 1;  
-}
-
-/*text*/
+/**********SLIDER TEXT**********/
 .slideText{
     position: absolute;
     bottom: 0;
@@ -104,12 +69,67 @@ just replace your value based on the ratio equation*/
   animation-iteration-count:infinite;
 }
 
-/*pause on hover*/
-#sliderImages:hover > .slideText { 
-  animation-play-state:paused;
+/**********PLAY PAUSE**********/
+/*play pause appearance*/
+.playPause{
+    display: none;
+}
+#playPauseLabel{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    z-index: 13;
+}
+#cssSlider:after { 
+  content: "❚❚"; 
+  font-size: 8em; 
+  position: absolute; 
+  z-index: 12; 
+  color: #000;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s all ease-in-out; 
 }
 
-/*animation timer*/
+#cssSlider:hover:after { 
+  color: #000;
+  opacity: 1;  
+}
+
+.playPause:checked ~ #cssSlider:after{
+    content: "►"; 
+}
+
+/*pause the show*/
+.playPause:checked ~ #cssSlider #sliderImages{
+    animation-play-state:paused;
+}
+.playPause:checked ~ #cssSlider #sliderImages .slideText{
+    animation-play-state:paused;
+}
+
+
+/**********ANIMATIONS**********/
+/*slider*/
+@keyframes slider {  
+    0% { left: 0; opacity: 1; }
+    10% { left: 0; opacity: 1; }
+    16.6% { left: -100vw; opacity: 1; } 
+    26.6% { left: -100vw; opacity: 1; }
+    33.2% { left: -200vw; opacity: 1; }
+    43.2% { left: -200vw; opacity: 1; }
+    49.8% { left: -300vw; opacity: 1; }
+    59.8% { left: -300vw; opacity: 1; }
+    66.4% { left: -400vw; opacity: 1; }
+    76.4% { left: -400vw; opacity: 1; }
+    86.4% { left: -500vw; opacity: 1; }
+    96.4% { left: -500vw; opacity: 1; }
+    100% { left: 0; opacity: 1; }
+}
+
+/*text*/
 @keyframes textBounce {  
     0% { transform:translateY(-50%); opacity: 0; }
     
