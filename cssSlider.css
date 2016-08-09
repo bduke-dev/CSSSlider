@@ -9,38 +9,44 @@ html, body{
 }
 
 
+/**********NEXT SLIDE**********/
+/*don't display unless paused*/
+.playPause:not(:checked) ~ #cssSlider #controls{
+    display: none;
+}
 
+/*control styling*/
 #controls label { 
     position: absolute;
-	background-color: rebeccapurple;
 	width: 50px;
 	height: 50px;
 	opacity: .5;
+    z-index: 15;
 }
 
-#slide1:checked ~ #controls label:nth-child(2), 
-#slide2:checked ~ #controls label:nth-child(3), 
-#slide3:checked ~ #controls label:nth-child(4), 
-#slide4:checked ~ #controls label:nth-child(5), 
-#slide5:checked ~ #controls label:nth-child(6),
-#slide6:checked ~ #controls label:nth-child(1){
+/*control actions*/
+#slide1:checked ~ #controls #slideL2, 
+#slide2:checked ~ #controls #slideL3, 
+#slide3:checked ~ #controls #slideL4, 
+#slide4:checked ~ #controls #slideL5, 
+#slide5:checked ~ #controls #slideL6,
+#slide6:checked ~ #controls #slideL1{
 	background-color: green !important;
-	float: right;
-	margin: 0 -70px 0 0;
+	right: 0;
 	display: block;
+    height: 100%;
 }
-
-
-#slide1:checked ~ #controls label:nth-child(6),
-#slide2:checked ~ #controls label:nth-child(1),
-#slide3:checked ~ #controls label:nth-child(2),
-#slide4:checked ~ #controls label:nth-child(3),
-#slide5:checked ~ #controls label:nth-child(4),
-#slide6:checked ~ #controls label:nth-child(5){
+#slide1:checked ~ #controls #slideL6,
+#slide2:checked ~ #controls #slideL1,
+#slide3:checked ~ #controls #slideL2,
+#slide4:checked ~ #controls #slideL3,
+#slide5:checked ~ #controls #slideL4,
+#slide6:checked ~ #controls #slideL5{
 	background-color: red !important;
-	float: left;
-	margin: 0 0 0 -70px;
+	left: 0;
+    bottom: 0;
 	display: block;
+    height: 100%;
 }
 
 
