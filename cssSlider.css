@@ -154,9 +154,11 @@ anywhere else breaks the slider*/
 /*pause the show*/
 .playPause:checked ~ #cssSlider #sliderImages{
     animation-play-state:paused;
+    animation-play-state: initial;
 }
 .playPause:checked ~ #cssSlider #sliderImages .slideText{
     animation-play-state:paused;
+    animation-play-state: initial;
 }
 
 
