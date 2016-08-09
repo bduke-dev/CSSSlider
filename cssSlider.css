@@ -49,6 +49,14 @@ html, body{
     height: 100%;
 }
 
+/*next page action*/
+#slide1:checked ~ #sliderImages { margin-left:0; }
+#slide2:checked ~ #sliderImages { margin-left:-100vw; }
+#slide3:checked ~ #sliderImages { margin-left:-200vw; }
+#slide4:checked ~ #sliderImages { margin-left:-300vw; }
+#slide5:checked ~ #sliderImages { margin-left:-400vw; }
+#slide6:checked ~ #sliderImages { margin-left:-500vw; }
+
 
 /**********IMAGE/SLIDER STYLING**********/
 /*don't show the other images*/
