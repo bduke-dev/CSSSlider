@@ -24,39 +24,100 @@ html, body{
     width: 4vw;
     z-index: 15;
 }
+.playBtn{
+    background-color: blue;
+    position: absolute;
+    height: 100%;
+    width: 4vw;
+    z-index: 15;
+}
+.pauseBtn{
+    background-color: yellow;
+    position: absolute;
+    height: 100%;
+    width: 4vw;
+    z-index: 15;
+}
 
+/*PAGE 1*/
 #slideL1{
     left: 0;
+}
+#play1{
+    left: 46vw;
+}
+#pause1{
+    left: 50vw;
 }
 #slideR1{
     left: 96vw;
 }
+
+/*PAGE 2*/
 #slideL2{
     left: 100vw;
+}
+#play2{
+    left: 146vw;
+}
+#pause2{
+    left: 150vw;
 }
 #slideR2{
     left: 196vw;
 }
+
+/*PAGE 3*/
 #slideL3{
     left: 200vw;
+}
+#play3{
+    left: 246vw;
+}
+#pause3{
+    left: 250vw;
 }
 #slideR3{
     left: 296vw;
 }
+
+/*PAGE 4*/
 #slideL4{
     left: 300vw;
+}
+#play4{
+    left: 346vw;
+}
+#pause4{
+    left: 350vw;
 }
 #slideR4{
     left: 396vw;
 }
+
+/*PAGE 5*/
 #slideL5{
     left: 400vw;
+}
+#play5{
+    left: 446vw;
+}
+#pause5{
+    left: 450vw;
 }
 #slideR5{
     left: 496vw;
 }
+
+/*PAGE 6*/
 #slideL6{
     left: 500vw;
+}
+#play6{
+    left: 546vw;
+}
+#pause6{
+    left: 550vw;
 }
 #slideR6{
     left: 596vw;
@@ -64,44 +125,7 @@ html, body{
 
 
 /**********NEXT SLIDE**********/
-/*don't display unless paused
-.playPause:not(:checked) ~ #cssSlider #controls{
-    display: none;
-}
 
-/*control styling
-#controls label { 
-    position: absolute;
-	width: 50px;
-	height: 50px;
-	opacity: .5;
-    z-index: 15;
-}
-
-/*control actions
-#slide1:checked ~ #controls #slideL2, 
-#slide2:checked ~ #controls #slideL3, 
-#slide3:checked ~ #controls #slideL4, 
-#slide4:checked ~ #controls #slideL5, 
-#slide5:checked ~ #controls #slideL6,
-#slide6:checked ~ #controls #slideL1{
-	background-color: green !important;
-	right: 0;
-	display: block;
-    height: 100%;
-}
-#slide1:checked ~ #controls #slideL6,
-#slide2:checked ~ #controls #slideL1,
-#slide3:checked ~ #controls #slideL2,
-#slide4:checked ~ #controls #slideL3,
-#slide5:checked ~ #controls #slideL4,
-#slide6:checked ~ #controls #slideL5{
-	background-color: red !important;
-	left: 0;
-    bottom: 0;
-	display: block;
-    height: 100%;
-}
 
 /*next page action*/
 #slide1:checked ~ #sliderImages { transform: translateX(0); }
