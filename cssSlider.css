@@ -9,13 +9,67 @@ html, body{
 }
 
 
+
+.slideL{
+    background-color: red;
+    position: absolute;
+    height: 100%;
+    width: 4vw;
+    z-index: 15;
+}
+.slideR{
+    background-color: green;
+    position: absolute;
+    height: 100%;
+    width: 4vw;
+    z-index: 15;
+}
+
+#slideL1{
+    left: 0;
+}
+#slideR1{
+    left: 96vw;
+}
+#slideL2{
+    left: 100vw;
+}
+#slideR2{
+    left: 196vw;
+}
+#slideL3{
+    left: 200vw;
+}
+#slideR3{
+    left: 296vw;
+}
+#slideL4{
+    left: 300vw;
+}
+#slideR4{
+    left: 396vw;
+}
+#slideL5{
+    left: 400vw;
+}
+#slideR5{
+    left: 496vw;
+}
+#slideL6{
+    left: 500vw;
+}
+#slideR6{
+    left: 596vw;
+}
+
+
 /**********NEXT SLIDE**********/
-/*don't display unless paused*/
+/*don't display unless paused
 .playPause:not(:checked) ~ #cssSlider #controls{
     display: none;
 }
 
-/*control styling*/
+/*control styling
 #controls label { 
     position: absolute;
 	width: 50px;
@@ -24,7 +78,7 @@ html, body{
     z-index: 15;
 }
 
-/*control actions*/
+/*control actions
 #slide1:checked ~ #controls #slideL2, 
 #slide2:checked ~ #controls #slideL3, 
 #slide3:checked ~ #controls #slideL4, 
@@ -73,12 +127,15 @@ just replace your value based on the ratio equation*/
 }
 
 /*size of the images*/
-#cssSlider img {  
+#cssSlider .pics {  
   width: 100vw;
   height: 100%; 
   float: left;
 }
-
+#cssSlider .pics img{
+    width: 100%;
+    height: 100%;
+}
 /*transition slider size*/
 #sliderImages { 
   position: absolute; 
@@ -89,11 +146,11 @@ just replace your value based on the ratio equation*/
   animation-iteration-count:infinite;
 }
 } /*this extra } has to be here or slider is broken, 
-idk why, have spent hourstrying to figure out why. 
+idk why, have spent hours trying to figure out why. 
 It has to be exactly after this block of code, 
 anywhere else breaks the slider*/
 
-#sliderImages img { 
+#sliderImages .pics { 
   float: right; 
 }
 
@@ -120,7 +177,7 @@ anywhere else breaks the slider*/
 }
 
 /**********PLAY PAUSE**********/
-/*play pause appearance*/
+/*play pause appearance
 .playPause{
     display: none;
 }
@@ -151,14 +208,12 @@ anywhere else breaks the slider*/
     content: "\25BA"; 
 }
 
-/*pause the show*/
+/*pause the show
 .playPause:checked ~ #cssSlider #sliderImages{
     animation-play-state:paused;
-    animation-play-state: initial;
 }
 .playPause:checked ~ #cssSlider #sliderImages .slideText{
     animation-play-state:paused;
-    animation-play-state: initial;
 }
 
 
@@ -181,7 +236,7 @@ anywhere else breaks the slider*/
 }
 
 /*text*/
-@keyframes textBounce {  
+keyframes textBounce {  
     0% { transform:translateY(-50%); opacity: 0; }
     
     1% { transform:translateY(10%); opacity: 1; }
