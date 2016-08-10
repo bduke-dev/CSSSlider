@@ -104,12 +104,12 @@ html, body{
 }
 
 /*next page action*/
-#slide1:checked ~ #sliderImages { margin-left:0; }
-#slide2:checked ~ #sliderImages { margin-left:-100vw; }
-#slide3:checked ~ #sliderImages { margin-left:-200vw; }
-#slide4:checked ~ #sliderImages { margin-left:-300vw; }
-#slide5:checked ~ #sliderImages { margin-left:-400vw; }
-#slide6:checked ~ #sliderImages { margin-left:-500vw; }
+#slide1:checked ~ #sliderImages { transform: translateX(0); }
+#slide2:checked ~ #sliderImages { transform: translateX(-100vw); }
+#slide3:checked ~ #sliderImages { transform: translateX(-200vw); }
+#slide4:checked ~ #sliderImages { transform: translateX(-300vw); }
+#slide5:checked ~ #sliderImages { transform: translateX(-400vw); }
+#slide6:checked ~ #sliderImages { transform: translateX(-500vw); }
 
 
 /**********IMAGE/SLIDER STYLING**********/
@@ -219,20 +219,20 @@ anywhere else breaks the slider*/
 
 /**********ANIMATIONS**********/
 /*slider*/
-@keyframes slider {  
-    0% { left: 0; opacity: 1; }
-    10% { left: 0; opacity: 1; }
-    16.6% { left: -100vw; opacity: 1; } 
-    26.6% { left: -100vw; opacity: 1; }
-    33.2% { left: -200vw; opacity: 1; }
-    43.2% { left: -200vw; opacity: 1; }
-    49.8% { left: -300vw; opacity: 1; }
-    59.8% { left: -300vw; opacity: 1; }
-    66.4% { left: -400vw; opacity: 1; }
-    76.4% { left: -400vw; opacity: 1; }
-    86.4% { left: -500vw; opacity: 1; }
-    96.4% { left: -500vw; opacity: 1; }
-    100% { left: 0; opacity: 1; }
+keyframes slider {  
+    0% { transform: translateX(0); opacity: 1; }
+    10% { transform: translateX(0); opacity: 1; }
+    16.6% { transform: translateX(-100vw); opacity: 1; } 
+    26.6% { transform: translateX(-100vw); opacity: 1; }
+    33.2% { transform: translateX(-200vw); opacity: 1; }
+    43.2% { transform: translateX(-200vw); opacity: 1; }
+    49.8% { transform: translateX(-300vw); opacity: 1; }
+    59.8% { transform: translateX(-300vw); opacity: 1; }
+    66.4% { transform: translateX(-400vw); opacity: 1; }
+    76.4% { transform: translateX(-400vw); opacity: 1; }
+    86.4% { transform: translateX(-500vw); opacity: 1; }
+    96.4% { transform: translateX(-500vw); opacity: 1; }
+    100% { transform: translateX(0); opacity: 1; }
 }
 
 /*text*/
