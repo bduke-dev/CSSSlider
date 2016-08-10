@@ -177,49 +177,19 @@ anywhere else breaks the slider*/
 }
 
 /**********PLAY PAUSE**********/
-/*play pause appearance
-.playPause{
-    display: none;
-}
-#playPauseLabel{
-    width: 100%;
-    height: 100%;
-    position: absolute; 
-    z-index: 13;
-}
-#cssSlider:after { 
-  content: "\275A \275A"; 
-  font-size: 8em; 
-  position: absolute; 
-  z-index: 12; 
-  color: #000;
-  opacity: 0;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: 1s all ease-in-out; 
-}
 
-#cssSlider:hover:after { 
-  opacity: 1;  
+/*pause the show*/
+#play:not(:checked) ~ #sliderImages{
+    animation: none;
 }
-
-.playPause:checked ~ #cssSlider:after{
-    content: "\25BA"; 
-}
-
-/*pause the show
-.playPause:checked ~ #cssSlider #sliderImages{
-    animation-play-state:paused;
-}
-.playPause:checked ~ #cssSlider #sliderImages .slideText{
-    animation-play-state:paused;
+#play:not(:checked) ~ #sliderImages .slideText{
+    animation: none;
 }
 
 
 /**********ANIMATIONS**********/
 /*slider*/
-keyframes slider {  
+@keyframes slider {  
     0% { transform: translateX(0); opacity: 1; }
     10% { transform: translateX(0); opacity: 1; }
     16.6% { transform: translateX(-100vw); opacity: 1; } 
