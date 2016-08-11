@@ -46,10 +46,10 @@ html, body{
 
 /**********NEXT SLIDE NAVIGATION**********/
 
-/*APPEARANCE*/
+/*APPEARANCE
 #cssSlider input{
     display: none;
-}
+}*/
 .slideL{
     position: absolute;
     top: 50%;
@@ -222,7 +222,42 @@ html, body{
     height:1em;
     width: 1em;
     border-radius: 100%;
-    background-color: greenyellow;
+    background: transparent;
+    
+}
+
+#play:checked ~ #pageIndicators #point1{
+    -webkit-animation: point 48000ms infinite -2000ms;
+    animation: point 40000ms infinite 0ms;
+}
+#play:checked ~ #pageIndicators #point2{
+    -webkit-animation: point 48000ms infinite 6000ms;
+    animation: point 40000ms infinite 6666.6666666667ms;
+}
+#play:checked ~ #pageIndicators #point3{
+    -webkit-animation: point 48000ms infinite 14000ms;
+    animation: point 40000ms infinite 13333.333333333ms;
+}
+#play:checked ~ #pageIndicators #point4{
+    -webkit-animation: point 48000ms infinite 22000ms;
+    animation: point 40000ms infinite 20000ms;
+}
+#play:checked ~ #pageIndicators #point5{
+    -webkit-animation: point 48000ms infinite 30000ms;
+    animation: point 40000ms infinite 26666.666666666ms;
+}
+#play:checked ~ #pageIndicators #point6{
+    -webkit-animation: point 48000ms infinite 38000ms;
+    animation: point 40000ms infinite 33333.333333333ms;
+}
+
+@keyframes point {
+  0%, 16.656666666666666%  { background: #3A4A5A; }
+  16.666666666666668%, 100% { background: transparent; }
+}
+@-webkit-keyframes point {
+  0%, 16.656666666666666%  { background: #3A4A5A; }
+  16.666666666666668%, 100% { background: transparent; }
 }
 
 
@@ -326,21 +361,30 @@ anywhere else breaks the slider*/
 }
 
 /**********ANIMATIONS**********/
+
 /*slider*/
 @keyframes slider {  
-    0% { transform: translateX(0); opacity: 1; }
-    10% { transform: translateX(0); opacity: 1; }
-    16.6% { transform: translateX(-100vw); opacity: 1; } 
-    26.6% { transform: translateX(-100vw); opacity: 1; }
-    33.2% { transform: translateX(-200vw); opacity: 1; }
-    43.2% { transform: translateX(-200vw); opacity: 1; }
-    49.8% { transform: translateX(-300vw); opacity: 1; }
-    59.8% { transform: translateX(-300vw); opacity: 1; }
-    66.4% { transform: translateX(-400vw); opacity: 1; }
-    76.4% { transform: translateX(-400vw); opacity: 1; }
-    86.4% { transform: translateX(-500vw); opacity: 1; }
-    96.4% { transform: translateX(-500vw); opacity: 1; }
-    100% { transform: translateX(0); opacity: 1; }
+    0%, 10% { 
+        transform: translateX(0); 
+    }
+    16.6666666667%, 26.6666666667% { 
+        transform: translateX(-100vw); 
+    }
+    33.3333333333%, 43.3333333333% { 
+        transform: translateX(-200vw); 
+    }
+    50%, 60% { 
+        transform: translateX(-300vw); 
+    }
+    66.6666666667%, 76.6666666667% { 
+        transform: translateX(-400vw); 
+    }
+    83.3333333333%, 93.3333333333% { 
+        transform: translateX(-500vw); 
+    }
+    100% { 
+        transform: translateX(0); 
+    }
 }
 
 /*text*/
