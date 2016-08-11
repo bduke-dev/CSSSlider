@@ -14,6 +14,7 @@
   font-weight: normal;
   font-style: normal;
   font-size: 10vw;  /* Preferred icon size */
+  color: black; /*color of media icons*/
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -220,7 +221,7 @@ html, body{
     height:1.5em;
     width: 1.5em;
     border-radius: 100%;
-    background-color: darkorchid;
+    background-color: darkorchid; /*color of page indicator*/
 }
 #cssSlider #pageIndicators .point{
     margin: .5em;
@@ -272,25 +273,25 @@ html, body{
     animation-play-state: paused;
 }
 #slide1:checked ~ #pageIndicators #point1{
-    background: #3A4A5A;
+    background: #3A4A5A; /*color of page indicator dot*/
 }
 #slide2:checked ~ #pageIndicators #point2{
-    background: #3A4A5A;
+    background: #3A4A5A; /*color of page indicator dot*/
 }
 #slide3:checked ~ #pageIndicators #point3{
-    background: #3A4A5A;
+    background: #3A4A5A; /*color of page indicator dot*/
 }
 #slide4:checked ~ #pageIndicators #point4{
-    background: #3A4A5A;
+    background: #3A4A5A; /*color of page indicator dot*/
 }
 #slide5:checked ~ #pageIndicators #point5{
-    background: #3A4A5A;
+    background: #3A4A5A; /*color of page indicator dot*/
 }
 #slide6:checked ~ #pageIndicators #point6{
-    background: #3A4A5A;
+    background: #3A4A5A; /*color of page indicator dot*/
 }
 .point:hover{
-    background: #3A4A5A !important;
+    background: #3A4A5A !important; /*color of page indicator dot*/
 }
 @keyframes point {
   0%, 16.656666666666666%  { background: #3A4A5A; }
@@ -359,12 +360,13 @@ anywhere else breaks the slider*/
     bottom: 0;
     padding: .6em;
     margin: 2em;
-    background-color: yellow;
+    background-color: yellow; /*color of blurb box*/
     border-radius: 1em;
 }
 .slideText p{
     padding: 0;
     margin: 0;
+    color: black; /*color of blurb box text*/
     font-size: 2em;
 }
 
