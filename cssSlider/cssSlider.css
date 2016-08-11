@@ -226,31 +226,63 @@ html, body{
     
 }
 
-#play:checked ~ #pageIndicators #point1{
+/*PAGE INDICATOR ANIMATION*/   
+#play:checked ~ #pageIndicators #point1,
+#pause:checked ~ #pageIndicators #point1{
     -webkit-animation: point 48000ms infinite -2000ms;
     animation: point 40000ms infinite 0ms;
 }
-#play:checked ~ #pageIndicators #point2{
+#play:checked ~ #pageIndicators #point2,
+#pause:checked ~ #pageIndicators #point2{
     -webkit-animation: point 48000ms infinite 6000ms;
     animation: point 40000ms infinite 6666.6666666667ms;
 }
-#play:checked ~ #pageIndicators #point3{
+#play:checked ~ #pageIndicators #point3,
+#pause:checked ~ #pageIndicators #point3{
     -webkit-animation: point 48000ms infinite 14000ms;
     animation: point 40000ms infinite 13333.333333333ms;
 }
-#play:checked ~ #pageIndicators #point4{
+#play:checked ~ #pageIndicators #point4,
+#pause:checked ~ #pageIndicators #point4{
     -webkit-animation: point 48000ms infinite 22000ms;
     animation: point 40000ms infinite 20000ms;
 }
-#play:checked ~ #pageIndicators #point5{
+#play:checked ~ #pageIndicators #point5,
+#pause:checked ~ #pageIndicators #point5{
     -webkit-animation: point 48000ms infinite 30000ms;
     animation: point 40000ms infinite 26666.666666666ms;
 }
-#play:checked ~ #pageIndicators #point6{
+#play:checked ~ #pageIndicators #point6,
+#pause:checked ~ #pageIndicators #point6{
     -webkit-animation: point 48000ms infinite 38000ms;
     animation: point 40000ms infinite 33333.333333333ms;
 }
-
+#pause:checked ~ #pageIndicators #point1,
+#pause:checked ~ #pageIndicators #point2,
+#pause:checked ~ #pageIndicators #point3,
+#pause:checked ~ #pageIndicators #point4,
+#pause:checked ~ #pageIndicators #point5,
+#pause:checked ~ #pageIndicators #point6{
+    animation-play-state: paused;
+}
+#slide1:checked ~ #pageIndicators #point1{
+    background: #3A4A5A;
+}
+#slide2:checked ~ #pageIndicators #point2{
+    background: #3A4A5A;
+}
+#slide3:checked ~ #pageIndicators #point3{
+    background: #3A4A5A;
+}
+#slide4:checked ~ #pageIndicators #point4{
+    background: #3A4A5A;
+}
+#slide5:checked ~ #pageIndicators #point5{
+    background: #3A4A5A;
+}
+#slide6:checked ~ #pageIndicators #point6{
+    background: #3A4A5A;
+}
 @keyframes point {
   0%, 16.656666666666666%  { background: #3A4A5A; }
   16.666666666666668%, 100% { background: transparent; }
