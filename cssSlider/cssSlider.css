@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(iconFont/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(iconFont/MaterialIcons-Regular.woff2) format('woff2'),
+       url(iconFont/MaterialIcons-Regular.woff) format('woff'),
+       url(iconFont/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 4vw;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 /*CSS RESET*/
 html, body{
 	margin: 0;
@@ -11,10 +47,12 @@ html, body{
 /**********NEXT SLIDE NAVIGATION**********/
 
 /*APPEARANCE*/
+#cssSlider input{
+    display: none;
+}
 .slideL{
-    background-color: red;
     position: absolute;
-    height: 100%;
+    top: 50%;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -25,9 +63,8 @@ html, body{
     transition: opacity .5s ease-in-out;
 }
 .slideR{
-    background-color: green;
     position: absolute;
-    height: 100%;
+    top: 50%;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -38,9 +75,8 @@ html, body{
     transition: opacity .5s ease-in-out;
 }
 .playBtn{
-    background-color: blue;
     position: absolute;
-    height: 100%;
+    top: 50%;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -51,9 +87,8 @@ html, body{
     transition: opacity .5s ease-in-out;
 }
 .pauseBtn{
-    background-color: yellow;
     position: absolute;
-    height: 100%;
+    top: 50%;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -63,6 +98,7 @@ html, body{
     -webkit-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
 }
+
 /*ONLY DISPLAY IF ON SLIDER*/
 #cssSlider .pics:hover > label{
     opacity: 1;
@@ -73,16 +109,24 @@ html, body{
     transition: opacity .5s ease-in-out;
 }
 
+/*DON'T SHOW PLAY AND PAUSE*/
+#play:not(:checked) ~ #sliderImages .pics .pauseBtn{
+    display: none;
+}
+#play:checked ~ #sliderImages .pics .playBtn{
+    display: none;
+}
+
 /*POSITION*/
 /*PAGE 1*/
 #slideL1{
     left: 0;
 }
 #play1{
-    left: 46vw;
+    left: 48vw;
 }
 #pause1{
-    left: 50vw;
+    left: 48vw;
 }
 #slideR1{
     left: 96vw;
@@ -93,10 +137,10 @@ html, body{
     left: 100vw;
 }
 #play2{
-    left: 146vw;
+    left: 148vw;
 }
 #pause2{
-    left: 150vw;
+    left: 148vw;
 }
 #slideR2{
     left: 196vw;
@@ -107,10 +151,10 @@ html, body{
     left: 200vw;
 }
 #play3{
-    left: 246vw;
+    left: 248vw;
 }
 #pause3{
-    left: 250vw;
+    left: 248vw;
 }
 #slideR3{
     left: 296vw;
@@ -121,10 +165,10 @@ html, body{
     left: 300vw;
 }
 #play4{
-    left: 346vw;
+    left: 348vw;
 }
 #pause4{
-    left: 350vw;
+    left: 348vw;
 }
 #slideR4{
     left: 396vw;
@@ -135,10 +179,10 @@ html, body{
     left: 400vw;
 }
 #play5{
-    left: 446vw;
+    left: 448vw;
 }
 #pause5{
-    left: 450vw;
+    left: 448vw;
 }
 #slideR5{
     left: 496vw;
@@ -149,10 +193,10 @@ html, body{
     left: 500vw;
 }
 #play6{
-    left: 546vw;
+    left: 548vw;
 }
 #pause6{
-    left: 550vw;
+    left: 548vw;
 }
 #slideR6{
     left: 596vw;
