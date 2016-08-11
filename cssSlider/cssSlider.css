@@ -202,6 +202,30 @@ html, body{
     left: 596vw;
 }
 
+/*PAGE INDICATORS*/
+#cssSlider #pageIndicators {
+    position: absolute;
+    bottom: 0;
+    background-color: aqua;
+    z-index: 15;
+}
+#cssSlider #pageIndicators .indicator{
+    display: inline-block;
+    height:2em;
+    width: 2em;
+    border-radius: 100%;
+    background-color: darkorchid;
+}
+#cssSlider #pageIndicators .point{
+    margin: .5em;
+    display: inline-block;
+    height:1em;
+    width: 1em;
+    border-radius: 100%;
+    background-color: greenyellow;
+}
+
+
 /*next page action*/
 #slide1:checked ~ #sliderImages { transform: translateX(0); }
 #slide2:checked ~ #sliderImages { transform: translateX(-100vw); }
