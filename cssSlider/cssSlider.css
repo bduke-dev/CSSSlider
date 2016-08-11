@@ -13,7 +13,7 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 4vw;  /* Preferred icon size */
+  font-size: 10vw;  /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -46,13 +46,14 @@ html, body{
 
 /**********NEXT SLIDE NAVIGATION**********/
 
-/*APPEARANCE
+/*APPEARANCE*/
 #cssSlider input{
     display: none;
-}*/
+}
 .slideL{
     position: absolute;
     top: 50%;
+    margin-top: -50px;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -65,6 +66,7 @@ html, body{
 .slideR{
     position: absolute;
     top: 50%;
+    margin-top: -50px;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -77,6 +79,7 @@ html, body{
 .playBtn{
     position: absolute;
     top: 50%;
+    margin-top: -50px;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -89,6 +92,7 @@ html, body{
 .pauseBtn{
     position: absolute;
     top: 50%;
+    margin-top: -50px;
     width: 4vw;
     z-index: 15;
     opacity: 0;
@@ -123,13 +127,13 @@ html, body{
     left: 0;
 }
 #play1{
-    left: 48vw;
+    left: 45vw;
 }
 #pause1{
-    left: 48vw;
+    left: 45vw;
 }
 #slideR1{
-    left: 96vw;
+    left: 90vw;
 }
 
 /*PAGE 2*/
@@ -137,13 +141,13 @@ html, body{
     left: 100vw;
 }
 #play2{
-    left: 148vw;
+    left: 145vw;
 }
 #pause2{
-    left: 148vw;
+    left: 145vw;
 }
 #slideR2{
-    left: 196vw;
+    left: 190vw;
 }
 
 /*PAGE 3*/
@@ -151,13 +155,13 @@ html, body{
     left: 200vw;
 }
 #play3{
-    left: 248vw;
+    left: 245vw;
 }
 #pause3{
-    left: 248vw;
+    left: 245vw;
 }
 #slideR3{
-    left: 296vw;
+    left: 290vw;
 }
 
 /*PAGE 4*/
@@ -165,13 +169,13 @@ html, body{
     left: 300vw;
 }
 #play4{
-    left: 348vw;
+    left: 345vw;
 }
 #pause4{
-    left: 348vw;
+    left: 345vw;
 }
 #slideR4{
-    left: 396vw;
+    left: 390vw;
 }
 
 /*PAGE 5*/
@@ -179,13 +183,13 @@ html, body{
     left: 400vw;
 }
 #play5{
-    left: 448vw;
+    left: 445vw;
 }
 #pause5{
-    left: 448vw;
+    left: 445vw;
 }
 #slideR5{
-    left: 496vw;
+    left: 490vw;
 }
 
 /*PAGE 6*/
@@ -193,34 +197,36 @@ html, body{
     left: 500vw;
 }
 #play6{
-    left: 548vw;
+    left: 545vw;
 }
 #pause6{
-    left: 548vw;
+    left: 545vw;
 }
 #slideR6{
-    left: 596vw;
+    left: 590vw;
 }
 
 /*PAGE INDICATORS*/
 #cssSlider #pageIndicators {
     position: absolute;
     bottom: 0;
-    background-color: aqua;
+    text-align: center;
+    width: 100vw;
     z-index: 15;
+    
 }
 #cssSlider #pageIndicators .indicator{
     display: inline-block;
-    height:2em;
-    width: 2em;
+    height:1.5em;
+    width: 1.5em;
     border-radius: 100%;
     background-color: darkorchid;
 }
 #cssSlider #pageIndicators .point{
     margin: .5em;
     display: inline-block;
-    height:1em;
-    width: 1em;
+    height:.5em;
+    width: .5em;
     border-radius: 100%;
     background: transparent;
     
@@ -282,6 +288,9 @@ html, body{
 }
 #slide6:checked ~ #pageIndicators #point6{
     background: #3A4A5A;
+}
+.point:hover{
+    background: #3A4A5A !important;
 }
 @keyframes point {
   0%, 16.656666666666666%  { background: #3A4A5A; }
@@ -348,15 +357,15 @@ anywhere else breaks the slider*/
 .slideText{
     position: absolute;
     bottom: 0;
-    padding: 1em;
-    margin: 1em;
+    padding: .6em;
+    margin: 2em;
     background-color: yellow;
     border-radius: 1em;
 }
 .slideText p{
     padding: 0;
     margin: 0;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .slideText {  
@@ -474,10 +483,8 @@ anywhere else breaks the slider*/
 
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px){
-    .slideText{
+    .slideText,
+    #pageIndicators{
         display: none;
-    }
-    #cssSlider:after { 
-        font-size: 3em; 
-    }
+    }    
 }
