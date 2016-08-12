@@ -304,12 +304,12 @@ html, body{
 
 
 /*next page action*/
-#slide1:checked ~ #sliderImages { transform: translateX(0); }
-#slide2:checked ~ #sliderImages { transform: translateX(-100vw); }
-#slide3:checked ~ #sliderImages { transform: translateX(-200vw); }
-#slide4:checked ~ #sliderImages { transform: translateX(-300vw); }
-#slide5:checked ~ #sliderImages { transform: translateX(-400vw); }
-#slide6:checked ~ #sliderImages { transform: translateX(-500vw); }
+#slide1:checked ~ #sliderImages { margin-left: 0; }
+#slide2:checked ~ #sliderImages { margin-left: -100vw; }
+#slide3:checked ~ #sliderImages { margin-left: -200vw; }
+#slide4:checked ~ #sliderImages { margin-left: -300vw; }
+#slide5:checked ~ #sliderImages { margin-left: -400vw; }
+#slide6:checked ~ #sliderImages { margin-left: -500vw; }
 
 
 /**********IMAGE/SLIDER STYLING**********/
@@ -338,8 +338,9 @@ just replace your value based on the ratio equation*/
 }
 /*transition slider size*/
 #sliderImages { 
-    transition: 2s;
-  position: absolute; 
+  position: absolute;
+  left: 0;
+  transition: 2.66666666668s; 
   width:600vw;  
   animation-name:slider;
   animation-duration: 40s;
@@ -464,7 +465,7 @@ anywhere else breaks the slider*/
         margin-left: -500vw; 
     }
     100% { 
-        margin-left: 0; 
+        margin-left: -.1vw; /*can't be 0, gives blank page*/
     }
 }
 
