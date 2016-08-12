@@ -63,6 +63,7 @@ html, body{
     -moz-transition: opacity .5s ease-in-out;
     -webkit-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
+    cursor: pointer;
 }
 .slideR{
     position: absolute;
@@ -76,6 +77,7 @@ html, body{
     -moz-transition: opacity .5s ease-in-out;
     -webkit-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
+    cursor: pointer;
 }
 .playBtn{
     position: absolute;
@@ -89,6 +91,7 @@ html, body{
     -moz-transition: opacity .5s ease-in-out;
     -webkit-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
+    cursor: pointer;
 }
 .pauseBtn{
     position: absolute;
@@ -102,6 +105,7 @@ html, body{
     -moz-transition: opacity .5s ease-in-out;
     -webkit-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
+    cursor: pointer;
 }
 
 /*ONLY DISPLAY IF ON SLIDER*/
@@ -214,7 +218,6 @@ html, body{
     text-align: center;
     width: 100vw;
     z-index: 15;
-    
 }
 #cssSlider #pageIndicators .indicator{
     display: inline-block;
@@ -222,6 +225,7 @@ html, body{
     width: 1.5em;
     border-radius: 100%;
     background-color: darkorchid; /*color of page indicator*/
+    cursor: pointer;
 }
 #cssSlider #pageIndicators .point{
     margin: .5em;
@@ -229,7 +233,9 @@ html, body{
     height:.5em;
     width: .5em;
     border-radius: 100%;
-    background: transparent;
+    background: #3A4A5A; /*color of page indicator dot*/
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
     
 }
 
@@ -272,34 +278,23 @@ html, body{
 #pause:checked ~ #pageIndicators #point6{
     animation-play-state: paused;
 }
-#slide1:checked ~ #pageIndicators #point1{
-    background: #3A4A5A; /*color of page indicator dot*/
+#slide1:checked ~ #pageIndicators #point1,
+#slide2:checked ~ #pageIndicators #point2,
+#slide3:checked ~ #pageIndicators #point3,
+#slide4:checked ~ #pageIndicators #point4,
+#slide5:checked ~ #pageIndicators #point5,
+#slide6:checked ~ #pageIndicators #point6,
+#pageIndicators > label:hover > .point{
+    opacity: 1 !important;
 }
-#slide2:checked ~ #pageIndicators #point2{
-    background: #3A4A5A; /*color of page indicator dot*/
-}
-#slide3:checked ~ #pageIndicators #point3{
-    background: #3A4A5A; /*color of page indicator dot*/
-}
-#slide4:checked ~ #pageIndicators #point4{
-    background: #3A4A5A; /*color of page indicator dot*/
-}
-#slide5:checked ~ #pageIndicators #point5{
-    background: #3A4A5A; /*color of page indicator dot*/
-}
-#slide6:checked ~ #pageIndicators #point6{
-    background: #3A4A5A; /*color of page indicator dot*/
-}
-.point:hover{
-    background: #3A4A5A !important; /*color of page indicator dot*/
-}
+
 @keyframes point {
-  0%, 16.656666666666666%  { background: #3A4A5A; }
-  16.666666666666668%, 100% { background: transparent; }
+  1%, 16%  { opacity: 1; }
+  17%, 100% { opacity: 0; }
 }
-@-webkit-keyframes point {
-  0%, 16.656666666666666%  { background: #3A4A5A; }
-  16.666666666666668%, 100% { background: transparent; }
+-webkit-keyframes point {
+  0%, 16%  { opacity: 1; }
+  17%, 100% { opacity: 0; }
 }
 
 
