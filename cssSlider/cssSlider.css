@@ -284,7 +284,7 @@ html, body{
 #slide4:checked ~ #pageIndicators #point4,
 #slide5:checked ~ #pageIndicators #point5,
 #slide6:checked ~ #pageIndicators #point6,
-#pageIndicators > label:hover > .point{
+#cssSlider > #pageIndicators > .indicator:hover > .point{
     opacity: 1 !important;
 }
 
@@ -292,7 +292,7 @@ html, body{
   1%, 16%  { opacity: 1; }
   17%, 100% { opacity: 0; }
 }
--webkit-keyframes point {
+@-webkit-keyframes point {
   0%, 16%  { opacity: 1; }
   17%, 100% { opacity: 0; }
 }
