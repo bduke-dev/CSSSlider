@@ -54,8 +54,7 @@ html, body{
 .slideL{
     position: absolute;
     top: 50%;
-    margin-top: -50px;
-    width: 4vw;
+    transform: translateY(-50%);
     z-index: 15;
     opacity: 0;
     -o-transition: opacity .5s ease-in-out;
@@ -68,8 +67,7 @@ html, body{
 .slideR{
     position: absolute;
     top: 50%;
-    margin-top: -50px;
-    width: 4vw;
+    transform: translateY(-50%);
     z-index: 15;
     opacity: 0;
     -o-transition: opacity .5s ease-in-out;
@@ -82,8 +80,7 @@ html, body{
 .playBtn{
     position: absolute;
     top: 50%;
-    margin-top: -50px;
-    width: 4vw;
+    transform: translateY(-50%);
     z-index: 15;
     opacity: 0;
     -o-transition: opacity .5s ease-in-out;
@@ -96,8 +93,7 @@ html, body{
 .pauseBtn{
     position: absolute;
     top: 50%;
-    margin-top: -50px;
-    width: 4vw;
+    transform: translateY(-50%);
     z-index: 15;
     opacity: 0;
     -o-transition: opacity .5s ease-in-out;
@@ -234,7 +230,7 @@ html, body{
     width: .5em;
     border-radius: 100%;
     background: transparent; /*color of page indicator dot*/
-    transition: opacity .2s ease-in-out;
+    transition: .3s ease-in-out;
     z-index: 16;
     
 }
@@ -246,7 +242,7 @@ html, body{
     border-radius: 100%;
     background: #3A4A5A; /*color of page indicator dot*/
     opacity: 0;
-    transition: opacity .2s ease-in-out;
+    transition: opacity .3s ease-in-out;
     
 }
 
