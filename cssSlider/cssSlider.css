@@ -338,6 +338,7 @@ just replace your value based on the ratio equation*/
 }
 /*transition slider size*/
 #sliderImages { 
+    transition: 2s;
   position: absolute; 
   width:600vw;  
   animation-name:slider;
