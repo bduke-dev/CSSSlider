@@ -361,7 +361,7 @@ anywhere else breaks the slider*/
     padding: .6em;
     margin: 2em;
     background-color: yellow; /*color of blurb box*/
-    border-radius: 1em;
+    border-radius: .5em;
 }
 .slideText p{
     padding: 0;
@@ -427,6 +427,43 @@ anywhere else breaks the slider*/
     }
     100% { 
         transform: translateX(0); 
+    }
+}
+
+
+/* IE 10+ hack - cant animate translate :( */
+@media screen and (-ms-high-contrast: active), 
+(-ms-high-contrast: none) {
+  #sliderImages { 
+  position: absolute; 
+  width:600vw;  
+  animation-name:slider-ie;
+  animation-duration: 40s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
+}
+}
+@keyframes slider-ie {  
+    0%, 10% { 
+        margin-left: 0; 
+    }
+    16.6666666667%, 26.6666666667% { 
+        margin-left: -100vw; 
+    }
+    33.3333333333%, 43.3333333333% { 
+        margin-left: -200vw; 
+    }
+    50%, 60% { 
+        margin-left: -300vw; 
+    }
+    66.6666666667%, 76.6666666667% { 
+        margin-left: -400vw; 
+    }
+    83.3333333333%, 93.3333333333% { 
+        margin-left: -500vw; 
+    }
+    100% { 
+        margin-left: 0; 
     }
 }
 
