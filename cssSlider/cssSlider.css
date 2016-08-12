@@ -227,8 +227,19 @@ html, body{
     background-color: darkorchid; /*color of page indicator*/
     cursor: pointer;
 }
-#cssSlider #pageIndicators .point{
+#cssSlider #pageIndicators .hoverPoint{
     margin: .5em;
+    display: inline-block;
+    height:.5em;
+    width: .5em;
+    border-radius: 100%;
+    background: transparent; /*color of page indicator dot*/
+    transition: opacity .2s ease-in-out;
+    z-index: 16;
+    
+}
+#cssSlider #pageIndicators .point{
+    margin-bottom: .5em;
     display: inline-block;
     height:.5em;
     width: .5em;
@@ -283,9 +294,13 @@ html, body{
 #slide3:checked ~ #pageIndicators #point3,
 #slide4:checked ~ #pageIndicators #point4,
 #slide5:checked ~ #pageIndicators #point5,
-#slide6:checked ~ #pageIndicators #point6,
-#cssSlider > #pageIndicators > .indicator:hover > .point{
-    opacity: 1 !important;
+#slide6:checked ~ #pageIndicators #point6{
+    opacity: 1;
+}
+
+/*used to override the animation*/
+#cssSlider > #pageIndicators > .indicator:hover > .hoverPoint{
+    background: #3A4A5A; /*color of page indicator dot*/
 }
 
 @keyframes point {
