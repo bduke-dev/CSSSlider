@@ -1,40 +1,3 @@
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(iconFont/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
-       url(iconFont/MaterialIcons-Regular.woff2) format('woff2'),
-       url(iconFont/MaterialIcons-Regular.woff) format('woff'),
-       url(iconFont/MaterialIcons-Regular.ttf) format('truetype');
-}
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 10vw;  /* Preferred icon size */
-  color: #F2F1EF; /*color of media icons*/
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
 /*CSS RESET*/
 html, body{
 	margin: 0;
@@ -52,6 +15,12 @@ html, body{
     display: none;
 }
 .slideL{
+    width: 10vw;
+    height: 10vw;
+    background: url('icons/previous.png');
+    background-image: url('icons/previous.svg'), none;
+    background-repeat: no-repeat;
+    background-size: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -65,6 +34,12 @@ html, body{
     cursor: pointer;
 }
 .slideR{
+    width: 10vw;
+    height: 10vw;
+    background: url('icons/next.png');
+    background-image: url('icons/next.svg'), none;
+    background-repeat: no-repeat;
+    background-size: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -78,6 +53,12 @@ html, body{
     cursor: pointer;
 }
 .playBtn{
+    width: 10vw;
+    height: 10vw;
+    background: url('icons/play.png');
+    background-image: url('icons/play.svg'), none;
+    background-repeat: no-repeat;
+    background-size: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -91,6 +72,12 @@ html, body{
     cursor: pointer;
 }
 .pauseBtn{
+    width: 10vw;
+    height: 10vw;
+    background: url('icons/pause.png');
+    background-image: url('icons/pause.svg'), none;
+    background-repeat: no-repeat;
+    background-size: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
