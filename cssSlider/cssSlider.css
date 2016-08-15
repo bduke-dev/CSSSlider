@@ -14,18 +14,20 @@ html, body{
 #cssSlider input{
     display: none;
 }
-
-.slideL, .playPauseBtn, .slideR{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 15;
+#pageNav{
     opacity: 0;
     -o-transition: opacity .5s ease-in-out;
     -ms-transition: opacity .5s ease-in-out;
     -moz-transition: opacity .5s ease-in-out;
     -webkit-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
+}
+.slideL, .playPauseBtn, .slideR{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    
     cursor: pointer;
 }
 .slideL{
@@ -64,7 +66,12 @@ html, body{
 }
 
 /*ONLY DISPLAY IF ON SLIDER*/
-#cssSlider #sliderImages:hover ~ #previousArrow .slideL,
+#cssSlider #sliderImages:hover ~ #pageNav,
+#pageNav:hover{
+    opacity: 1;
+}
+
+/*#cssSlider #sliderImages:hover ~ #previousArrow .slideL,
 #cssSlider #sliderImages:hover ~ #playPause .playPauseBtn,
 #cssSlider #sliderImages:hover ~ #nextArrow .slideR,
 #previousArrow:hover > .slideL,
@@ -75,10 +82,10 @@ html, body{
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
-#play:not(:checked) ~ #playPause #pauseBtn{
+#play:not(:checked) ~ #pageNav #playPause #pauseBtn{
     display: none;
 }
-#play:checked ~ #playPause #playBtn{
+#play:checked ~ #pageNav #playPause #playBtn{
     display: none;
 }
 
@@ -93,65 +100,65 @@ html, body{
     left: 90vw;
 }
 
-#slide1:checked ~ #previousArrow > #slideL6,
-#slide1:checked ~ #nextArrow > #slideR2,
-#slide2:checked ~ #previousArrow > #slideL1,
-#slide2:checked ~ #nextArrow > #slideR3,
-#slide3:checked ~ #previousArrow > #slideL2,
-#slide3:checked ~ #nextArrow > #slideR4,
-#slide4:checked ~ #previousArrow > #slideL3,
-#slide4:checked ~ #nextArrow > #slideR5,
-#slide5:checked ~ #previousArrow > #slideL4,
-#slide5:checked ~ #nextArrow > #slideR6,
-#slide6:checked ~ #previousArrow > #slideL5,
-#slide6:checked ~ #nextArrow > #slideR1{
+#slide1:checked ~ #pageNav #previousArrow > #slideL6,
+#slide1:checked ~ #pageNav #nextArrow > #slideR2,
+#slide2:checked ~ #pageNav #previousArrow > #slideL1,
+#slide2:checked ~ #pageNav #nextArrow > #slideR3,
+#slide3:checked ~ #pageNav #previousArrow > #slideL2,
+#slide3:checked ~ #pageNav #nextArrow > #slideR4,
+#slide4:checked ~ #pageNav #previousArrow > #slideL3,
+#slide4:checked ~ #pageNav #nextArrow > #slideR5,
+#slide5:checked ~ #pageNav #previousArrow > #slideL4,
+#slide5:checked ~ #pageNav #nextArrow > #slideR6,
+#slide6:checked ~ #pageNav #previousArrow > #slideL5,
+#slide6:checked ~ #pageNav #nextArrow > #slideR1{
     z-index: 15;
 }
 
-#play:checked ~ #previousArrow > #slideL6,
-#play:checked ~ #nextArrow > #slideR2,
-#pause:checked ~ #previousArrow > #slideL6,
-#pause:checked ~ #nextArrow > #slideR2{
+#play:checked ~ #pageNav #previousArrow > #slideL6,
+#play:checked ~ #pageNav #nextArrow > #slideR2,
+#pause:checked ~ #pageNav #previousArrow > #slideL6,
+#pause:checked ~ #pageNav #nextArrow > #slideR2{
   -webkit-animation: arrows 40000ms infinite 0ms;
   animation: arrows 40000ms infinite 0ms;
 }
-#play:checked ~ #previousArrow > #slideL1,
-#play:checked ~ #nextArrow > #slideR3,
-#pause:checked ~ #previousArrow > #slideL1,
-#pause:checked ~ #nextArrow > #slideR3{
+#play:checked ~ #pageNav #previousArrow > #slideL1,
+#play:checked ~ #pageNav #nextArrow > #slideR3,
+#pause:checked ~ #pageNav #previousArrow > #slideL1,
+#pause:checked ~ #pageNav #nextArrow > #slideR3{
   -webkit-animation: arrows 40000ms infinite 6666.6666666667ms;
   animation: arrows 40000ms infinite 6666.6666666667ms;
 }
-#play:checked ~ #previousArrow > #slideL2,
-#play:checked ~ #nextArrow > #slideR4,
-#pause:checked ~ #previousArrow > #slideL2,
-#pause:checked ~ #nextArrow > #slideR4{
+#play:checked ~ #pageNav #previousArrow > #slideL2,
+#play:checked ~ #pageNav #nextArrow > #slideR4,
+#pause:checked ~ #pageNav #previousArrow > #slideL2,
+#pause:checked ~ #pageNav #nextArrow > #slideR4{
   -webkit-animation: arrows 40000ms infinite 13333.333333333ms;
   animation: arrows 40000ms infinite 13333.333333333ms;
 }
-#play:checked ~ #previousArrow > #slideL3,
-#play:checked ~ #nextArrow > #slideR5,
-#pause:checked ~ #previousArrow > #slideL3,
-#pause:checked ~ #nextArrow > #slideR5{
+#play:checked ~ #pageNav #previousArrow > #slideL3,
+#play:checked ~ #pageNav #nextArrow > #slideR5,
+#pause:checked ~ #pageNav #previousArrow > #slideL3,
+#pause:checked ~ #pageNav #nextArrow > #slideR5{
   -webkit-animation: arrows 40000ms infinite 20000ms;
   animation: arrows 40000ms infinite 20000ms;
 }
-#play:checked ~ #previousArrow > #slideL4,
-#play:checked ~ #nextArrow > #slideR6,
-#pause:checked ~ #previousArrow > #slideL4,
-#pause:checked ~ #nextArrow > #slideR6{
+#play:checked ~ #pageNav #previousArrow > #slideL4,
+#play:checked ~ #pageNav #nextArrow > #slideR6,
+#pause:checked ~ #pageNav #previousArrow > #slideL4,
+#pause:checked ~ #pageNav #nextArrow > #slideR6{
   -webkit-animation: arrows 40000ms infinite 26666.666666666ms;
   animation: arrows 40000ms infinite 26666.666666666ms;
 }
-#play:checked ~ #previousArrow > #slideL5,
-#play:checked ~ #nextArrow > #slideR1,
-#pause:checked ~ #previousArrow > #slideL5,
-#pause:checked ~ #nextArrow > #slideR1{
+#play:checked ~ #pageNav #previousArrow > #slideL5,
+#play:checked ~ #pageNav #nextArrow > #slideR1,
+#pause:checked ~ #pageNav #previousArrow > #slideL5,
+#pause:checked ~ #pageNav #nextArrow > #slideR1{
   -webkit-animation: arrows 40000ms infinite 33333.333333333ms;
   animation: arrows 40000ms infinite 33333.333333333ms;
 }
 
--webkit-keyframes arrows {
+@-webkit-keyframes arrows {
   0%, 16.656666666666666% { opacity: 1; z-index: 15; }
   16.666666666666668%, 100%  { opacity: 0; z-index: -1; }
 }
@@ -370,18 +377,18 @@ anywhere else breaks the slider*/
 #pause:checked ~ #sliderImages,
 #pause:checked ~ #sliderImages .slideText,
 #pause:checked ~ #sliderImages .slideText p,
-#pause:checked ~ #previousArrow > #slideL6,
-#pause:checked ~ #nextArrow > #slideR2,
-#pause:checked ~ #previousArrow > #slideL1,
-#pause:checked ~ #nextArrow > #slideR3,
-#pause:checked ~ #previousArrow > #slideL2,
-#pause:checked ~ #nextArrow > #slideR4,
-#pause:checked ~ #previousArrow > #slideL3,
-#pause:checked ~ #nextArrow > #slideR5,
-#pause:checked ~ #previousArrow > #slideL4,
-#pause:checked ~ #nextArrow > #slideR6,
-#pause:checked ~ #previousArrow > #slideL5,
-#pause:checked ~ #nextArrow > #slideR1,
+#pause:checked ~ #pageNav #previousArrow > #slideL6,
+#pause:checked ~ #pageNav #nextArrow > #slideR2,
+#pause:checked ~ #pageNav #previousArrow > #slideL1,
+#pause:checked ~ #pageNav #nextArrow > #slideR3,
+#pause:checked ~ #pageNav #previousArrow > #slideL2,
+#pause:checked ~ #pageNav #nextArrow > #slideR4,
+#pause:checked ~ #pageNav #previousArrow > #slideL3,
+#pause:checked ~ #pageNav #nextArrow > #slideR5,
+#pause:checked ~ #pageNav #previousArrow > #slideL4,
+#pause:checked ~ #pageNav #nextArrow > #slideR6,
+#pause:checked ~ #pageNav #previousArrow > #slideL5,
+#pause:checked ~ #pageNav #nextArrow > #slideR1,
 #pause:checked ~ #pageIndicators #point1,
 #pause:checked ~ #pageIndicators #point2,
 #pause:checked ~ #pageIndicators #point3,
