@@ -8,11 +8,25 @@ html, body{
 	vertical-align: baseline;
 }
 
-/**********NEXT SLIDE NAVIGATION**********/
+/**********NEXT SLIDE ARROW NAVIGATION**********/
 
 /*APPEARANCE*/
 #cssSlider input{
     display: none;
+}
+
+.slideL, .playPauseBtn, .slideR{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    opacity: 0;
+    -o-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    cursor: pointer;
 }
 .slideL{
     width: 10vw;
@@ -21,17 +35,7 @@ html, body{
     background-image: url('icons/previous.svg'), none;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 15;
-    opacity: 0;
-    -o-transition: opacity .5s ease-in-out;
-    -ms-transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-    cursor: pointer;
+    z-index: -1;
 }
 .slideR{
     width: 10vw;
@@ -40,159 +44,123 @@ html, body{
     background-image: url('icons/next.svg'), none;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 15;
-    opacity: 0;
-    -o-transition: opacity .5s ease-in-out;
-    -ms-transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-    cursor: pointer;
+    z-index: -1;
 }
-.playBtn{
+#playBtn{
     width: 10vw;
     height: 10vw;
     background: url('icons/play.png');
     background-image: url('icons/play.svg'), none;
     background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 15;
-    opacity: 0;
-    -o-transition: opacity .5s ease-in-out;
-    -ms-transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-    cursor: pointer;
+    background-size: 100%;    
 }
-.pauseBtn{
+#pauseBtn{
     width: 10vw;
     height: 10vw;
     background: url('icons/pause.png');
     background-image: url('icons/pause.svg'), none;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 15;
-    opacity: 0;
-    -o-transition: opacity .5s ease-in-out;
-    -ms-transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-    cursor: pointer;
 }
 
 /*ONLY DISPLAY IF ON SLIDER*/
-#cssSlider .pics:hover > label{
+#cssSlider #sliderImages:hover ~ #previousArrow .slideL,
+#cssSlider #sliderImages:hover ~ #playPause .playPauseBtn,
+#cssSlider #sliderImages:hover ~ #nextArrow .slideR,
+#previousArrow:hover > .slideL,
+#playPause:hover > .playPauseBtn,
+#nextArrow:hover > .slideR{
     opacity: 1;
-    -o-transition: opacity .5s ease-in-out;
-    -ms-transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
+    
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
-#play:not(:checked) ~ #sliderImages .pics .pauseBtn{
+#play:not(:checked) ~ #playPause #pauseBtn{
     display: none;
 }
-#play:checked ~ #sliderImages .pics .playBtn{
+#play:checked ~ #playPause #playBtn{
     display: none;
 }
 
 /*POSITION*/
-/*PAGE 1*/
-#slideL1{
+.slideL{
     left: 0;
 }
-#play1{
+.playPauseBtn{
     left: 45vw;
 }
-#pause1{
-    left: 45vw;
-}
-#slideR1{
+.slideR{
     left: 90vw;
 }
 
-/*PAGE 2*/
-#slideL2{
-    left: 100vw;
-}
-#play2{
-    left: 145vw;
-}
-#pause2{
-    left: 145vw;
-}
-#slideR2{
-    left: 190vw;
-}
-
-/*PAGE 3*/
-#slideL3{
-    left: 200vw;
-}
-#play3{
-    left: 245vw;
-}
-#pause3{
-    left: 245vw;
-}
-#slideR3{
-    left: 290vw;
+#slide1:checked ~ #previousArrow > #slideL6,
+#slide1:checked ~ #nextArrow > #slideR2,
+#slide2:checked ~ #previousArrow > #slideL1,
+#slide2:checked ~ #nextArrow > #slideR3,
+#slide3:checked ~ #previousArrow > #slideL2,
+#slide3:checked ~ #nextArrow > #slideR4,
+#slide4:checked ~ #previousArrow > #slideL3,
+#slide4:checked ~ #nextArrow > #slideR5,
+#slide5:checked ~ #previousArrow > #slideL4,
+#slide5:checked ~ #nextArrow > #slideR6,
+#slide6:checked ~ #previousArrow > #slideL5,
+#slide6:checked ~ #nextArrow > #slideR1{
+    z-index: 15;
 }
 
-/*PAGE 4*/
-#slideL4{
-    left: 300vw;
+#play:checked ~ #previousArrow > #slideL6,
+#play:checked ~ #nextArrow > #slideR2,
+#pause:checked ~ #previousArrow > #slideL6,
+#pause:checked ~ #nextArrow > #slideR2{
+  -webkit-animation: arrows 40000ms infinite 0ms;
+  animation: arrows 40000ms infinite 0ms;
 }
-#play4{
-    left: 345vw;
+#play:checked ~ #previousArrow > #slideL1,
+#play:checked ~ #nextArrow > #slideR3,
+#pause:checked ~ #previousArrow > #slideL1,
+#pause:checked ~ #nextArrow > #slideR3{
+  -webkit-animation: arrows 40000ms infinite 6666.6666666667ms;
+  animation: arrows 40000ms infinite 6666.6666666667ms;
 }
-#pause4{
-    left: 345vw;
+#play:checked ~ #previousArrow > #slideL2,
+#play:checked ~ #nextArrow > #slideR4,
+#pause:checked ~ #previousArrow > #slideL2,
+#pause:checked ~ #nextArrow > #slideR4{
+  -webkit-animation: arrows 40000ms infinite 13333.333333333ms;
+  animation: arrows 40000ms infinite 13333.333333333ms;
 }
-#slideR4{
-    left: 390vw;
+#play:checked ~ #previousArrow > #slideL3,
+#play:checked ~ #nextArrow > #slideR5,
+#pause:checked ~ #previousArrow > #slideL3,
+#pause:checked ~ #nextArrow > #slideR5{
+  -webkit-animation: arrows 40000ms infinite 20000ms;
+  animation: arrows 40000ms infinite 20000ms;
+}
+#play:checked ~ #previousArrow > #slideL4,
+#play:checked ~ #nextArrow > #slideR6,
+#pause:checked ~ #previousArrow > #slideL4,
+#pause:checked ~ #nextArrow > #slideR6{
+  -webkit-animation: arrows 40000ms infinite 26666.666666666ms;
+  animation: arrows 40000ms infinite 26666.666666666ms;
+}
+#play:checked ~ #previousArrow > #slideL5,
+#play:checked ~ #nextArrow > #slideR1,
+#pause:checked ~ #previousArrow > #slideL5,
+#pause:checked ~ #nextArrow > #slideR1{
+  -webkit-animation: arrows 40000ms infinite 33333.333333333ms;
+  animation: arrows 40000ms infinite 33333.333333333ms;
 }
 
-/*PAGE 5*/
-#slideL5{
-    left: 400vw;
+-webkit-keyframes arrows {
+  0%, 16.656666666666666% { opacity: 1; z-index: 15; }
+  16.666666666666668%, 100%  { opacity: 0; z-index: -1; }
 }
-#play5{
-    left: 445vw;
-}
-#pause5{
-    left: 445vw;
-}
-#slideR5{
-    left: 490vw;
+@keyframes arrows {
+  0%, 16.656666666666666% { z-index: 15; }
+  16.666666666666668%, 100%  { z-index: -1; }
 }
 
-/*PAGE 6*/
-#slideL6{
-    left: 500vw;
-}
-#play6{
-    left: 545vw;
-}
-#pause6{
-    left: 545vw;
-}
-#slideR6{
-    left: 590vw;
-}
+/********** SLIDE INDICATORS**********/
 
 /*PAGE INDICATORS*/
 #cssSlider #pageIndicators {
@@ -235,41 +203,33 @@ html, body{
 /*PAGE INDICATOR ANIMATION*/   
 #play:checked ~ #pageIndicators #point1,
 #pause:checked ~ #pageIndicators #point1{
-    -webkit-animation: point 48000ms infinite -2000ms;
+    -webkit-animation: point 40000ms infinite 0ms;
     animation: point 40000ms infinite 0ms;
 }
 #play:checked ~ #pageIndicators #point2,
 #pause:checked ~ #pageIndicators #point2{
-    -webkit-animation: point 48000ms infinite 6000ms;
+    -webkit-animation: point 40000ms infinite 6666.6666666667ms;
     animation: point 40000ms infinite 6666.6666666667ms;
 }
 #play:checked ~ #pageIndicators #point3,
 #pause:checked ~ #pageIndicators #point3{
-    -webkit-animation: point 48000ms infinite 14000ms;
+    -webkit-animation: point 40000ms infinite 13333.333333333ms;
     animation: point 40000ms infinite 13333.333333333ms;
 }
 #play:checked ~ #pageIndicators #point4,
 #pause:checked ~ #pageIndicators #point4{
-    -webkit-animation: point 48000ms infinite 22000ms;
+    -webkit-animation: point 40000ms infinite 20000ms;
     animation: point 40000ms infinite 20000ms;
 }
 #play:checked ~ #pageIndicators #point5,
 #pause:checked ~ #pageIndicators #point5{
-    -webkit-animation: point 48000ms infinite 30000ms;
+    -webkit-animation: point 40000ms infinite 26666.666666666ms;
     animation: point 40000ms infinite 26666.666666666ms;
 }
 #play:checked ~ #pageIndicators #point6,
 #pause:checked ~ #pageIndicators #point6{
-    -webkit-animation: point 48000ms infinite 38000ms;
+    -webkit-animation: point 40000ms infinite 33333.333333333ms;
     animation: point 40000ms infinite 33333.333333333ms;
-}
-#pause:checked ~ #pageIndicators #point1,
-#pause:checked ~ #pageIndicators #point2,
-#pause:checked ~ #pageIndicators #point3,
-#pause:checked ~ #pageIndicators #point4,
-#pause:checked ~ #pageIndicators #point5,
-#pause:checked ~ #pageIndicators #point6{
-    animation-play-state: paused;
 }
 #slide1:checked ~ #pageIndicators #point1,
 #slide2:checked ~ #pageIndicators #point2,
@@ -407,14 +367,29 @@ anywhere else breaks the slider*/
 }
 
 /*pause the show*/
-#pause:checked ~ #sliderImages{
+#pause:checked ~ #sliderImages,
+#pause:checked ~ #sliderImages .slideText,
+#pause:checked ~ #sliderImages .slideText p,
+#pause:checked ~ #previousArrow > #slideL6,
+#pause:checked ~ #nextArrow > #slideR2,
+#pause:checked ~ #previousArrow > #slideL1,
+#pause:checked ~ #nextArrow > #slideR3,
+#pause:checked ~ #previousArrow > #slideL2,
+#pause:checked ~ #nextArrow > #slideR4,
+#pause:checked ~ #previousArrow > #slideL3,
+#pause:checked ~ #nextArrow > #slideR5,
+#pause:checked ~ #previousArrow > #slideL4,
+#pause:checked ~ #nextArrow > #slideR6,
+#pause:checked ~ #previousArrow > #slideL5,
+#pause:checked ~ #nextArrow > #slideR1,
+#pause:checked ~ #pageIndicators #point1,
+#pause:checked ~ #pageIndicators #point2,
+#pause:checked ~ #pageIndicators #point3,
+#pause:checked ~ #pageIndicators #point4,
+#pause:checked ~ #pageIndicators #point5,
+#pause:checked ~ #pageIndicators #point6{
     animation-play-state: paused;
-}
-#pause:checked ~ #sliderImages .slideText{
-    animation-play-state: paused;
-}
-#pause:checked ~ #sliderImages .slideText p{
-    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
 }
 
 /**********ANIMATIONS**********/
