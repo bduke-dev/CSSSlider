@@ -8,6 +8,12 @@ html, body{
 	vertical-align: baseline;
 }
 
+/*FONT IMPORT*/
+@font-face {
+    font-family: timeburner;
+    src: url(timeburner.ttf);
+}
+
 /********** NEXT SLIDE ARROW NAVIGATION **********/
 
 /*APPEARANCE*/
@@ -275,6 +281,10 @@ just replace your value based on the ratio equation*/
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count:infinite;
 }
+} /*this extra } has to be here or slider is broken, 
+idk why, have spent hours trying to figure out why. 
+It has to be exactly after this block of code, 
+anywhere else breaks the slider*/
 
 #sliderImages img { 
   float: right; 
@@ -293,10 +303,11 @@ just replace your value based on the ratio equation*/
     border-radius: .5em;
 }
 .slideText p{
-    padding: 0;
+    padding: .1em;
     margin: 0;
     color: black; /*color of blurb box text*/
     font-size: 2em;
+    font-family: timeburner;
 }
 
 .slideText {  
