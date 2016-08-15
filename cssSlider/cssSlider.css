@@ -21,16 +21,19 @@ html, body{
     display: none;
 }
 #pageNav{
-    opacity: 0;
-    -webkit-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
-}
-.slideL, .playPauseBtn, .slideR{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 15;
+    width: 100vw;
+    height: 10vw;
+}
+.slideL, .playPauseBtn, .slideR{
+    position: absolute;
+    opacity: 0;
     cursor: pointer;
+    -webkit-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
 }
 .slideL{
     width: 10vw;
@@ -68,8 +71,13 @@ html, body{
 }
 
 /*ONLY DISPLAY IF ON SLIDER*/
-#cssSlider #sliderImages:hover ~ #pageNav,
-#pageNav:hover{
+/*#cssSlider #sliderImages:hover ~ #pageNav,*/
+#pageNav:hover > #previousArrow .slideL,
+#pageNav:hover > #playPause .playPauseBtn,
+#pageNav:hover > #nextArrow .slideR,
+#cssSlider #sliderImages:hover ~ #pageNav #previousArrow .slideL,
+#cssSlider #sliderImages:hover ~ #pageNav #playPause .playPauseBtn,
+#cssSlider #sliderImages:hover ~ #pageNav #nextArrow .slideR{
     opacity: 1;
 }
 
@@ -272,14 +280,14 @@ just replace your value based on the ratio equation*/
   left: 0;
   transition: 2.66666666668s; 
   width:600vw;  
-  animation-name:slider;
-  animation-duration: 40s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count:infinite;
   -webkit-animation-name:slider;
   -webkit-animation-duration: 40s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count:infinite;
+  animation-name:slider;
+  animation-duration: 40s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
 }
 } /*this extra } has to be here or slider is broken, 
 idk why, have spent hours trying to figure out why. 
@@ -311,25 +319,25 @@ anywhere else breaks the slider*/
 }
 
 .slideText {  
-  animation-name: textBoxBounce;
-  animation-duration: 40s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count:infinite;
   -webkit-animation-name: textBoxBounce;
   -webkit-animation-duration: 40s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count:infinite;
-}
-
-.slideText p {  
-  animation-name: textBounce;
+  animation-name: textBoxBounce;
   animation-duration: 40s;
   animation-timing-function: ease-in-out;
   animation-iteration-count:infinite;
+}
+
+.slideText p {  
   -webkit-animation-name: textBounce;
   -webkit-animation-duration: 40s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count:infinite;
+  animation-name: textBounce;
+  animation-duration: 40s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
 }
 
 /********** END SLIDER TEXT **********/
@@ -366,8 +374,8 @@ anywhere else breaks the slider*/
 #slide4:checked ~ #sliderImages .slideText p,
 #slide5:checked ~ #sliderImages .slideText p,
 #slide6:checked ~ #sliderImages .slideText p{
-    animation: none;
     -webkit-animation: none;
+    animation: none;
 }
 
 /*pause all animations*/
@@ -392,8 +400,8 @@ anywhere else breaks the slider*/
 #pause:checked ~ #pageIndicators #point4,
 #pause:checked ~ #pageIndicators #point5,
 #pause:checked ~ #pageIndicators #point6{
-    animation-play-state: paused;
     -webkit-animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 /********** END PLAY PAUSE OF ALL ANIMATIONS **********/
@@ -472,14 +480,14 @@ anywhere else breaks the slider*/
 @media screen and (-ms-high-contrast: active), 
 (-ms-high-contrast: none) {
   #sliderImages {  
-  animation-name:slider-ie;
-  animation-duration: 40s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count:infinite;
   -webkit-animation-name:slider-ie;
   -webkit-animation-duration: 40s;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count:infinite;
+  animation-name:slider-ie;
+  animation-duration: 40s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
   }
 }
 
