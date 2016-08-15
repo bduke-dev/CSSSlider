@@ -8,7 +8,7 @@ html, body{
 	vertical-align: baseline;
 }
 
-/**********NEXT SLIDE ARROW NAVIGATION**********/
+/********** NEXT SLIDE ARROW NAVIGATION **********/
 
 /*APPEARANCE*/
 #cssSlider input{
@@ -27,7 +27,6 @@ html, body{
     top: 50%;
     transform: translateY(-50%);
     z-index: 15;
-    
     cursor: pointer;
 }
 .slideL{
@@ -71,16 +70,6 @@ html, body{
     opacity: 1;
 }
 
-/*#cssSlider #sliderImages:hover ~ #previousArrow .slideL,
-#cssSlider #sliderImages:hover ~ #playPause .playPauseBtn,
-#cssSlider #sliderImages:hover ~ #nextArrow .slideR,
-#previousArrow:hover > .slideL,
-#playPause:hover > .playPauseBtn,
-#nextArrow:hover > .slideR{
-    opacity: 1;
-    
-}
-
 /*DON'T SHOW PLAY AND PAUSE*/
 #play:not(:checked) ~ #pageNav #playPause #pauseBtn{
     display: none;
@@ -100,6 +89,7 @@ html, body{
     left: 90vw;
 }
 
+/*WHICH ARROW SHOULD BE ON TOP*/
 #slide1:checked ~ #pageNav #previousArrow > #slideL6,
 #slide1:checked ~ #pageNav #nextArrow > #slideR2,
 #slide2:checked ~ #pageNav #previousArrow > #slideL1,
@@ -115,6 +105,7 @@ html, body{
     z-index: 15;
 }
 
+/*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
 #play:checked ~ #pageNav #previousArrow > #slideL6,
 #play:checked ~ #pageNav #nextArrow > #slideR2,
 #pause:checked ~ #pageNav #previousArrow > #slideL6,
@@ -158,18 +149,11 @@ html, body{
   animation: arrows 40000ms infinite 33333.333333333ms;
 }
 
-@-webkit-keyframes arrows {
-  0%, 16.656666666666666% { opacity: 1; z-index: 15; }
-  16.666666666666668%, 100%  { opacity: 0; z-index: -1; }
-}
-@keyframes arrows {
-  0%, 16.656666666666666% { z-index: 15; }
-  16.666666666666668%, 100%  { z-index: -1; }
-}
+/********** END NEXT SLIDE ARROW NAVIGATION **********/
 
-/********** SLIDE INDICATORS**********/
+/********** SLIDE INDICATORS **********/
 
-/*PAGE INDICATORS*/
+/*PAGE INDICATORS APPEARANCE*/
 #cssSlider #pageIndicators {
     position: absolute;
     bottom: 0;
@@ -207,7 +191,7 @@ html, body{
     
 }
 
-/*PAGE INDICATOR ANIMATION*/   
+/*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/   
 #play:checked ~ #pageIndicators #point1,
 #pause:checked ~ #pageIndicators #point1{
     -webkit-animation: point 40000ms infinite 0ms;
@@ -238,6 +222,8 @@ html, body{
     -webkit-animation: point 40000ms infinite 33333.333333333ms;
     animation: point 40000ms infinite 33333.333333333ms;
 }
+
+/*WHICH INDICATOR SHOULD BE LIT*/
 #slide1:checked ~ #pageIndicators #point1,
 #slide2:checked ~ #pageIndicators #point2,
 #slide3:checked ~ #pageIndicators #point3,
@@ -247,31 +233,15 @@ html, body{
     background: #F2F1EF; /*color of page indicator dot*/
 }
 
-/*used to override the animation*/
+/*used to override the animation for lit indicator*/
 #cssSlider > #pageIndicators > .indicator:hover > .hoverPoint{
     background: #F2F1EF; /*color of page indicator dot*/
 }
 
-@keyframes point {
-  1%, 16%  { background: #F2F1EF; /*color of page indicator dot*/ }
-  17%, 100% { background: transparent; }
-}
-@-webkit-keyframes point {
-  0%, 16%  { background: #F2F1EF; /*color of page indicator dot*/ }
-  17%, 100% { background: transparent; }
-}
+/********** END SLIDE INDICATORS **********/
 
+/**********IMAGE/SLIDER STYLING **********/
 
-/*next page action*/
-#slide1:checked ~ #sliderImages { margin-left: 0; }
-#slide2:checked ~ #sliderImages { margin-left: -100vw; }
-#slide3:checked ~ #sliderImages { margin-left: -200vw; }
-#slide4:checked ~ #sliderImages { margin-left: -300vw; }
-#slide5:checked ~ #sliderImages { margin-left: -400vw; }
-#slide6:checked ~ #sliderImages { margin-left: -500vw; }
-
-
-/**********IMAGE/SLIDER STYLING**********/
 /*don't show the other images*/
 #cssSlider { 
   position: relative; 
@@ -286,15 +256,12 @@ just replace your value based on the ratio equation*/
 }
 
 /*size of the images*/
-#cssSlider .pics {  
+#cssSlider img {  
   width: 100vw;
   height: 100%; 
   float: left;
 }
-#cssSlider .pics img{
-    width: 100%;
-    height: 100%;
-}
+
 /*transition slider size*/
 #sliderImages { 
   position: absolute;
@@ -306,16 +273,15 @@ just replace your value based on the ratio equation*/
   animation-timing-function: ease-in-out;
   animation-iteration-count:infinite;
 }
-} /*this extra } has to be here or slider is broken, 
-idk why, have spent hours trying to figure out why. 
-It has to be exactly after this block of code, 
-anywhere else breaks the slider*/
 
-#sliderImages .pics { 
+#sliderImages img { 
   float: right; 
 }
 
-/**********SLIDER TEXT**********/
+/********** END IMAGE/SLIDER STYLING **********/
+
+/********** SLIDER TEXT **********/
+
 .slideText{
     position: absolute;
     bottom: 0;
@@ -345,7 +311,20 @@ anywhere else breaks the slider*/
   animation-iteration-count:infinite;
 }
 
-/**********PLAY PAUSE**********/
+/********** END SLIDER TEXT **********/
+
+/********** MANUAL PAGE ADVANCEMENT **********/
+
+#slide1:checked ~ #sliderImages { margin-left: 0; }
+#slide2:checked ~ #sliderImages { margin-left: -100vw; }
+#slide3:checked ~ #sliderImages { margin-left: -200vw; }
+#slide4:checked ~ #sliderImages { margin-left: -300vw; }
+#slide5:checked ~ #sliderImages { margin-left: -400vw; }
+#slide6:checked ~ #sliderImages { margin-left: -500vw; }
+
+/********** END MANUAL PAGE ADVANCEMENT **********/
+
+/********** PLAY PAUSE OF ALL ANIMATIONS **********/
 
 /*restart the show*/
 #slide1:checked ~ #sliderImages,
@@ -353,17 +332,13 @@ anywhere else breaks the slider*/
 #slide3:checked ~ #sliderImages,
 #slide4:checked ~ #sliderImages,
 #slide5:checked ~ #sliderImages,
-#slide6:checked ~ #sliderImages{
-    animation: none;
-}
+#slide6:checked ~ #sliderImages,
 #slide1:checked ~ #sliderImages .slideText,
 #slide2:checked ~ #sliderImages .slideText,
 #slide3:checked ~ #sliderImages .slideText,
 #slide4:checked ~ #sliderImages .slideText,
 #slide5:checked ~ #sliderImages .slideText,
-#slide6:checked ~ #sliderImages .slideText{
-    animation: none;
-}
+#slide6:checked ~ #sliderImages .slideText,
 #slide1:checked ~ #sliderImages .slideText p,
 #slide2:checked ~ #sliderImages .slideText p,
 #slide3:checked ~ #sliderImages .slideText p,
@@ -373,7 +348,7 @@ anywhere else breaks the slider*/
     animation: none;
 }
 
-/*pause the show*/
+/*pause all animations*/
 #pause:checked ~ #sliderImages,
 #pause:checked ~ #sliderImages .slideText,
 #pause:checked ~ #sliderImages .slideText p,
@@ -399,7 +374,29 @@ anywhere else breaks the slider*/
     -webkit-animation-play-state: paused;
 }
 
-/**********ANIMATIONS**********/
+/********** END PLAY PAUSE OF ALL ANIMATIONS **********/
+
+/********** ANIMATIONS **********/
+
+/*arrows*/
+@-webkit-keyframes arrows {
+  0%, 16.656666666666666% { opacity: 1; z-index: 15; }
+  16.666666666666668%, 100%  { opacity: 0; z-index: -1; }
+}
+@keyframes arrows {
+  0%, 16.656666666666666% { z-index: 15; }
+  16.666666666666668%, 100%  { z-index: -1; }
+}
+
+/*page indicators*/
+@keyframes point {
+  1%, 16%  { background: #F2F1EF; /*color of page indicator dot*/ }
+  17%, 100% { background: transparent; }
+}
+@-webkit-keyframes point {
+  0%, 16%  { background: #F2F1EF; /*color of page indicator dot*/ }
+  17%, 100% { background: transparent; }
+}
 
 /*slider*/
 @keyframes slider {  
@@ -426,8 +423,7 @@ anywhere else breaks the slider*/
     }
 }
 
-
-/* IE 10+ hack - cant animate translate :( */
+/* IE 10+ hack - cant animate translate */
 @media screen and (-ms-high-contrast: active), 
 (-ms-high-contrast: none) {
   #sliderImages { 
@@ -463,7 +459,7 @@ anywhere else breaks the slider*/
     }
 }
 
-/*text*/
+/*text box*/
 @keyframes textBoxBounce {  
     0% { 
         transform:translateY(-50%); opacity: 0; 
@@ -554,6 +550,7 @@ anywhere else breaks the slider*/
     }
 }
 
+/*text*/
 @keyframes textBounce {  
     .5% { 
         transform:translateY(-50%); opacity: 0; 
@@ -643,6 +640,8 @@ anywhere else breaks the slider*/
         transform:translateY(-50%); opacity: 0; 
     }
 }
+
+/********** END ANIMATIONS **********/
 
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px){
