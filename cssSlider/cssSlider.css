@@ -17,10 +17,10 @@ html, body{
 /********** NEXT SLIDE ARROW NAVIGATION **********/
 
 /*APPEARANCE*/
-#cssSlider input{
+#cssSlider > input{
     display: none;
 }
-#pageNav{
+#cssSlider > #pageNav{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -28,14 +28,16 @@ html, body{
     width: 100vw;
     height: 10vw;
 }
-.slideL, .playPauseBtn, .slideR{
+#cssSlider > #pageNav > #previousArrow > .slideL, 
+#cssSlider > #pageNav > #playPause > .playPauseBtn, 
+#cssSlider > #pageNav > #nextArrow > .slideR{
     position: absolute;
     opacity: 0;
     cursor: pointer;
     -webkit-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
 }
-.slideL{
+#cssSlider > #pageNav > #previousArrow > .slideL{
     width: 10vw;
     height: 10vw;
     background: url('icons/previous.png');
@@ -44,7 +46,7 @@ html, body{
     background-size: 100%;
     z-index: -1;
 }
-.slideR{
+#cssSlider > #pageNav > #nextArrow > .slideR{
     width: 10vw;
     height: 10vw;
     background: url('icons/next.png');
@@ -53,7 +55,7 @@ html, body{
     background-size: 100%;
     z-index: -1;
 }
-#playBtn{
+#cssSlider > #pageNav > #playPause > #playBtn{
     width: 10vw;
     height: 10vw;
     background: url('icons/play.png');
@@ -61,7 +63,7 @@ html, body{
     background-repeat: no-repeat;
     background-size: 100%;    
 }
-#pauseBtn{
+#cssSlider > #pageNav > #playPause > #pauseBtn{
     width: 10vw;
     height: 10vw;
     background: url('icons/pause.png');
@@ -72,90 +74,90 @@ html, body{
 
 /*ONLY DISPLAY IF ON SLIDER*/
 /*#cssSlider #sliderImages:hover ~ #pageNav,*/
-#pageNav:hover > #previousArrow .slideL,
-#pageNav:hover > #playPause .playPauseBtn,
-#pageNav:hover > #nextArrow .slideR,
+#cssSlider > #pageNav:hover > #previousArrow > .slideL,
+#cssSlider > #pageNav:hover > #playPause > .playPauseBtn,
+#cssSlider > #pageNav:hover > #nextArrow > .slideR,
 #cssSlider #sliderImages:hover ~ #pageNav #previousArrow .slideL,
-#cssSlider #sliderImages:hover ~ #pageNav #playPause .playPauseBtn,
-#cssSlider #sliderImages:hover ~ #pageNav #nextArrow .slideR{
+#cssSlider > #sliderImages:hover ~ #pageNav > #playPause > .playPauseBtn,
+#cssSlider > #sliderImages:hover ~ #pageNav > #nextArrow > .slideR{
     opacity: 1;
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
-#play:not(:checked) ~ #pageNav #playPause #pauseBtn{
+#cssSlider > #play:not(:checked) ~ #pageNav > #playPause > #pauseBtn{
     display: none;
 }
-#play:checked ~ #pageNav #playPause #playBtn{
+#cssSlider > #play:checked ~ #pageNav > #playPause > #playBtn{
     display: none;
 }
 
 /*POSITION*/
-.slideL{
+#cssSlider > #pageNav > #previousArrow > .slideL{
     left: 0;
 }
-.playPauseBtn{
+#cssSlider > #pageNav > #playPause > .playPauseBtn{
     left: 45vw;
 }
-.slideR{
+#cssSlider > #pageNav > #nextArrow > .slideR{
     left: 90vw;
 }
 
 /*WHICH ARROW SHOULD BE ON TOP*/
-#slide1:checked ~ #pageNav #previousArrow > #slideL6,
-#slide1:checked ~ #pageNav #nextArrow > #slideR2,
-#slide2:checked ~ #pageNav #previousArrow > #slideL1,
-#slide2:checked ~ #pageNav #nextArrow > #slideR3,
-#slide3:checked ~ #pageNav #previousArrow > #slideL2,
-#slide3:checked ~ #pageNav #nextArrow > #slideR4,
-#slide4:checked ~ #pageNav #previousArrow > #slideL3,
-#slide4:checked ~ #pageNav #nextArrow > #slideR5,
-#slide5:checked ~ #pageNav #previousArrow > #slideL4,
-#slide5:checked ~ #pageNav #nextArrow > #slideR6,
-#slide6:checked ~ #pageNav #previousArrow > #slideL5,
-#slide6:checked ~ #pageNav #nextArrow > #slideR1{
+#cssSlider > #slide1:checked ~ #pageNav > #previousArrow > #slideL6,
+#cssSlider > #slide1:checked ~ #pageNav > #nextArrow > #slideR2,
+#cssSlider > #slide2:checked ~ #pageNav > #previousArrow > #slideL1,
+#cssSlider > #slide2:checked ~ #pageNav > #nextArrow > #slideR3,
+#cssSlider > #slide3:checked ~ #pageNav > #previousArrow > #slideL2,
+#cssSlider > #slide3:checked ~ #pageNav > #nextArrow > #slideR4,
+#cssSlider > #slide4:checked ~ #pageNav > #previousArrow > #slideL3,
+#cssSlider > #slide4:checked ~ #pageNav > #nextArrow > #slideR5,
+#cssSlider > #slide5:checked ~ #pageNav > #previousArrow > #slideL4,
+#cssSlider > #slide5:checked ~ #pageNav > #nextArrow > #slideR6,
+#cssSlider > #slide6:checked ~ #pageNav > #previousArrow > #slideL5,
+#cssSlider > #slide6:checked ~ #pageNav > #nextArrow > #slideR1{
     z-index: 15;
 }
 
 /*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
-#play:checked ~ #pageNav #previousArrow > #slideL6,
-#play:checked ~ #pageNav #nextArrow > #slideR2,
-#pause:checked ~ #pageNav #previousArrow > #slideL6,
-#pause:checked ~ #pageNav #nextArrow > #slideR2{
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL6,
+#cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR2,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL6,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR2{
   -webkit-animation: arrows 40000ms infinite 0ms;
   animation: arrows 40000ms infinite 0ms;
 }
-#play:checked ~ #pageNav #previousArrow > #slideL1,
-#play:checked ~ #pageNav #nextArrow > #slideR3,
-#pause:checked ~ #pageNav #previousArrow > #slideL1,
-#pause:checked ~ #pageNav #nextArrow > #slideR3{
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL1,
+#cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR3,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL1,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR3{
   -webkit-animation: arrows 40000ms infinite 6666.6666666667ms;
   animation: arrows 40000ms infinite 6666.6666666667ms;
 }
-#play:checked ~ #pageNav #previousArrow > #slideL2,
-#play:checked ~ #pageNav #nextArrow > #slideR4,
-#pause:checked ~ #pageNav #previousArrow > #slideL2,
-#pause:checked ~ #pageNav #nextArrow > #slideR4{
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL2,
+#cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR4,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL2,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR4{
   -webkit-animation: arrows 40000ms infinite 13333.333333333ms;
   animation: arrows 40000ms infinite 13333.333333333ms;
 }
-#play:checked ~ #pageNav #previousArrow > #slideL3,
-#play:checked ~ #pageNav #nextArrow > #slideR5,
-#pause:checked ~ #pageNav #previousArrow > #slideL3,
-#pause:checked ~ #pageNav #nextArrow > #slideR5{
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL3,
+#cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR5,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL3,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR5{
   -webkit-animation: arrows 40000ms infinite 20000ms;
   animation: arrows 40000ms infinite 20000ms;
 }
-#play:checked ~ #pageNav #previousArrow > #slideL4,
-#play:checked ~ #pageNav #nextArrow > #slideR6,
-#pause:checked ~ #pageNav #previousArrow > #slideL4,
-#pause:checked ~ #pageNav #nextArrow > #slideR6{
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL4,
+#cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR6,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL4,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR6{
   -webkit-animation: arrows 40000ms infinite 26666.666666666ms;
   animation: arrows 40000ms infinite 26666.666666666ms;
 }
-#play:checked ~ #pageNav #previousArrow > #slideL5,
-#play:checked ~ #pageNav #nextArrow > #slideR1,
-#pause:checked ~ #pageNav #previousArrow > #slideL5,
-#pause:checked ~ #pageNav #nextArrow > #slideR1{
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL5,
+#cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR1,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL5,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR1{
   -webkit-animation: arrows 40000ms infinite 33333.333333333ms;
   animation: arrows 40000ms infinite 33333.333333333ms;
 }
@@ -165,14 +167,14 @@ html, body{
 /********** SLIDE INDICATORS **********/
 
 /*PAGE INDICATORS APPEARANCE*/
-#cssSlider #pageIndicators {
+#cssSlider > #pageIndicators {
     position: absolute;
     bottom: 0;
     text-align: center;
     width: 100vw;
     z-index: 15;
 }
-#cssSlider #pageIndicators .indicator{
+#cssSlider > #pageIndicators > .indicator{
     display: inline-block;
     height:1.5em;
     width: 1.5em;
@@ -180,7 +182,7 @@ html, body{
     background-color: #ABB7B7; /*color of page indicator*/
     cursor: pointer;
 }
-#cssSlider #pageIndicators .hoverPoint{
+#cssSlider > #pageIndicators > .indicator > .hoverPoint{
     margin: .5em;
     display: inline-block;
     height:.5em;
@@ -192,7 +194,7 @@ html, body{
     z-index: 16;
     
 }
-#cssSlider #pageIndicators .point{
+#cssSlider > #pageIndicators > .indicator > .hoverPoint > .point{
     margin-bottom: .5em;
     display: inline-block;
     height:.5em;
@@ -204,44 +206,44 @@ html, body{
 }
 
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/   
-#play:checked ~ #pageIndicators #point1,
-#pause:checked ~ #pageIndicators #point1{
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1{
     -webkit-animation: point 40000ms infinite 0ms;
     animation: point 40000ms infinite 0ms;
 }
-#play:checked ~ #pageIndicators #point2,
-#pause:checked ~ #pageIndicators #point2{
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2{
     -webkit-animation: point 40000ms infinite 6666.6666666667ms;
     animation: point 40000ms infinite 6666.6666666667ms;
 }
-#play:checked ~ #pageIndicators #point3,
-#pause:checked ~ #pageIndicators #point3{
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3{
     -webkit-animation: point 40000ms infinite 13333.333333333ms;
     animation: point 40000ms infinite 13333.333333333ms;
 }
-#play:checked ~ #pageIndicators #point4,
-#pause:checked ~ #pageIndicators #point4{
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4{
     -webkit-animation: point 40000ms infinite 20000ms;
     animation: point 40000ms infinite 20000ms;
 }
-#play:checked ~ #pageIndicators #point5,
-#pause:checked ~ #pageIndicators #point5{
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5{
     -webkit-animation: point 40000ms infinite 26666.666666666ms;
     animation: point 40000ms infinite 26666.666666666ms;
 }
-#play:checked ~ #pageIndicators #point6,
-#pause:checked ~ #pageIndicators #point6{
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6{
     -webkit-animation: point 40000ms infinite 33333.333333333ms;
     animation: point 40000ms infinite 33333.333333333ms;
 }
 
 /*WHICH INDICATOR SHOULD BE LIT*/
-#slide1:checked ~ #pageIndicators #point1,
-#slide2:checked ~ #pageIndicators #point2,
-#slide3:checked ~ #pageIndicators #point3,
-#slide4:checked ~ #pageIndicators #point4,
-#slide5:checked ~ #pageIndicators #point5,
-#slide6:checked ~ #pageIndicators #point6{
+#cssSlider > #slide1:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
+#cssSlider > #slide2:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
+#cssSlider > #slide3:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
+#cssSlider > #slide4:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4,
+#cssSlider > #slide5:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5,
+#cssSlider > #slide6:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6{
     background: #F2F1EF; /*color of page indicator dot*/
 }
 
@@ -268,14 +270,14 @@ just replace your value based on the ratio equation*/
 }
 
 /*size of the images*/
-#cssSlider img {  
+#cssSlider > #sliderImages > img {  
   width: 100vw;
   height: 100%; 
   float: left;
 }
 
 /*transition slider size*/
-#sliderImages { 
+#cssSlider > #sliderImages { 
   position: absolute;
   left: 0;
   transition: 2.66666666668s; 
@@ -289,20 +291,13 @@ just replace your value based on the ratio equation*/
   animation-timing-function: ease-in-out;
   animation-iteration-count:infinite;
 }
-} /*this extra } has to be here or slider is broken, 
-idk why, have spent hours trying to figure out why. 
-It has to be exactly after this block of code, 
-anywhere else breaks the slider*/
 
-#sliderImages img { 
-  float: right; 
-}
 
 /********** END IMAGE/SLIDER STYLING **********/
 
 /********** SLIDER TEXT **********/
 
-.slideText{
+#cssSlider > #slideDesc > .slideText{
     position: absolute;
     bottom: 0;
     padding: .6em;
@@ -323,7 +318,7 @@ anywhere else breaks the slider*/
     950ms transform 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550),
     950ms visibility 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
-.slideText p{
+#cssSlider > #slideDesc > .slideText > p{
     padding: .1em;
     margin: 0;
     color: black; /*color of blurb box text*/
@@ -332,12 +327,12 @@ anywhere else breaks the slider*/
 }
 
 /*BRING THE TEXT FORWARD ON ITS PAGE*/
-#slide1:checked ~ #slideDesc > #slideText1,
-#slide2:checked ~ #slideDesc > #slideText2,
-#slide3:checked ~ #slideDesc > #slideText3,
-#slide4:checked ~ #slideDesc > #slideText4,
-#slide5:checked ~ #slideDesc > #slideText5,
-#slide6:checked ~ #slideDesc > #slideText6{
+#cssSlider > #slide1:checked ~ #slideDesc > #slideText1,
+#cssSlider > #slide2:checked ~ #slideDesc > #slideText2,
+#cssSlider > #slide3:checked ~ #slideDesc > #slideText3,
+#cssSlider > #slide4:checked ~ #slideDesc > #slideText4,
+#cssSlider > #slide5:checked ~ #slideDesc > #slideText5,
+#cssSlider > #slide6:checked ~ #slideDesc > #slideText6{
     z-index: 2;
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -345,33 +340,33 @@ anywhere else breaks the slider*/
 }
 
 /*TEXT BOX ANIMATION*/
-#play:checked ~ #slideDesc > #slideText1,
-#pause:checked ~ #slideDesc > #slideText1{
+#cssSlider > #play:checked ~ #slideDesc > #slideText1,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText1{
   -webkit-animation: textBoxBounce 40000ms infinite 0ms;
   animation: textBoxBounce 40000ms infinite 0ms;
 }
-#play:checked ~ #slideDesc > #slideText2,
-#pause:checked ~ #slideDesc > #slideText2{
+#cssSlider > #play:checked ~ #slideDesc > #slideText2,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText2{
   -webkit-animation: textBoxBounce 40000ms infinite 6666.6666666667ms;
   animation: textBoxBounce 40000ms infinite 6666.6666666667ms;
 }
-#play:checked ~ #slideDesc > #slideText3,
-#pause:checked ~ #slideDesc > #slideText3{
+#cssSlider > #play:checked ~ #slideDesc > #slideText3,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText3{
   -webkit-animation: textBoxBounce 40000ms infinite 13333.333333333ms;
   animation: textBoxBounce 40000ms infinite 13333.333333333ms;
 }
-#play:checked ~ #slideDesc > #slideText4,
-#pause:checked ~ #slideDesc > #slideText4{
+#cssSlider > #play:checked ~ #slideDesc > #slideText4,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText4{
   -webkit-animation: textBoxBounce 40000ms infinite 20000ms;
   animation: textBoxBounce 40000ms infinite 20000ms;
 }
-#play:checked ~ #slideDesc > #slideText5,
-#pause:checked ~ #slideDesc > #slideText5{
+#cssSlider > #play:checked ~ #slideDesc > #slideText5,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText5{
   -webkit-animation: textBoxBounce 40000ms infinite 26666.666666666ms;
   animation: textBoxBounce 40000ms infinite 26666.666666666ms;
 }
-#play:checked ~ #slideDesc > #slideText6,
-#pause:checked ~ #slideDesc > #slideText6{
+#cssSlider > #play:checked ~ #slideDesc > #slideText6,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText6{
   -webkit-animation: textBoxBounce 40000ms infinite 33333.333333333ms;
   animation: textBoxBounce 40000ms infinite 33333.333333333ms;
 }
@@ -382,54 +377,54 @@ anywhere else breaks the slider*/
 
 /********** MANUAL PAGE ADVANCEMENT **********/
 
-#slide1:checked ~ #sliderImages { margin-left: 0; }
-#slide2:checked ~ #sliderImages { margin-left: -100vw; }
-#slide3:checked ~ #sliderImages { margin-left: -200vw; }
-#slide4:checked ~ #sliderImages { margin-left: -300vw; }
-#slide5:checked ~ #sliderImages { margin-left: -400vw; }
-#slide6:checked ~ #sliderImages { margin-left: -500vw; }
+#cssSlider > #slide1:checked ~ #sliderImages { margin-left: 0; }
+#cssSlider > #slide2:checked ~ #sliderImages { margin-left: -100vw; }
+#cssSlider > #slide3:checked ~ #sliderImages { margin-left: -200vw; }
+#cssSlider > #slide4:checked ~ #sliderImages { margin-left: -300vw; }
+#cssSlider > #slide5:checked ~ #sliderImages { margin-left: -400vw; }
+#cssSlider > #slide6:checked ~ #sliderImages { margin-left: -500vw; }
 
 /********** END MANUAL PAGE ADVANCEMENT **********/
 
 /********** PLAY PAUSE OF ALL ANIMATIONS **********/
 
 /*restart the show*/
-#slide1:checked ~ #sliderImages,
-#slide2:checked ~ #sliderImages,
-#slide3:checked ~ #sliderImages,
-#slide4:checked ~ #sliderImages,
-#slide5:checked ~ #sliderImages,
-#slide6:checked ~ #sliderImages{
+#cssSlider > #slide1:checked ~ #sliderImages,
+#cssSlider > #slide2:checked ~ #sliderImages,
+#cssSlider > #slide3:checked ~ #sliderImages,
+#cssSlider > #slide4:checked ~ #sliderImages,
+#cssSlider > #slide5:checked ~ #sliderImages,
+#cssSlider > #slide6:checked ~ #sliderImages{
     -webkit-animation: none;
     animation: none;
 }
 
 /*pause all animations*/
-#pause:checked ~ #sliderImages,
-#pause:checked ~ #slideDesc > #slideText1,
-#pause:checked ~ #slideDesc > #slideText2,
-#pause:checked ~ #slideDesc > #slideText3,
-#pause:checked ~ #slideDesc > #slideText4,
-#pause:checked ~ #slideDesc > #slideText5,
-#pause:checked ~ #slideDesc > #slideText6,
-#pause:checked ~ #pageNav #previousArrow > #slideL6,
-#pause:checked ~ #pageNav #nextArrow > #slideR2,
-#pause:checked ~ #pageNav #previousArrow > #slideL1,
-#pause:checked ~ #pageNav #nextArrow > #slideR3,
-#pause:checked ~ #pageNav #previousArrow > #slideL2,
-#pause:checked ~ #pageNav #nextArrow > #slideR4,
-#pause:checked ~ #pageNav #previousArrow > #slideL3,
-#pause:checked ~ #pageNav #nextArrow > #slideR5,
-#pause:checked ~ #pageNav #previousArrow > #slideL4,
-#pause:checked ~ #pageNav #nextArrow > #slideR6,
-#pause:checked ~ #pageNav #previousArrow > #slideL5,
-#pause:checked ~ #pageNav #nextArrow > #slideR1,
-#pause:checked ~ #pageIndicators #point1,
-#pause:checked ~ #pageIndicators #point2,
-#pause:checked ~ #pageIndicators #point3,
-#pause:checked ~ #pageIndicators #point4,
-#pause:checked ~ #pageIndicators #point5,
-#pause:checked ~ #pageIndicators #point6{
+#cssSlider > #pause:checked ~ #sliderImages,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText1,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText2,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText3,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText4,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText5,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText6,
+#cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL6,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR2,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL1,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR3,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL2,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR4,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL3,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR5,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL4,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR6,
+#cssSlider > #pause:checked ~ #pageNav > #previousArrow > #slideL5,
+#cssSlider > #pause:checked ~ #pageNav #nextArrow > #slideR1,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point1,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point2,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point3,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point4,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point5,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point6{
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
 }
@@ -622,8 +617,8 @@ anywhere else breaks the slider*/
 
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px){
-    .slideText,
-    #pageIndicators{
+    #cssSlider > #slideDesc > .slideText,
+    #cssSlider > #pageIndicators{
         display: none;
     }    
 }
