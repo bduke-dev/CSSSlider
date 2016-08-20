@@ -13,6 +13,9 @@ By avoiding the use of JavaScript the slider does not rely on the device having 
 Using anything besides 6 images would mean recalculating the timing of all animations, as well as, the sizing of the sider.
 - This slider is set up for full screen images, can be modified to work in smaller formats. 
 
+### Author
+This image slider was created by [b.duke](https://bmduke1997.github.io/).
+
 #### Licenses
 - The slider itself is under the CC-0 license. Do what you want with it, credit would be nice, but not necessary.
 - The play/pause and next/previous arrows are a part of [Google's Material Icons](https://design.google.com/icons/), licensed under 
