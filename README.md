@@ -17,7 +17,7 @@ Using anything besides 6 images would mean recalculating the timing of all anima
 This image slider was created by [b.duke](https://bmduke1997.github.io/).
 
 #### Licenses
-- The slider itself is under the CC-0 license. Do what you want with it, credit would be nice, but not necessary.
+- The slider itself is under the GPLv3 license. Do what you want with it, credit would be nice, but not necessary.
 - The play/pause and next/previous arrows are a part of [Google's Material Icons](https://design.google.com/icons/), licensed under 
 the Apache License Version 2.0. 
 - The font [TimeBurner](http://www.fontspace.com/nimavisual/timeburner) is licensed as Freeware, free for personal and commercial use.
