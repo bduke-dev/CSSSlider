@@ -1,18 +1,27 @@
 # CSS_Slider
 A simple image slider coded completely in CSS. This is done to achieve the most cross compatibility among browsers.
-By avoiding the use of JavaScript the slider does not rely on the device having it, allowing it to work in about all browsers.
+By avoiding the use of JavaScript, the slider does not rely on the device having it, allowing it to work in about all browsers.
 
 ## Features
-- Automatic timed advancement, each slide is 4s long
-- Play/Pause button
-- Forward/Previous arrow advancement
-- Page indicators that double as page advancement
+* Automatic timed advancement, each slide is 4s long (described below is how to modify)
+* Play/Pause button
+* Forward/Previous arrow advancement
+* Page indicators that double as page advancement
 
-### Notes
-- The slider requires exactly 6 images. It can be modified to work with more or less, however that will require a lot of work. 
-Using anything besides 6 images would mean recalculating the timing of all animations, as well as, the sizing of the sider.
-- This slider is set up for full screen images, can be modified to work in smaller formats. 
-
+## Framework
+### Slider
+The slider is set up to be the entire width of the screen, so 100vw.
+The only thing that will need to be changed to meet the need of more or less than 6 images is the width of the whole slider.
+'''<p>
+/*transition slider size*/
+#cssSlider> #sliderImages {
+    position: absolute;
+    left: 0;
+    transition: 2.66666666668s;
+    width: 600vw;
+  }
+</p>
+'''
 ### Author
 This image slider was created by [b.duke](https://bmduke1997.github.io/).
 
