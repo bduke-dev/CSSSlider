@@ -11,17 +11,17 @@ By avoiding the use of JavaScript, the slider does not rely on the device having
 ## Framework
 ### Slider
 The slider is set up to be the entire width of the screen, so 100vw.
-The only thing that will need to be changed to meet the need of more or less than 6 images is the width of the whole slider.
-'''<p>
+The only thing that will need to be changed to meet the need of more or less than 6 images is the width of the whole slider, which is depicted below as 600vw. Simply replace it with the number of images X 100vw.
+``` css
 /*transition slider size*/
 #cssSlider> #sliderImages {
     position: absolute;
     left: 0;
     transition: 2.66666666668s;
     width: 600vw;
-  }
-</p>
-'''
+```
+That takes care of the sizing, the other issue with changing the size is the timing of the transition needs to be chenged. The way the timing works is the show runs for 100% of the chosen time. So, start by picking a duration. For example, I choose 40s.  I did this because I wanted each slide to be shown for 4s. I achieved this timing by pausing each slide for 10% of the 100% of the time (10% of 40s is 4s).
+
 ### Author
 This image slider was created by [b.duke](https://bmduke1997.github.io/).
 
