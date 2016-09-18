@@ -343,8 +343,8 @@ just replace your value based on the ratio equation*/
 #cssSlider> #sliderImages {
     position: absolute;
     left: 0;
-    transition: 2.66666666668s;
     width: 600vw;
+    /*animation parameters*/
     -webkit-animation-name: slider;
     -webkit-animation-duration: 40s;
     -webkit-animation-timing-function: ease-in-out;
@@ -353,6 +353,9 @@ just replace your value based on the ratio equation*/
     animation-duration: 40s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    /*this is the time to transition between images
+    when using the arrows*/
+    transition: 2.66666666667s;
 }
 
 
