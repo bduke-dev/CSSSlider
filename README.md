@@ -9,6 +9,7 @@ By avoiding the use of JavaScript, the slider does not rely on the device having
 * Page indicators that double as page advancement
 
 ## Framework
+The slider was built to hosue 6 images
 ## Animations and Manual Advancement
 ### Slider
 The slider is set up to be the entire width of the screen, so 100vw.
@@ -114,10 +115,49 @@ Now the the other part of the animation, is the actual timing of the animation. 
 ```
 As for when the animation is not running is even easier. Whichever radio button is active will bring the corresponding arrows to a z-index of 15. So, for mine if the show animation is not running and the user is manually navigating the images the first page would bring the previous page 6 arrow and next page 2 arrow to the top. For this see the section in the code titiled ```/*WHICH ARROW SHOULD BE ON TOP*/``` in the ```/********** NEXT SLIDE ARROW NAVIGATION **********/```.
 ### Page Indicators
-The page indicators are exactly like the Next/Previous Arrows with one small modification. The difference is in the animation percents. The animation is from 0% to the start time of the second image rounded down to the nearest percent. Then from the next percent to 100%. So, mine was 0% to 16%, then 17% to 100%. This is so there is time for the indicator dots to fade in and out, allowing for a smother transition. All you need to do is set time percents like the Arrows, except in the ```/*page indicators*/``` under ```/********** ANIMATIONS **********/```
-For the manual lighting of the indicator dot is exavtly like the Next/Previous Arrows. It is just a copy of the code, but it selects the dots instead of the arrrows. The code can be vieded in ```/*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/``` under ```/********** SLIDE INDICATORS **********/```.
+The page indicators are exactly like the Next/Previous Arrows with one small modification. The difference is in the animation percents and the fact that we change its color instead of z-index. The animation is from 0% to the start time of the second image rounded down to the nearest percent. Then from the next percent to 100%. So, mine was 0% to 16%, then 17% to 100%. This is so there is time for the indicator dots to fade in and out, allowing for a smother transition. All you need to do is set time percents like the Arrows, except in the ```/*page indicators*/``` under ```/********** ANIMATIONS **********/```
+For the manual lighting of the indicator dot is exactly like the Next/Previous Arrows. It is just a copy of the code, but it selects the dots instead of the arrrows. The code can be vieded in ```/*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/``` under ```/********** SLIDE INDICATORS **********/```.
 ### Slider Text Box
-
+The Slider Text Box is the slide's description in the bottom left corner. It functions a lot like the Next/Previous Arrows, with the only major modificaiton to the animation percent timing. The percents are a bit inexact in the fact that you just have to play with them untill it looks right. To get the base percents take the percent of time used for the first slide to the start of the second. Mine was 0% to 16.6666666667%. Then just plug them in the framework, described below and play aroud untill it looks good. For the actial timing of the animations refer to Next/Previous Arrows, and put the code in ```/*TEXT BOX ANIMATION*/``` under ```/********** SLIDER TEXT **********/```.
+```css
+/*text box*/
+/*this hows only the code for keyframes, not all browers suppost code for keyframes, so 
+besure to update the code for @-webkit-keyframes arrows also*/
+@keyframes textBoxBounce {
+    /*was 0% to 16.6666666667%, but after modification this is what worked for me*/
+    0.6927083333333334%,
+    15.963958333333334% {
+        opacity: 1;
+        z-index: 2;
+        visibility: visible;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    /*was 0% to 16.6666666667%, but after modification this is what worked for me*/
+    0.9895833333333334%,
+    15.667083333333334% {
+        opacity: 1;
+        z-index: 2;
+        visibility: visible;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    /*was 17%, but after modification this is what worked for me*/
+    17.65625% {
+        opacity: 0;
+        z-index: 2;
+        visibility: hidden;
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+    }
+    /*just needs to be a decimal percent difference from the previous*/
+    17.66625%,
+    100% {
+        z-index: 0;
+    }
+}
+```
+As for the manual control of the text box, whichever radio button is selected brings its corresponding text box forward. This can be viewed in ```/*BRING THE TEXT FORWARD ON ITS PAGE*/``` under ```/*TEXT BOX ANIMATION*/``` under ```/********** SLIDER TEXT **********/```.
 
 ### Author
 This image slider was created by [b.duke](https://bmduke1997.github.io/).
