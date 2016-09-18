@@ -9,6 +9,7 @@ By avoiding the use of JavaScript, the slider does not rely on the device having
 * Page indicators that double as page advancement
 
 ## Framework
+## Animations and Manual Advancement
 ### Slider
 The slider is set up to be the entire width of the screen, so 100vw.
 The only thing that will need to be changed to meet the need of more or less than 6 images is the width of the whole slider, which is depicted below as 600vw. Simply replace it with the number of images X 100vw.
@@ -62,6 +63,18 @@ and @-webkit-keyframes slider-ie*/
         transform: translateX(-200vw);
     }
 ```
+For the manual page advancement we say, whenever its corresponding radio button is selected margin over x. In mine if the first is selected it will margin over 0, if the second -100vw, and so on untill there are no more pictures.
+```css 
+/********** MANUAL PAGE ADVANCEMENT **********/
+
+#cssSlider> #slide1:checked~ #sliderImages {
+    margin-left: 0;
+}
+
+#cssSlider> #slide2:checked~ #sliderImages {
+    margin-left: -100vw;
+}
+```
 ### Next/Previous Arrows
 The next and previous arrows run on a timer similar to the slider. The gist of how it works is, as time progresses, using keyframe animatios, the corresponging arrows are brought from a z-index of -1 to 15 when on that arrow's page. When the slide show is paused on the other hand, whichever page is avtive tells its corresponding arrows to be a z-index of 15.
 To figure out the timing of the animation is rather simple, take the percent of time used for the first slide to the start of the second. This is when the arrow is visible, z-index 15.  Next, take the decimal right after the ending time and go to 100%. This is when the arrow is not visible, z-index -1. As in my exaple, my first slide starts at 0% and the second starts at 16.6666666667%, this is when I will show the arrow. Then going from 16.66666666668% to 100% I will not show the arrow.
@@ -100,6 +113,11 @@ Now the the other part of the animation, is the actual timing of the animation. 
 }
 ```
 As for when the animation is not running is even easier. Whichever radio button is active will bring the corresponding arrows to a z-index of 15. So, for mine if the show animation is not running and the user is manually navigating the images the first page would bring the previous page 6 arrow and next page 2 arrow to the top. For this see the section in the code titiled ```/*WHICH ARROW SHOULD BE ON TOP*/``` in the ```/********** NEXT SLIDE ARROW NAVIGATION **********/```.
+### Page Indicators
+The page indicators are exactly like the Next/Previous Arrows with one small modification. The difference is in the animation percents. The animation is from 0% to the start time of the second image rounded down to the nearest percent. Then from the next percent to 100%. So, mine was 0% to 16%, then 17% to 100%. This is so there is time for the indicator dots to fade in and out, allowing for a smother transition. All you need to do is set time percents like the Arrows, except in the ```/*page indicators*/``` under ```/********** ANIMATIONS **********/```
+For the manual lighting of the indicator dot is exavtly like the Next/Previous Arrows. It is just a copy of the code, but it selects the dots instead of the arrrows. The code can be vieded in ```/*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/``` under ```/********** SLIDE INDICATORS **********/```.
+### Slider Text Box
+
 
 ### Author
 This image slider was created by [b.duke](https://bmduke1997.github.io/).
