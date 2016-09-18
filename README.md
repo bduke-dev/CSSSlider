@@ -62,6 +62,44 @@ and @-webkit-keyframes slider-ie*/
         transform: translateX(-200vw);
     }
 ```
+### Next/Previous Arrows
+The next and previous arrows run on a timer similar to the slider. The gist of how it works is, as time progresses, using keyframe animatios, the corresponging arrows are brought from a z-index of -1 to 15 when on that arrow's page. When the slide show is paused on the other hand, whichever page is avtive tells its corresponding arrows to be a z-index of 15.
+To figure out the timing of the animation is rather simple, take the percent of time used for the first slide to the start of the second. This is when the arrow is visible, z-index 15.  Next, take the decimal right after the ending time and go to 100%. This is when the arrow is not visible, z-index -1. As in my exaple, my first slide starts at 0% and the second starts at 16.6666666667%, this is when I will show the arrow. Then going from 16.66666666668% to 100% I will not show the arrow.
+```css
+/*arrows*/
+/*this hows only the code for keyframes, not all browers suppost code for keyframes, so 
+besure to update the code for @-webkit-keyframes arrows also*/
+@keyframes arrows {
+    0%,
+    16.6666666667% {
+        z-index: 15;
+    }
+    16.66666666668%,
+    100% {
+        z-index: -1;
+    }
+}
+```
+Now the the other part of the animation, is the actual timing of the animation. As there are multiple arrows, they each need a little bit of timing so that they do not all diaplay at the same time. The syntax for that is ``` (animation or -webkit-animation): (time of whole show in ms) infinite (delay start of animation) ``` To figure out the delay, take the time of the show in ms and divide by the number of images. Start the fitst arrow with a delay of 0ms, and increase them by the time we just found. In mine that was 40000/6 = 6666.6666666667ms. 
+```css
+/*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
+#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL6,
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR2,
+#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL6,
+#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR2 {
+    -webkit-animation: arrows 40000ms infinite 0ms;
+    animation: arrows 40000ms infinite 0ms;
+}
+
+#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL1,
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR3,
+#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL1,
+#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR3 {
+    -webkit-animation: arrows 40000ms infinite 6666.6666666667ms;
+    animation: arrows 40000ms infinite 6666.6666666667ms;
+}
+```
+As for when the animation is not running is even easier. Whichever radio button is active will bring the corresponding arrows to a z-index of 15. So, for mine if the show animation is not running and the user is manually navigating the images the first page would bring the previous page 6 arrow and next page 2 arrow to the top. For this see the section in the code titiled ```/*WHICH ARROW SHOULD BE ON TOP*/``` in the ```/********** NEXT SLIDE ARROW NAVIGATION **********/```.
 
 ### Author
 This image slider was created by [b.duke](https://bmduke1997.github.io/).
