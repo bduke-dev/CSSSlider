@@ -9,7 +9,7 @@ By avoiding the use of JavaScript, the slider does not rely on the device having
 * Page indicators that double as page advancement
 
 ## Framework
-#### Provides an explanation of how to add or subtract images and adjust the other pieced of the framework to accoidate the change
+#### Provides an explanation of how to add or subtract images and adjust the other pieces of the framework to accomidate the change
 ### Radio Buttons
 The radio buttons, which are not visible, are what handle the play, pause, and advancement. You need to have a radio button for each page, as well as, the play and pause which should not be changed. To add a new radio buttons just place it under the others with an id of the slide number like othe other ones. This is housed in the HTML document directly under the opening cssSlider div statement. 
 ### Slider
@@ -22,7 +22,11 @@ To add images to the slider simply insert them into the HTML document in the sli
     width: 600vw;
 ```
 ### Next/Previous Arrows
-To add or remove arrows to complement the change in images you need to change two references. Each radio button has two corresponding arrows, a next and a previous. In the pageNav div look in both the previousArrow and nextArrow. The previous arrows are the left arrows and next is the right arrows. Either inset a new arrow, naming like the others except with the for="the id of the new radio button"
+To add or remove arrows to complement the change in images you need to change two references. Each radio button has two corresponding arrows, a next and a previous. In the pageNav div look in both the previousArrow and nextArrow. The previous arrows are the left arrows and next is the right arrows. Either inset a new arrow, naming like the others except with the for="the id of the new radio button".
+### Page Indicators
+The Page Indicators work like the arrows, except each radio button only has one corresponding indicatoe. They are housed in the pageIndicators div. Delete or add accordingly. If adding simply name like the others except witht the for="the id of the new radio button".
+### Slider Text Box
+To add or remove text boxes navigate to the slideDesc div. The add or remove accordingly. To add simply name like the others, following their pattern.
 ## Animations and Manual Advancement
 #### Provides an explanation of how to configre animations and manual advancement of features
 ### Slider
