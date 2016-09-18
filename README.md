@@ -9,11 +9,11 @@ By avoiding the use of JavaScript, the slider does not rely on the device having
 * Page indicators that double as page advancement
 
 ## Framework
-The slider was built to hosue 6 images
-## Animations and Manual Advancement
+#### Provides an explanation of how to add or subtract images and adjust the other pieced of the framework to accoidate the change
+### Radio Buttons
+The radio buttons, which are not visible, are what handle the play, pause, and advancement. You need to have a radio button for each page, as well as, the play and pause which should not be changed. To add a new radio buttons just place it under the others with an id of the slide number like othe other ones. This is housed in the HTML document directly under the opening cssSlider div statement. 
 ### Slider
-The slider is set up to be the entire width of the screen, so 100vw.
-The only thing that will need to be changed to meet the need of more or less than 6 images is the width of the whole slider, which is depicted below as 600vw. Simply replace it with the number of images X 100vw.
+To add images to the slider simply insert them into the HTML document in the sliderImages div. The only thing that will need to be changed to meet the need of more or less than 6 images is the width of the whole slider, which is depicted below as 600vw. Simply replace it with the number of images X 100vw.
 ``` css
 /*transition slider size*/
 #cssSlider> #sliderImages {
@@ -21,7 +21,12 @@ The only thing that will need to be changed to meet the need of more or less tha
     left: 0;
     width: 600vw;
 ```
-That takes care of the sizing, the other issue with changing the size is the timing of the transition needs to be chenged. The way the timing works is the show runs for 100% of the chosen time. So, start by picking a duration. For example, I choose 40s.  I did this because I wanted each slide to be shown for 4s. I achieved this timing by pausing each slide for 10% of the 100% of the time (10% of 40s is 4s). Any percent can be used, however 10% is easiest to work with. 
+### Next/Previous Arrows
+To add or remove arrows to complement the change in images you need to change two references. Each radio button has two corresponding arrows, a next and a previous. In the pageNav div look in both the previousArrow and nextArrow. The previous arrows are the left arrows and next is the right arrows. Either inset a new arrow, naming like the others except with the for="the id of the new radio button"
+## Animations and Manual Advancement
+#### Provides an explanation of how to configre animations and manual advancement of features
+### Slider
+The timimg transitions works in percents of time. The way the timing works is the show runs for 100% of the chosen time. So, start by picking a duration. For example, I choose 40s.  I did this because I wanted each slide to be shown for 4s. I achieved this timing by pausing each slide for 10% of the 100% of the time (10% of 40s is 4s). Any percent can be used, however 10% is easiest to work with. 
 
 Now that you have chosen a pause percent you multiply it by the number of images, making sure that it dows not excede 100%. So, going on my exaple, I have 6 images and each pauses for 10% of the time, meaning that 60% of the time the slider is not moving. This leaves 40% of the time to actually have transitions between each image. Next we need to calculate the transition percent between each image. This is achieved by taking the 40% achieved in teh step before and dividing it between our 6 images, producing 6.6666666667% of time to transition from one image to the next (note it is very important to use as many decimal places as possible so no transitions can get off over time). One last thing we need to do is use the 6.6666666667% we found and multiply 40s by it. We do this so we can fid how log the image switch duration is, so we can use that time when manually switching between images (40 X 6.6666666667% is transition: 2.66666666667s). Using all of the numbers we calculated, here's the actual places you will use it (note I am excluding the lines already stated above).
 ``` css
@@ -64,7 +69,7 @@ and @-webkit-keyframes slider-ie*/
         transform: translateX(-200vw);
     }
 ```
-For the manual page advancement we say, whenever its corresponding radio button is selected margin over x. In mine if the first is selected it will margin over 0, if the second -100vw, and so on untill there are no more pictures.
+For the manual page advancement we say, whenever its corresponding radio button is selected margin over x. In mine if the first is selected it will margin over 0, if the second -100vw, and so on untill there are no more pictures. 
 ```css 
 /********** MANUAL PAGE ADVANCEMENT **********/
 
