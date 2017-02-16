@@ -21,6 +21,12 @@ To add images to the slider simply insert them into the HTML document in the sli
     left: 0;
     width: 600vw;
 ```
+The images can als be used as links to othere elements on the page, other pages, links to external sites, or files. They can be used as links to just about anythign the "< a >" tag can be used for, just wrap the desired image in "< a >" tags.
+```html
+<div id="sliderImages">
+    <a href="link"><img src="cssSlider/images/pure.png" alt="pure"><a>
+</div>
+```
 ### Next/Previous Arrows
 To add or remove arrows to complement the change in images you need to change two references. Each radio button has two corresponding arrows, a next and a previous. In the pageNav div look in both the previousArrow and nextArrow. The previous arrows are the left arrows and next is the right arrows. Either inset a new arrow, naming like the others except with the for="the id of the new radio button".
 ### Page Indicators
