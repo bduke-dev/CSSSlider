@@ -331,7 +331,9 @@ just replace your value based on the ratio equation*/
 
 /*size of the images*/
 
-#cssSlider> #sliderImages> img {
+#cssSlider> #sliderImages> img,
+#cssSlider> #sliderImages> a> img {
+    //allows images to be wrapped in links
     width: 100vw;
     height: 100%;
     float: left;

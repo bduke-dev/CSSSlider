@@ -255,7 +255,8 @@ just replace your value based on the ratio equation*/
   height: 0; }
 
 /*size of the images*/
-#cssSlider > #sliderImages > img {
+#cssSlider > #sliderImages > img,
+#cssSlider > #sliderImages > a > img {
   width: 100vw;
   height: 100%;
   float: left; }
