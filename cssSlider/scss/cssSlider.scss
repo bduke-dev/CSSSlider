@@ -1,3 +1,4 @@
+@import '_variables';
 /*CSS RESET*/
 
 html,
@@ -24,7 +25,7 @@ body {
 
 /*APPEARANCE*/
 
-#cssSlider> input {
+input {
     display: none;
 }
 
@@ -322,10 +323,18 @@ body {
 /*the size of the responsixe slider, 
 just replace your value based on the ratio equation*/
 
-#cssSlider {
+#fullScreen:not(:checked)  ~ #cssSlider {
     padding-bottom: 43.95%;
     /*to find % aspect ratio, (height/width)100*/
-    height: 0;
+	height: 0;
+}
+
+#fullScreen:checked  ~ #cssSlider {
+    height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: $backgroundColor;
 }
 
 
