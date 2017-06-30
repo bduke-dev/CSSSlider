@@ -1,4 +1,5 @@
 @import '_variables';
+
 /*CSS RESET*/
 
 html,
@@ -25,11 +26,12 @@ body {
 
 /*APPEARANCE*/
 
-input { /*new wrapper to this*/
+input {
+    /*new wrapper to this*/
     display: none;
 }
 
-#cssSlider> #pageNav {
+#cssSlider>#pageNav {
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -39,9 +41,9 @@ input { /*new wrapper to this*/
     height: 10vw;
 }
 
-#cssSlider> #pageNav> #previousArrow> .slideL,
-#cssSlider> #pageNav> #playPause> .playPauseBtn,
-#cssSlider> #pageNav> #nextArrow> .slideR {
+#cssSlider>#pageNav>#previousArrow>.slideL,
+#cssSlider>#pageNav>#playPause>.playPauseBtn,
+#cssSlider>#pageNav>#nextArrow>.slideR {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -49,125 +51,126 @@ input { /*new wrapper to this*/
     transition: opacity .5s ease-in-out;
 }
 
-@mixin arrowStyle($bckImg){
-	width: 10vw;
+@mixin arrowStyle($bckImg) {
+    width: 10vw;
     height: 10vw;
     background: url(#{$bckImg + png});
-    background-image: url(#{$bckImg + svg}), none; 
+    background-image: url(#{$bckImg + svg}),
+    none;
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: -1;
 }
-#cssSlider> #pageNav> #previousArrow> .slideL {
-	@include arrowStyle('icons/previous.');
+
+#cssSlider>#pageNav>#previousArrow>.slideL {
+    @include arrowStyle('icons/previous.');
 }
 
-#cssSlider> #pageNav> #nextArrow> .slideR {
-	@include arrowStyle('icons/next.');
+#cssSlider>#pageNav>#nextArrow>.slideR {
+    @include arrowStyle('icons/next.');
 }
 
-#cssSlider> #pageNav> #playPause> #playBtn {
-	@include arrowStyle('icons/play.');
+#cssSlider>#pageNav>#playPause>#playBtn {
+    @include arrowStyle('icons/play.');
 }
 
-#cssSlider> #pageNav> #playPause> #pauseBtn {
-	@include arrowStyle('icons/pause.');
+#cssSlider>#pageNav>#playPause>#pauseBtn {
+    @include arrowStyle('icons/pause.');
 }
 
 
 /*POSITION*/
 
-#cssSlider> #pageNav> #previousArrow> .slideL {
+#cssSlider>#pageNav>#previousArrow>.slideL {
     left: 2vw;
 }
 
-#cssSlider> #pageNav> #playPause> .playPauseBtn {
+#cssSlider>#pageNav>#playPause>.playPauseBtn {
     left: 50%;
     margin: 0 0 0 -5vw;
 }
 
-#cssSlider> #pageNav> #nextArrow> .slideR {
+#cssSlider>#pageNav>#nextArrow>.slideR {
     right: 2vw;
 }
 
 
 /*ONLY DISPLAY IF ON SLIDER*/
 
-#cssSlider> #pageNav:hover> #previousArrow> .slideL,
-#cssSlider> #pageNav:hover> #playPause> .playPauseBtn,
-#cssSlider> #pageNav:hover> #nextArrow> .slideR,
-#cssSlider #sliderImages:hover~ #pageNav #previousArrow .slideL,
-#cssSlider> #sliderImages:hover~ #pageNav> #playPause> .playPauseBtn,
-#cssSlider> #sliderImages:hover~ #pageNav> #nextArrow> .slideR {
+#cssSlider>#pageNav:hover>#previousArrow>.slideL,
+#cssSlider>#pageNav:hover>#playPause>.playPauseBtn,
+#cssSlider>#pageNav:hover>#nextArrow>.slideR,
+#cssSlider #sliderImages:hover~#pageNav #previousArrow .slideL,
+#cssSlider>#sliderImages:hover~#pageNav>#playPause>.playPauseBtn,
+#cssSlider>#sliderImages:hover~#pageNav>#nextArrow>.slideR {
     opacity: 1;
 }
 
 
 /*DON'T SHOW PLAY AND PAUSE*/
 
-#cssSlider> #play:not(:checked)~ #pageNav> #playPause> #pauseBtn {
+#cssSlider>#play:not(:checked)~#pageNav>#playPause>#pauseBtn {
     display: none;
 }
 
-#cssSlider> #play:checked~ #pageNav> #playPause> #playBtn {
+#cssSlider>#play:checked~#pageNav>#playPause>#playBtn {
     display: none;
 }
 
 
 /*WHICH ARROW SHOULD BE ON TOP*/
 
-#cssSlider> #slide1:checked~ #pageNav> #previousArrow> #slideL6,
-#cssSlider> #slide1:checked~ #pageNav> #nextArrow> #slideR2,
-#cssSlider> #slide2:checked~ #pageNav> #previousArrow> #slideL1,
-#cssSlider> #slide2:checked~ #pageNav> #nextArrow> #slideR3,
-#cssSlider> #slide3:checked~ #pageNav> #previousArrow> #slideL2,
-#cssSlider> #slide3:checked~ #pageNav> #nextArrow> #slideR4,
-#cssSlider> #slide4:checked~ #pageNav> #previousArrow> #slideL3,
-#cssSlider> #slide4:checked~ #pageNav> #nextArrow> #slideR5,
-#cssSlider> #slide5:checked~ #pageNav> #previousArrow> #slideL4,
-#cssSlider> #slide5:checked~ #pageNav> #nextArrow> #slideR6,
-#cssSlider> #slide6:checked~ #pageNav> #previousArrow> #slideL5,
-#cssSlider> #slide6:checked~ #pageNav> #nextArrow> #slideR1 {
+#cssSlider>#slide1:checked~#pageNav>#previousArrow>#slideL6,
+#cssSlider>#slide1:checked~#pageNav>#nextArrow>#slideR2,
+#cssSlider>#slide2:checked~#pageNav>#previousArrow>#slideL1,
+#cssSlider>#slide2:checked~#pageNav>#nextArrow>#slideR3,
+#cssSlider>#slide3:checked~#pageNav>#previousArrow>#slideL2,
+#cssSlider>#slide3:checked~#pageNav>#nextArrow>#slideR4,
+#cssSlider>#slide4:checked~#pageNav>#previousArrow>#slideL3,
+#cssSlider>#slide4:checked~#pageNav>#nextArrow>#slideR5,
+#cssSlider>#slide5:checked~#pageNav>#previousArrow>#slideL4,
+#cssSlider>#slide5:checked~#pageNav>#nextArrow>#slideR6,
+#cssSlider>#slide6:checked~#pageNav>#previousArrow>#slideL5,
+#cssSlider>#slide6:checked~#pageNav>#nextArrow>#slideR1 {
     z-index: 15;
 }
 
 
 /*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
 
-@mixin arrowTime($time){
-	-webkit-animation: arrows 40000ms infinite $time;
+@mixin arrowTime($time) {
+    -webkit-animation: arrows 40000ms infinite $time;
     animation: arrows 40000ms infinite $time;
 }
 
-/*TODO I removed the pause button being checked condition allowing advancement, idk why i even includedit, watch for bugs*/
-#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL6,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR2 {
-	@include arrowTime(0ms);
+#cssSlider>#play:checked~#pageNav>#previousArrow>#slideL6,
+#cssSlider>#play:checked~#pageNav>#nextArrow>#slideR2 {
+    @include arrowTime(0ms);
 }
 
-#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL1,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR3 {
-	@include arrowTime( 6666.6666666667ms);
+#cssSlider>#play:checked~#pageNav>#previousArrow>#slideL1,
+#cssSlider>#play:checked~#pageNav>#nextArrow>#slideR3 {
+    @include arrowTime( 6666.6666666667ms);
 }
 
-#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL2,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR4 {
-	@include arrowTime(13333.333333333ms);
+#cssSlider>#play:checked~#pageNav>#previousArrow>#slideL2,
+#cssSlider>#play:checked~#pageNav>#nextArrow>#slideR4 {
+    @include arrowTime(13333.333333333ms);
 }
 
-#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL3,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR5 {
-	@include arrowTime(20000ms);
+#cssSlider>#play:checked~#pageNav>#previousArrow>#slideL3,
+#cssSlider>#play:checked~#pageNav>#nextArrow>#slideR5 {
+    @include arrowTime(20000ms);
 }
 
-#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL4,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR6 {
-	@include arrowTime(26666.666666666ms);
+#cssSlider>#play:checked~#pageNav>#previousArrow>#slideL4,
+#cssSlider>#play:checked~#pageNav>#nextArrow>#slideR6 {
+    @include arrowTime(26666.666666666ms);
 }
 
-#cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL5,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR1 {
-	@include arrowTime(33333.333333333ms);
+#cssSlider>#play:checked~#pageNav>#previousArrow>#slideL5,
+#cssSlider>#play:checked~#pageNav>#nextArrow>#slideR1 {
+    @include arrowTime(33333.333333333ms);
 }
 
 
@@ -179,7 +182,7 @@ input { /*new wrapper to this*/
 
 /*PAGE INDICATORS APPEARANCE*/
 
-#cssSlider> #pageIndicators {
+#cssSlider>#pageIndicators {
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -187,7 +190,7 @@ input { /*new wrapper to this*/
     z-index: 15;
 }
 
-#cssSlider> #pageIndicators> .indicator {
+#cssSlider>#pageIndicators>.indicator {
     display: inline-block;
     height: 1.5em;
     width: 1.5em;
@@ -197,8 +200,10 @@ input { /*new wrapper to this*/
     cursor: pointer;
 }
 
+
 /*why can't i mix in or anything here?*/
-#cssSlider> #pageIndicators> .indicator> .hoverPoint {
+
+#cssSlider>#pageIndicators>.indicator>.hoverPoint {
     margin: .5em;
     display: inline-block;
     height: .5em;
@@ -210,7 +215,7 @@ input { /*new wrapper to this*/
     z-index: 16;
 }
 
-#cssSlider> #pageIndicators> .indicator> .hoverPoint> .point {
+#cssSlider>#pageIndicators>.indicator>.hoverPoint>.point {
     margin-bottom: .5em;
     display: inline-block;
     height: .5em;
@@ -224,60 +229,59 @@ input { /*new wrapper to this*/
 
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
 
-#cssSlider> #play:checked~ #pageIndicators> .indicator> .hoverPoint> #point1,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point1 {
-    -webkit-animation: point 40000ms infinite 0ms;
-    animation: point 40000ms infinite 0ms;
+@mixin pointTime($time) {
+    -webkit-animation: point 40000ms infinite $time;
+    animation: point 40000ms infinite $time;
 }
 
-#cssSlider> #play:checked~ #pageIndicators> .indicator> .hoverPoint> #point2,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point2 {
-    -webkit-animation: point 40000ms infinite 6666.6666666667ms;
-    animation: point 40000ms infinite 6666.6666666667ms;
+#cssSlider>#play:checked~#pageIndicators>.indicator>.hoverPoint>#point1,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point1 {
+    @include pointTime(0ms);
 }
 
-#cssSlider> #play:checked~ #pageIndicators> .indicator> .hoverPoint> #point3,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point3 {
-    -webkit-animation: point 40000ms infinite 13333.333333333ms;
-    animation: point 40000ms infinite 13333.333333333ms;
+#cssSlider>#play:checked~#pageIndicators>.indicator>.hoverPoint>#point2,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point2 {
+    @include pointTime(6666.6666666667ms);
 }
 
-#cssSlider> #play:checked~ #pageIndicators> .indicator> .hoverPoint> #point4,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point4 {
-    -webkit-animation: point 40000ms infinite 20000ms;
-    animation: point 40000ms infinite 20000ms;
+#cssSlider>#play:checked~#pageIndicators>.indicator>.hoverPoint>#point3,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point3 {
+    @include pointTime(13333.333333333ms);
 }
 
-#cssSlider> #play:checked~ #pageIndicators> .indicator> .hoverPoint> #point5,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point5 {
-    -webkit-animation: point 40000ms infinite 26666.666666666ms;
-    animation: point 40000ms infinite 26666.666666666ms;
+#cssSlider>#play:checked~#pageIndicators>.indicator>.hoverPoint>#point4,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point4 {
+    @include pointTime(20000ms);
 }
 
-#cssSlider> #play:checked~ #pageIndicators> .indicator> .hoverPoint> #point6,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point6 {
-    -webkit-animation: point 40000ms infinite 33333.333333333ms;
-    animation: point 40000ms infinite 33333.333333333ms;
+#cssSlider>#play:checked~#pageIndicators>.indicator>.hoverPoint>#point5,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point5 {
+    @include pointTime(26666.666666666ms);
+}
+
+#cssSlider>#play:checked~#pageIndicators>.indicator>.hoverPoint>#point6,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point6 {
+    @include pointTime(33333.333333333ms);
 }
 
 
 /*WHICH INDICATOR SHOULD BE LIT*/
 
-#cssSlider> #slide1:checked~ #pageIndicators> .indicator> .hoverPoint> #point1,
-#cssSlider> #slide2:checked~ #pageIndicators> .indicator> .hoverPoint> #point2,
-#cssSlider> #slide3:checked~ #pageIndicators> .indicator> .hoverPoint> #point3,
-#cssSlider> #slide4:checked~ #pageIndicators> .indicator> .hoverPoint> #point4,
-#cssSlider> #slide5:checked~ #pageIndicators> .indicator> .hoverPoint> #point5,
-#cssSlider> #slide6:checked~ #pageIndicators> .indicator> .hoverPoint> #point6 {
-    background: #F2F1EF;
+#cssSlider>#slide1:checked~#pageIndicators>.indicator>.hoverPoint>#point1,
+#cssSlider>#slide2:checked~#pageIndicators>.indicator>.hoverPoint>#point2,
+#cssSlider>#slide3:checked~#pageIndicators>.indicator>.hoverPoint>#point3,
+#cssSlider>#slide4:checked~#pageIndicators>.indicator>.hoverPoint>#point4,
+#cssSlider>#slide5:checked~#pageIndicators>.indicator>.hoverPoint>#point5,
+#cssSlider>#slide6:checked~#pageIndicators>.indicator>.hoverPoint>#point6 {
+    background: $indicatorColor;
     /*color of page indicator dot*/
 }
 
 
 /*used to override the animation for lit indicator*/
 
-#cssSlider> #pageIndicators> .indicator:hover> .hoverPoint {
-    background: #F2F1EF;
+#cssSlider>#pageIndicators>.indicator:hover>.hoverPoint {
+    background: $indicatorColor;
     /*color of page indicator dot*/
 }
 
@@ -299,67 +303,80 @@ input { /*new wrapper to this*/
 /*the size of the responsixe slider, 
 just replace your value based on the ratio equation*/
 
-@mixin full(){
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background: $sliderBackground;
+@mixin full() {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $sliderBackground;
 }
 
-@mixin off(){
-	padding-bottom: 43.95%;
+@mixin off() {
+    padding-bottom: 43.95%;
     /*to find % aspect ratio, (height/width)100*/
-	height: 0;
+    height: 0;
 }
+
 
 /*normal display*/
-#off:checked  ~ #cssSlider {
+
+#off:checked~#cssSlider {
     @include off();
 }
 
+
 /*full screen display*/
-#full:checked  ~ #cssSlider {
+
+#full:checked~#cssSlider {
     @include full();
 }
 
+
 /*full screen display, wide screen only*/
-#fullWideOnly:checked  ~ #cssSlider {
-   @media screen and (min-width: 1001px){ /*wide*/
-		@include full();
-	}
-    @media screen and (max-width: 1000px) { /*narrow*/
-		@include off();
-	}
+
+#fullWideOnly:checked~#cssSlider {
+    @media screen and (min-width: 1001px) {
+        /*wide*/
+        @include full();
+    }
+    @media screen and (max-width: 1000px) {
+        /*narrow*/
+        @include off();
+    }
 }
 
+
 /*full screen display, narrow screen only*/
-#fullNrowOnly:checked  ~ #cssSlider {
-	@media screen and (min-width: 1001px){ /*wide*/
-		@include off();
-	}
-    @media screen and (max-width: 1000px) { /*narrow*/
-		@include full();
-	}
+
+#fullNrowOnly:checked~#cssSlider {
+    @media screen and (min-width: 1001px) {
+        /*wide*/
+        @include off();
+    }
+    @media screen and (max-width: 1000px) {
+        /*narrow*/
+        @include full();
+    }
 }
+
 
 /*size of the images*/
 
-#cssSlider> #sliderImages> img,
-#cssSlider> #sliderImages> a> img {
+#cssSlider>#sliderImages>img,
+#cssSlider>#sliderImages>a>img {
     //allows images to be wrapped in links
-    width: 100vw;
-    height: 100%;
+    width: 227.555555556vh;
+    height: 100vh;
     float: left;
 }
 
 
 /*transition slider size*/
 
-#cssSlider> #sliderImages {
+#cssSlider>#sliderImages {
     position: absolute;
     left: 0;
-    width: 600vw;
+    width: 1365.333333333vh;
     /*animation parameters*/
     -webkit-animation-name: slider;
     -webkit-animation-duration: 40s;
@@ -380,7 +397,7 @@ just replace your value based on the ratio equation*/
 
 /********** SLIDER TEXT **********/
 
-#cssSlider> #slideDesc> .slideText {
+#cssSlider>#slideDesc>.slideText {
     position: absolute;
     bottom: 0;
     padding: .6em;
@@ -396,10 +413,10 @@ just replace your value based on the ratio equation*/
     transition: 950ms opacity 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms -webkit-transform 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms transform 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms visibility 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
-#cssSlider> #slideDesc> .slideText> p {
+#cssSlider>#slideDesc>.slideText>p {
     padding: .1em;
     margin: 0;
-    color: black;
+    color: $descTextColor;
     /*color of blurb box text*/
     font-size: 2em;
     font-family: timeburner;
@@ -408,12 +425,12 @@ just replace your value based on the ratio equation*/
 
 /*BRING THE TEXT FORWARD ON ITS PAGE*/
 
-#cssSlider> #slide1:checked~ #slideDesc> #slideText1,
-#cssSlider> #slide2:checked~ #slideDesc> #slideText2,
-#cssSlider> #slide3:checked~ #slideDesc> #slideText3,
-#cssSlider> #slide4:checked~ #slideDesc> #slideText4,
-#cssSlider> #slide5:checked~ #slideDesc> #slideText5,
-#cssSlider> #slide6:checked~ #slideDesc> #slideText6 {
+#cssSlider>#slide1:checked~#slideDesc>#slideText1,
+#cssSlider>#slide2:checked~#slideDesc>#slideText2,
+#cssSlider>#slide3:checked~#slideDesc>#slideText3,
+#cssSlider>#slide4:checked~#slideDesc>#slideText4,
+#cssSlider>#slide5:checked~#slideDesc>#slideText5,
+#cssSlider>#slide6:checked~#slideDesc>#slideText6 {
     z-index: 2;
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -423,40 +440,39 @@ just replace your value based on the ratio equation*/
 
 /*TEXT BOX ANIMATION*/
 
-#cssSlider> #play:checked~ #slideDesc> #slideText1,
-#cssSlider> #pause:checked~ #slideDesc> #slideText1 {
-    -webkit-animation: textBoxBounce 40000ms infinite 0ms;
-    animation: textBoxBounce 40000ms infinite 0ms;
+@mixin pointTime($time) {
+    -webkit-animation: textBoxBounce 40000ms infinite $time;
+    animation: textBoxBounce 40000ms infinite $time;
 }
 
-#cssSlider> #play:checked~ #slideDesc> #slideText2,
-#cssSlider> #pause:checked~ #slideDesc> #slideText2 {
-    -webkit-animation: textBoxBounce 40000ms infinite 6666.6666666667ms;
-    animation: textBoxBounce 40000ms infinite 6666.6666666667ms;
+#cssSlider>#play:checked~#slideDesc>#slideText1,
+#cssSlider>#pause:checked~#slideDesc>#slideText1 {
+    @include pointTime(0ms);
 }
 
-#cssSlider> #play:checked~ #slideDesc> #slideText3,
-#cssSlider> #pause:checked~ #slideDesc> #slideText3 {
-    -webkit-animation: textBoxBounce 40000ms infinite 13333.333333333ms;
-    animation: textBoxBounce 40000ms infinite 13333.333333333ms;
+#cssSlider>#play:checked~#slideDesc>#slideText2,
+#cssSlider>#pause:checked~#slideDesc>#slideText2 {
+    @include pointTime(6666.6666666667ms);
 }
 
-#cssSlider> #play:checked~ #slideDesc> #slideText4,
-#cssSlider> #pause:checked~ #slideDesc> #slideText4 {
-    -webkit-animation: textBoxBounce 40000ms infinite 20000ms;
-    animation: textBoxBounce 40000ms infinite 20000ms;
+#cssSlider>#play:checked~#slideDesc>#slideText3,
+#cssSlider>#pause:checked~#slideDesc>#slideText3 {
+    @include pointTime(13333.333333333ms);
 }
 
-#cssSlider> #play:checked~ #slideDesc> #slideText5,
-#cssSlider> #pause:checked~ #slideDesc> #slideText5 {
-    -webkit-animation: textBoxBounce 40000ms infinite 26666.666666666ms;
-    animation: textBoxBounce 40000ms infinite 26666.666666666ms;
+#cssSlider>#play:checked~#slideDesc>#slideText4,
+#cssSlider>#pause:checked~#slideDesc>#slideText4 {
+    @include pointTime(20000ms);
 }
 
-#cssSlider> #play:checked~ #slideDesc> #slideText6,
-#cssSlider> #pause:checked~ #slideDesc> #slideText6 {
-    -webkit-animation: textBoxBounce 40000ms infinite 33333.333333333ms;
-    animation: textBoxBounce 40000ms infinite 33333.333333333ms;
+#cssSlider>#play:checked~#slideDesc>#slideText5,
+#cssSlider>#pause:checked~#slideDesc>#slideText5 {
+    @include pointTime(26666.666666666ms);
+}
+
+#cssSlider>#play:checked~#slideDesc>#slideText6,
+#cssSlider>#pause:checked~#slideDesc>#slideText6 {
+    @include pointTime(33333.333333333ms);
 }
 
 
@@ -465,27 +481,27 @@ just replace your value based on the ratio equation*/
 
 /********** MANUAL PAGE ADVANCEMENT **********/
 
-#cssSlider> #slide1:checked~ #sliderImages {
+#cssSlider>#slide1:checked~#sliderImages {
     margin-left: 0;
 }
 
-#cssSlider> #slide2:checked~ #sliderImages {
+#cssSlider>#slide2:checked~#sliderImages {
     margin-left: -100vw;
 }
 
-#cssSlider> #slide3:checked~ #sliderImages {
+#cssSlider>#slide3:checked~#sliderImages {
     margin-left: -200vw;
 }
 
-#cssSlider> #slide4:checked~ #sliderImages {
+#cssSlider>#slide4:checked~#sliderImages {
     margin-left: -300vw;
 }
 
-#cssSlider> #slide5:checked~ #sliderImages {
+#cssSlider>#slide5:checked~#sliderImages {
     margin-left: -400vw;
 }
 
-#cssSlider> #slide6:checked~ #sliderImages {
+#cssSlider>#slide6:checked~#sliderImages {
     margin-left: -500vw;
 }
 
@@ -498,12 +514,12 @@ just replace your value based on the ratio equation*/
 
 /*restart the show*/
 
-#cssSlider> #slide1:checked~ #sliderImages,
-#cssSlider> #slide2:checked~ #sliderImages,
-#cssSlider> #slide3:checked~ #sliderImages,
-#cssSlider> #slide4:checked~ #sliderImages,
-#cssSlider> #slide5:checked~ #sliderImages,
-#cssSlider> #slide6:checked~ #sliderImages {
+#cssSlider>#slide1:checked~#sliderImages,
+#cssSlider>#slide2:checked~#sliderImages,
+#cssSlider>#slide3:checked~#sliderImages,
+#cssSlider>#slide4:checked~#sliderImages,
+#cssSlider>#slide5:checked~#sliderImages,
+#cssSlider>#slide6:checked~#sliderImages {
     -webkit-animation: none;
     animation: none;
 }
@@ -511,31 +527,31 @@ just replace your value based on the ratio equation*/
 
 /*pause all animations*/
 
-#cssSlider> #pause:checked~ #sliderImages,
-#cssSlider> #pause:checked~ #slideDesc> #slideText1,
-#cssSlider> #pause:checked~ #slideDesc> #slideText2,
-#cssSlider> #pause:checked~ #slideDesc> #slideText3,
-#cssSlider> #pause:checked~ #slideDesc> #slideText4,
-#cssSlider> #pause:checked~ #slideDesc> #slideText5,
-#cssSlider> #pause:checked~ #slideDesc> #slideText6,
-#cssSlider> #pause:checked~ #pageNav #previousArrow> #slideL6,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR2,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL1,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR3,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL2,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR4,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL3,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR5,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL4,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR6,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL5,
-#cssSlider> #pause:checked~ #pageNav #nextArrow> #slideR1,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point1,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point2,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point3,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point4,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point5,
-#cssSlider> #pause:checked~ #pageIndicators> .indicator> .hoverPoint> #point6 {
+#cssSlider>#pause:checked~#sliderImages,
+#cssSlider>#pause:checked~#slideDesc>#slideText1,
+#cssSlider>#pause:checked~#slideDesc>#slideText2,
+#cssSlider>#pause:checked~#slideDesc>#slideText3,
+#cssSlider>#pause:checked~#slideDesc>#slideText4,
+#cssSlider>#pause:checked~#slideDesc>#slideText5,
+#cssSlider>#pause:checked~#slideDesc>#slideText6,
+#cssSlider>#pause:checked~#pageNav #previousArrow>#slideL6,
+#cssSlider>#pause:checked~#pageNav>#nextArrow>#slideR2,
+#cssSlider>#pause:checked~#pageNav>#previousArrow>#slideL1,
+#cssSlider>#pause:checked~#pageNav>#nextArrow>#slideR3,
+#cssSlider>#pause:checked~#pageNav>#previousArrow>#slideL2,
+#cssSlider>#pause:checked~#pageNav>#nextArrow>#slideR4,
+#cssSlider>#pause:checked~#pageNav>#previousArrow>#slideL3,
+#cssSlider>#pause:checked~#pageNav>#nextArrow>#slideR5,
+#cssSlider>#pause:checked~#pageNav>#previousArrow>#slideL4,
+#cssSlider>#pause:checked~#pageNav>#nextArrow>#slideR6,
+#cssSlider>#pause:checked~#pageNav>#previousArrow>#slideL5,
+#cssSlider>#pause:checked~#pageNav #nextArrow>#slideR1,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point1,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point2,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point3,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point4,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point5,
+#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point6 {
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
 }
@@ -579,7 +595,7 @@ just replace your value based on the ratio equation*/
 @keyframes point {
     1%,
     16% {
-        background: #F2F1EF;
+        background: $indicatorColor;
         /*color of page indicator dot*/
     }
     17%,
@@ -591,7 +607,7 @@ just replace your value based on the ratio equation*/
 @-webkit-keyframes point {
     0%,
     16% {
-        background: #F2F1EF;
+        background: $indicatorColor;
         /*color of page indicator dot*/
     }
     17%,
@@ -812,8 +828,8 @@ just replace your value based on the ratio equation*/
 /*FOR MOBILE*/
 
 @media screen and (max-width: 1000px) {
-    #cssSlider> #slideDesc> .slideText,
-    #cssSlider> #pageIndicators {
+    #cssSlider>#slideDesc>.slideText,
+    #cssSlider>#pageIndicators {
         display: none;
     }
 }
