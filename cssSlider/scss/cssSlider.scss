@@ -323,20 +323,49 @@ input {
 /*the size of the responsixe slider, 
 just replace your value based on the ratio equation*/
 
-#fullScreen:not(:checked)  ~ #cssSlider {
-    padding-bottom: 43.95%;
+@mixin full(){
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: $sliderBackground;
+}
+
+@mixin off(){
+	padding-bottom: 43.95%;
     /*to find % aspect ratio, (height/width)100*/
 	height: 0;
 }
 
-#fullScreen:checked  ~ #cssSlider {
-    height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background: $backgroundColor;
+/*normal display*/
+#off:checked  ~ #cssSlider {
+    @include off();
 }
 
+/*full screen display*/
+#full:checked  ~ #cssSlider {
+    @include full();
+}
+
+/*full screen display, wide screen only*/
+#fullWideOnly:checked  ~ #cssSlider {
+   @media screen and (min-width: 1001px){ /*wide*/
+		@include full();
+	}
+    @media screen and (max-width: 1000px) { /*narrow*/
+		@include off();
+	}
+}
+
+/*full screen display, narrow screen only*/
+#fullNrowOnly:checked  ~ #cssSlider {
+	@media screen and (min-width: 1001px){ /*wide*/
+		@include off();
+	}
+    @media screen and (max-width: 1000px) { /*narrow*/
+		@include full();
+	}
+}
 
 /*size of the images*/
 
