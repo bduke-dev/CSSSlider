@@ -25,7 +25,7 @@ body {
 
 /*APPEARANCE*/
 
-input {
+input { /*new wrapper to this*/
     display: none;
 }
 
@@ -49,42 +49,29 @@ input {
     transition: opacity .5s ease-in-out;
 }
 
-#cssSlider> #pageNav> #previousArrow> .slideL {
-    width: 10vw;
+@mixin arrowStyle($bckImg){
+	width: 10vw;
     height: 10vw;
-    background: url('icons/previous.png');
-    background-image: url('icons/previous.svg'), none;
+    background: url(#{$bckImg + png});
+    background-image: url(#{$bckImg + svg}), none; 
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: -1;
+}
+#cssSlider> #pageNav> #previousArrow> .slideL {
+	@include arrowStyle('icons/previous.');
 }
 
 #cssSlider> #pageNav> #nextArrow> .slideR {
-    width: 10vw;
-    height: 10vw;
-    background: url('icons/next.png');
-    background-image: url('icons/next.svg'), none;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    z-index: -1;
+	@include arrowStyle('icons/next.');
 }
 
 #cssSlider> #pageNav> #playPause> #playBtn {
-    width: 10vw;
-    height: 10vw;
-    background: url('icons/play.png');
-    background-image: url('icons/play.svg'), none;
-    background-repeat: no-repeat;
-    background-size: 100%;
+	@include arrowStyle('icons/play.');
 }
 
 #cssSlider> #pageNav> #playPause> #pauseBtn {
-    width: 10vw;
-    height: 10vw;
-    background: url('icons/pause.png');
-    background-image: url('icons/pause.svg'), none;
-    background-repeat: no-repeat;
-    background-size: 100%;
+	@include arrowStyle('icons/pause.');
 }
 
 
@@ -147,52 +134,40 @@ input {
 
 /*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
 
+@mixin arrowTime($time){
+	-webkit-animation: arrows 40000ms infinite $time;
+    animation: arrows 40000ms infinite $time;
+}
+
+/*TODO I removed the pause button being checked condition allowing advancement, idk why i even includedit, watch for bugs*/
 #cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL6,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR2,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL6,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR2 {
-    -webkit-animation: arrows 40000ms infinite 0ms;
-    animation: arrows 40000ms infinite 0ms;
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR2 {
+	@include arrowTime(0ms);
 }
 
 #cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL1,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR3,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL1,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR3 {
-    -webkit-animation: arrows 40000ms infinite 6666.6666666667ms;
-    animation: arrows 40000ms infinite 6666.6666666667ms;
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR3 {
+	@include arrowTime( 6666.6666666667ms);
 }
 
 #cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL2,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR4,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL2,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR4 {
-    -webkit-animation: arrows 40000ms infinite 13333.333333333ms;
-    animation: arrows 40000ms infinite 13333.333333333ms;
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR4 {
+	@include arrowTime(13333.333333333ms);
 }
 
 #cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL3,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR5,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL3,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR5 {
-    -webkit-animation: arrows 40000ms infinite 20000ms;
-    animation: arrows 40000ms infinite 20000ms;
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR5 {
+	@include arrowTime(20000ms);
 }
 
 #cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL4,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR6,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL4,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR6 {
-    -webkit-animation: arrows 40000ms infinite 26666.666666666ms;
-    animation: arrows 40000ms infinite 26666.666666666ms;
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR6 {
+	@include arrowTime(26666.666666666ms);
 }
 
 #cssSlider> #play:checked~ #pageNav> #previousArrow> #slideL5,
-#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR1,
-#cssSlider> #pause:checked~ #pageNav> #previousArrow> #slideL5,
-#cssSlider> #pause:checked~ #pageNav> #nextArrow> #slideR1 {
-    -webkit-animation: arrows 40000ms infinite 33333.333333333ms;
-    animation: arrows 40000ms infinite 33333.333333333ms;
+#cssSlider> #play:checked~ #pageNav> #nextArrow> #slideR1 {
+	@include arrowTime(33333.333333333ms);
 }
 
 
@@ -222,6 +197,7 @@ input {
     cursor: pointer;
 }
 
+/*why can't i mix in or anything here?*/
 #cssSlider> #pageIndicators> .indicator> .hoverPoint {
     margin: .5em;
     display: inline-block;
