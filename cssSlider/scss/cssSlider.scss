@@ -305,9 +305,6 @@ just replace your value based on the ratio equation*/
 
 @mixin full() {
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background: $sliderBackground;
     #sliderImages {
         left: calc((#{$width} - 100vw) / -2);
@@ -353,7 +350,8 @@ just replace your value based on the ratio equation*/
 
 #cssSlider>#sliderImages {
     position: absolute;
-    /*left: calc((#{$width} - 100vw) / -2);*/
+    margin: 0;
+    padding: 0;
     width: $fullWidth;
     /*animation parameters*/
     -webkit-animation-name: slider;
@@ -380,7 +378,8 @@ just replace your value based on the ratio equation*/
     bottom: 0;
     padding: .6em;
     margin: 2em;
-    background-color: #ABB7B7;
+    max-width: calc(100vw - 4em);
+    background-color: $blurbBox;
     /*color of blurb box*/
     border-radius: .5em;
     z-index: -1;
