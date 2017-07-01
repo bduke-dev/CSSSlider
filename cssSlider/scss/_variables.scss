@@ -1,3 +1,15 @@
 $sliderBackground: #5B5B5B;
 $indicatorColor: #F2F1EF;
 $descTextColor: black;
+
+/*sizing*/
+
+
+/*for full screen calculate (100 * width of img) / height of img with vh as units*/
+
+
+/*for normal slider just uncomment the second width*/
+
+$width: 227.555555556vh;
+//$width: 100vw;
+$fullWidth: $width * 6;

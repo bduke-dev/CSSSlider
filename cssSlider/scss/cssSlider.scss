@@ -300,7 +300,7 @@ input {
 }
 
 
-/*the size of the responsixe slider, 
+/*the size of the responsive slider, 
 just replace your value based on the ratio equation*/
 
 @mixin full() {
@@ -309,12 +309,18 @@ just replace your value based on the ratio equation*/
     flex-direction: column;
     justify-content: center;
     background: $sliderBackground;
+    #sliderImages {
+        left: calc((#{$width} - 100vw) / -2);
+    }
 }
 
 @mixin off() {
     padding-bottom: 43.95%;
     /*to find % aspect ratio, (height/width)100*/
     height: 0;
+    #sliderImages {
+        left: 0;
+    }
 }
 
 
@@ -332,41 +338,13 @@ just replace your value based on the ratio equation*/
 }
 
 
-/*full screen display, wide screen only*/
-
-#fullWideOnly:checked~#cssSlider {
-    @media screen and (min-width: 1001px) {
-        /*wide*/
-        @include full();
-    }
-    @media screen and (max-width: 1000px) {
-        /*narrow*/
-        @include off();
-    }
-}
-
-
-/*full screen display, narrow screen only*/
-
-#fullNrowOnly:checked~#cssSlider {
-    @media screen and (min-width: 1001px) {
-        /*wide*/
-        @include off();
-    }
-    @media screen and (max-width: 1000px) {
-        /*narrow*/
-        @include full();
-    }
-}
-
-
 /*size of the images*/
 
 #cssSlider>#sliderImages>img,
 #cssSlider>#sliderImages>a>img {
     //allows images to be wrapped in links
-    width: 227.555555556vh;
-    height: 100vh;
+    width: $width;
+    height: 100%;
     float: left;
 }
 
@@ -375,8 +353,8 @@ just replace your value based on the ratio equation*/
 
 #cssSlider>#sliderImages {
     position: absolute;
-    left: 0;
-    width: 1365.333333333vh;
+    /*left: calc((#{$width} - 100vw) / -2);*/
+    width: $fullWidth;
     /*animation parameters*/
     -webkit-animation-name: slider;
     -webkit-animation-duration: 40s;
@@ -486,23 +464,23 @@ just replace your value based on the ratio equation*/
 }
 
 #cssSlider>#slide2:checked~#sliderImages {
-    margin-left: -100vw;
+    margin-left: -$width;
 }
 
 #cssSlider>#slide3:checked~#sliderImages {
-    margin-left: -200vw;
+    margin-left: -$width * 2;
 }
 
 #cssSlider>#slide4:checked~#sliderImages {
-    margin-left: -300vw;
+    margin-left: -$width * 3;
 }
 
 #cssSlider>#slide5:checked~#sliderImages {
-    margin-left: -400vw;
+    margin-left: -$width * 4;
 }
 
 #cssSlider>#slide6:checked~#sliderImages {
-    margin-left: -500vw;
+    margin-left: -$width * 5;
 }
 
 
@@ -626,23 +604,23 @@ just replace your value based on the ratio equation*/
     }
     16.6666666667%,
     26.6666666667% {
-        transform: translateX(-100vw);
+        transform: translateX(-$width);
     }
     33.3333333333%,
     43.3333333333% {
-        transform: translateX(-200vw);
+        transform: translateX(-$width * 2);
     }
     50%,
     60% {
-        transform: translateX(-300vw);
+        transform: translateX(-$width * 3);
     }
     66.6666666667%,
     76.6666666667% {
-        transform: translateX(-400vw);
+        transform: translateX(-$width * 4);
     }
     83.3333333333%,
     93.3333333333% {
-        transform: translateX(-500vw);
+        transform: translateX(-$width * 5);
     }
     100% {
         transform: translateX(0);
@@ -656,23 +634,23 @@ just replace your value based on the ratio equation*/
     }
     16.6666666667%,
     26.6666666667% {
-        transform: translateX(-100vw);
+        transform: translateX(-$width);
     }
     33.3333333333%,
     43.3333333333% {
-        transform: translateX(-200vw);
+        transform: translateX(-$width * 2);
     }
     50%,
     60% {
-        transform: translateX(-300vw);
+        transform: translateX(-$width * 3);
     }
     66.6666666667%,
     76.6666666667% {
-        transform: translateX(-400vw);
+        transform: translateX(-$width * 4);
     }
     83.3333333333%,
     93.3333333333% {
-        transform: translateX(-500vw);
+        transform: translateX(-$width * 5);
     }
     100% {
         transform: translateX(0);
@@ -696,6 +674,9 @@ just replace your value based on the ratio equation*/
     }
 }
 
+
+/*come back to*/
+
 @keyframes slider-ie {
     0%,
     10% {
@@ -703,23 +684,23 @@ just replace your value based on the ratio equation*/
     }
     16.6666666667%,
     26.6666666667% {
-        margin-left: -100vw;
+        margin-left: -$width;
     }
     33.3333333333%,
     43.3333333333% {
-        margin-left: -200vw;
+        margin-left: -$width * 2;
     }
     50%,
     60% {
-        margin-left: -300vw;
+        margin-left: -$width * 3;
     }
     66.6666666667%,
     76.6666666667% {
-        margin-left: -400vw;
+        margin-left: -$width * 4;
     }
     83.3333333333%,
     93.3333333333% {
-        margin-left: -500vw;
+        margin-left: -$width * 5;
     }
     100% {
         margin-left: -.1vw;
