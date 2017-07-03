@@ -11,12 +11,13 @@
 
 /*the size of the responsive slider*/
 
-@mixin full($width) {
+@mixin immersive($width) {
     #cssSlider {
         height: 100vh;
         background: $sliderBackground;
         #sliderImages {
             left: calc((#{$width} - 100vw) / -2);
+            width: $width * 6;
             /*size of the images*/
             img,
             a>img {
@@ -35,6 +36,7 @@
         height: 0;
         #sliderImages {
             left: 0;
+            width: $width * 6;
             /*size of the images*/
             img,
             a>img {
@@ -46,21 +48,23 @@
     }
 }
 
+
+/*which mode to use*/
+
 @if($MODE=='immersive') {
     /*immersive mode*/
-    @include full($WIDTH);
+    @include immersive($WIDTH);
 }
 
 @else if($MODE=='wideOnly') {
     @media screen and (min-width: 1001px) {
         /*wide*/
-        @include full($WIDTH);
+        @include immersive($WIDTH);
     }
     @media screen and (max-width: 1000px) {
         /*narrow*/
         @include off(100vw);
     }
-    @include full();
 }
 
 @else {
@@ -75,7 +79,6 @@
     position: absolute;
     margin: 0;
     padding: 0;
-    width: $fullWidth;
     /*animation parameters*/
     -webkit-animation-name: slider;
     -webkit-animation-duration: 40s;
