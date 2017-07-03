@@ -1,33 +1,16 @@
 /*sizing*/
-/*for full screen calculate (100 * width of img) / height of img with vh as units*/
-/*for normal slider just uncomment the second width*/
-/*CSS RESET*/
-/* line 5, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/*FONT IMPORT*/
-@font-face {
-  font-family: timeburner;
-  src: url(timeburner.ttf);
-}
-
+/*for full screen calculate (height of slider in vh * width of img) / height of img with vh as units
+for normal slider just uncomment the second width*/
+/*slider imports*/
 /********** NEXT SLIDE ARROW NAVIGATION **********/
 /*APPEARANCE*/
-/* line 29, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
-input {
+/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
+#cssSlider > input {
   /*new wrapper to this*/
   display: none;
 }
 
-/* line 34, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 11, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav {
   position: absolute;
   top: 50%;
@@ -38,7 +21,7 @@ input {
   height: 10vw;
 }
 
-/* line 44, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 21, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL,
 #cssSlider > #pageNav > #playPause > .playPauseBtn,
 #cssSlider > #pageNav > #nextArrow > .slideR {
@@ -49,7 +32,7 @@ input {
   transition: opacity .5s ease-in-out;
 }
 
-/* line 65, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 42, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL {
   width: 10vw;
   height: 10vw;
@@ -60,7 +43,7 @@ input {
   z-index: -1;
 }
 
-/* line 69, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 46, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #nextArrow > .slideR {
   width: 10vw;
   height: 10vw;
@@ -71,7 +54,7 @@ input {
   z-index: -1;
 }
 
-/* line 73, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 50, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > #playBtn {
   width: 10vw;
   height: 10vw;
@@ -82,7 +65,7 @@ input {
   z-index: -1;
 }
 
-/* line 77, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 54, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > #pauseBtn {
   width: 10vw;
   height: 10vw;
@@ -94,24 +77,24 @@ input {
 }
 
 /*POSITION*/
-/* line 84, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 61, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL {
   left: 2vw;
 }
 
-/* line 88, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 65, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > .playPauseBtn {
   left: 50%;
   margin: 0 0 0 -5vw;
 }
 
-/* line 93, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 70, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #nextArrow > .slideR {
   right: 2vw;
 }
 
 /*ONLY DISPLAY IF ON SLIDER*/
-/* line 100, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 77, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav:hover > #previousArrow > .slideL,
 #cssSlider > #pageNav:hover > #playPause > .playPauseBtn,
 #cssSlider > #pageNav:hover > #nextArrow > .slideR,
@@ -122,18 +105,18 @@ input {
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
-/* line 112, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 89, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:not(:checked) ~ #pageNav > #playPause > #pauseBtn {
   display: none;
 }
 
-/* line 116, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 93, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #playPause > #playBtn {
   display: none;
 }
 
 /*WHICH ARROW SHOULD BE ON TOP*/
-/* line 123, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 100, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #slide1:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #slide1:checked ~ #pageNav > #nextArrow > #slideR2,
 #cssSlider > #slide2:checked ~ #pageNav > #previousArrow > #slideL1,
@@ -150,42 +133,42 @@ input {
 }
 
 /*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
-/* line 146, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 123, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR2 {
   -webkit-animation: arrows 40000ms infinite 0ms;
   animation: arrows 40000ms infinite 0ms;
 }
 
-/* line 151, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 128, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL1,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR3 {
   -webkit-animation: arrows 40000ms infinite 6666.66666667ms;
   animation: arrows 40000ms infinite 6666.66666667ms;
 }
 
-/* line 156, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 133, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL2,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR4 {
   -webkit-animation: arrows 40000ms infinite 13333.3333333ms;
   animation: arrows 40000ms infinite 13333.3333333ms;
 }
 
-/* line 161, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 138, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL3,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR5 {
   -webkit-animation: arrows 40000ms infinite 20000ms;
   animation: arrows 40000ms infinite 20000ms;
 }
 
-/* line 166, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 143, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL4,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR6 {
   -webkit-animation: arrows 40000ms infinite 26666.6666667ms;
   animation: arrows 40000ms infinite 26666.6666667ms;
 }
 
-/* line 171, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 148, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL5,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR1 {
   -webkit-animation: arrows 40000ms infinite 33333.3333333ms;
@@ -195,7 +178,7 @@ input {
 /********** END NEXT SLIDE ARROW NAVIGATION **********/
 /********** SLIDE INDICATORS **********/
 /*PAGE INDICATORS APPEARANCE*/
-/* line 185, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators {
   position: absolute;
   bottom: 0;
@@ -204,7 +187,7 @@ input {
   z-index: 15;
 }
 
-/* line 193, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 14, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator {
   display: inline-block;
   height: 1.5em;
@@ -216,7 +199,7 @@ input {
 }
 
 /*why can't i mix in or anything here?*/
-/* line 206, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 27, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator > .hoverPoint {
   margin: .5em;
   display: inline-block;
@@ -229,7 +212,7 @@ input {
   z-index: 16;
 }
 
-/* line 218, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 39, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator > .hoverPoint > .point {
   margin-bottom: .5em;
   display: inline-block;
@@ -242,42 +225,42 @@ input {
 }
 
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
-/* line 237, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 58, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
   -webkit-animation: point 40000ms infinite 0ms;
   animation: point 40000ms infinite 0ms;
 }
 
-/* line 242, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 63, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
   -webkit-animation: point 40000ms infinite 6666.66666667ms;
   animation: point 40000ms infinite 6666.66666667ms;
 }
 
-/* line 247, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 68, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
   -webkit-animation: point 40000ms infinite 13333.3333333ms;
   animation: point 40000ms infinite 13333.3333333ms;
 }
 
-/* line 252, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 73, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
   -webkit-animation: point 40000ms infinite 20000ms;
   animation: point 40000ms infinite 20000ms;
 }
 
-/* line 257, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 78, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
   -webkit-animation: point 40000ms infinite 26666.6666667ms;
   animation: point 40000ms infinite 26666.6666667ms;
 }
 
-/* line 262, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 83, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
   -webkit-animation: point 40000ms infinite 33333.3333333ms;
@@ -285,7 +268,7 @@ input {
 }
 
 /*WHICH INDICATOR SHOULD BE LIT*/
-/* line 270, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 91, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #slide1:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
 #cssSlider > #slide2:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
 #cssSlider > #slide3:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
@@ -297,7 +280,7 @@ input {
 }
 
 /*used to override the animation for lit indicator*/
-/* line 283, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 104, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator:hover > .hoverPoint {
   background: #F2F1EF;
   /*color of page indicator dot*/
@@ -306,50 +289,36 @@ input {
 /********** END SLIDE INDICATORS **********/
 /**********IMAGE/SLIDER STYLING **********/
 /*don't show the other images*/
-/* line 297, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider {
   position: relative;
   overflow: hidden;
 }
 
-/*the size of the responsive slider, 
-just replace your value based on the ratio equation*/
-/*normal display*/
-/* line 326, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
-#off:checked ~ #cssSlider {
-  padding-bottom: 43.95%;
-  /*to find % aspect ratio, (height/width)100*/
-  height: 0;
-}
-
-/* line 318, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
-#off:checked ~ #cssSlider #sliderImages {
-  left: 0;
-}
-
-/*full screen display*/
-/* line 333, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
-#full:checked ~ #cssSlider {
+/*the size of the responsive slider*/
+/*immersive mode*/
+/* line 15, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
+#cssSlider {
   height: 100vh;
   background: #5B5B5B;
 }
 
-/* line 309, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
-#full:checked ~ #cssSlider #sliderImages {
+/* line 18, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
+#cssSlider #sliderImages {
   left: calc((227.555555556vh - 100vw) / -2);
+  /*size of the images*/
 }
 
-/*size of the images*/
-/* line 340, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
-#cssSlider > #sliderImages > img,
-#cssSlider > #sliderImages > a > img {
+/* line 21, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
+#cssSlider #sliderImages img,
+#cssSlider #sliderImages a > img {
   width: 227.555555556vh;
   height: 100%;
   float: left;
 }
 
 /*transition slider size*/
-/* line 351, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 66, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider > #sliderImages {
   position: absolute;
   margin: 0;
@@ -371,7 +340,7 @@ just replace your value based on the ratio equation*/
 
 /********** END IMAGE/SLIDER STYLING **********/
 /********** SLIDER TEXT **********/
-/* line 376, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 3, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #slideDesc > .slideText {
   position: absolute;
   bottom: 0;
@@ -389,7 +358,7 @@ just replace your value based on the ratio equation*/
   transition: 950ms opacity 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms -webkit-transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms visibility 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* line 393, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 20, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #slideDesc > .slideText > p {
   padding: .1em;
   margin: 0;
@@ -400,7 +369,7 @@ just replace your value based on the ratio equation*/
 }
 
 /*BRING THE TEXT FORWARD ON ITS PAGE*/
-/* line 405, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 32, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #slide1:checked ~ #slideDesc > #slideText1,
 #cssSlider > #slide2:checked ~ #slideDesc > #slideText2,
 #cssSlider > #slide3:checked ~ #slideDesc > #slideText3,
@@ -414,42 +383,42 @@ just replace your value based on the ratio equation*/
 }
 
 /*TEXT BOX ANIMATION*/
-/* line 425, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 52, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1 {
   -webkit-animation: textBoxBounce 40000ms infinite 0ms;
   animation: textBoxBounce 40000ms infinite 0ms;
 }
 
-/* line 430, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 57, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText2,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2 {
   -webkit-animation: textBoxBounce 40000ms infinite 6666.66666667ms;
   animation: textBoxBounce 40000ms infinite 6666.66666667ms;
 }
 
-/* line 435, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 62, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText3,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText3 {
   -webkit-animation: textBoxBounce 40000ms infinite 13333.3333333ms;
   animation: textBoxBounce 40000ms infinite 13333.3333333ms;
 }
 
-/* line 440, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 67, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText4,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText4 {
   -webkit-animation: textBoxBounce 40000ms infinite 20000ms;
   animation: textBoxBounce 40000ms infinite 20000ms;
 }
 
-/* line 445, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 72, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText5,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText5 {
   -webkit-animation: textBoxBounce 40000ms infinite 26666.6666667ms;
   animation: textBoxBounce 40000ms infinite 26666.6666667ms;
 }
 
-/* line 450, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 77, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText6,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText6 {
   -webkit-animation: textBoxBounce 40000ms infinite 33333.3333333ms;
@@ -457,33 +426,51 @@ just replace your value based on the ratio equation*/
 }
 
 /********** END SLIDER TEXT **********/
+/*CSS RESET*/
+/* line 3, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/*FONT IMPORT*/
+@font-face {
+  font-family: timeburner;
+  src: url(timeburner.ttf);
+}
+
 /********** MANUAL PAGE ADVANCEMENT **********/
-/* line 461, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 36, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide1:checked ~ #sliderImages {
   margin-left: 0;
 }
 
-/* line 465, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 40, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide2:checked ~ #sliderImages {
   margin-left: -227.555555556vh;
 }
 
-/* line 469, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 44, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide3:checked ~ #sliderImages {
   margin-left: -455.111111112vh;
 }
 
-/* line 473, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 48, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide4:checked ~ #sliderImages {
   margin-left: -682.666666668vh;
 }
 
-/* line 477, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 52, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide5:checked ~ #sliderImages {
   margin-left: -910.222222224vh;
 }
 
-/* line 481, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 56, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide6:checked ~ #sliderImages {
   margin-left: -1137.77777778vh;
 }
@@ -491,7 +478,7 @@ just replace your value based on the ratio equation*/
 /********** END MANUAL PAGE ADVANCEMENT **********/
 /********** PLAY PAUSE OF ALL ANIMATIONS **********/
 /*restart the show*/
-/* line 494, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 69, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide1:checked ~ #sliderImages,
 #cssSlider > #slide2:checked ~ #sliderImages,
 #cssSlider > #slide3:checked ~ #sliderImages,
@@ -503,7 +490,7 @@ just replace your value based on the ratio equation*/
 }
 
 /*pause all animations*/
-/* line 507, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+/* line 82, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #sliderImages,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2,
@@ -648,7 +635,7 @@ just replace your value based on the ratio equation*/
 
 /* IE 10+ hack - cant animate translate */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* line 664, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+  /* line 239, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
   #sliderImages {
     -webkit-animation-name: slider-ie;
     -webkit-animation-duration: 40s;
@@ -788,11 +775,11 @@ just replace your value based on the ratio equation*/
 /********** END ANIMATIONS **********/
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px) {
-  /* line 811, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSlider.scss */
+  /* line 386, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
   #cssSlider > #slideDesc > .slideText,
   #cssSlider > #pageIndicators {
     display: none;
   }
 }
 
-/*# sourceMappingURL=../css/cssSlider.map */
+/*# sourceMappingURL=../../css/cssSlider.map */

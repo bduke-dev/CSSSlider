@@ -1,0 +1,15 @@
+$sliderBackground: #5B5B5B;
+$indicatorColor: #F2F1EF;
+$descTextColor: black;
+$blurbBox: #ABB7B7;
+
+/*sizing*/
+
+
+/*for full screen calculate (height of slider in vh * width of img) / height of img with vh as units
+for normal slider just uncomment the second width*/
+
+$WIDTH: 227.555555556vh;
+//$WIDTH: 100vw;
+$fullWidth: $WIDTH * 6;
+$MODE: immersive;
