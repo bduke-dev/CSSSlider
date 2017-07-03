@@ -17,7 +17,7 @@ body {
 }
 
 /*sizing*/
-/*for full screen calculate (height of slider in vh * width of img) / height of img with vh as units
+/*for full screen calculate (desired height of slider in vh * width of img) / height of img with vh as units
 for normal slider just uncomment the second width*/
 /*slider imports*/
 /********** NEXT SLIDE ARROW NAVIGATION **********/
@@ -315,49 +315,26 @@ for normal slider just uncomment the second width*/
 
 /*the size of the responsive slider*/
 /*which mode to use*/
-@media screen and (min-width: 1001px) {
-  /*wide*/
-  /* line 15, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
-  #cssSlider {
-    height: 100vh;
-    background: #5B5B5B;
-  }
-  /* line 18, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
-  #cssSlider #sliderImages {
-    left: calc((227.555555556vh - 100vw) / -2);
-    width: 1365.33333334vh;
-    /*size of the images*/
-  }
-  /* line 22, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
-  #cssSlider #sliderImages img,
-  #cssSlider #sliderImages a > img {
-    width: 227.555555556vh;
-    height: 100%;
-    float: left;
-  }
+/*immersive mode*/
+/* line 15, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
+#cssSlider {
+  height: 100vh;
+  background: #5B5B5B;
 }
 
-@media screen and (max-width: 1000px) {
-  /*narrow*/
-  /* line 33, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
-  #cssSlider {
-    padding-bottom: 43.95%;
-    /*to find % aspect ratio, (height/width)100*/
-    height: 0;
-  }
-  /* line 37, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
-  #cssSlider #sliderImages {
-    left: 0;
-    width: 600vw;
-    /*size of the images*/
-  }
-  /* line 41, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
-  #cssSlider #sliderImages img,
-  #cssSlider #sliderImages a > img {
-    width: 100vw;
-    height: 100%;
-    float: left;
-  }
+/* line 18, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
+#cssSlider #sliderImages {
+  left: calc((227.555555556vh - 100vw) / -2);
+  width: 1365.33333333vh;
+  /*size of the images*/
+}
+
+/* line 22, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
+#cssSlider #sliderImages img,
+#cssSlider #sliderImages a > img {
+  width: 227.555555556vh;
+  height: 100%;
+  float: left;
 }
 
 /*transition slider size*/
@@ -470,7 +447,7 @@ for normal slider just uncomment the second width*/
 /********** END SLIDER TEXT **********/
 /********** PLAY PAUSE OF ALL ANIMATIONS **********/
 /*restart the show*/
-/* line 4, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide1:checked ~ #sliderImages,
 #cssSlider > #slide2:checked ~ #sliderImages,
 #cssSlider > #slide3:checked ~ #sliderImages,
@@ -482,7 +459,7 @@ for normal slider just uncomment the second width*/
 }
 
 /*pause all animations*/
-/* line 15, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+/* line 19, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #sliderImages,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2,
@@ -518,7 +495,7 @@ for normal slider just uncomment the second width*/
 /********** AUTOMATIC PAGE ADVANCEMENT **********/
 /* IE 10+ hack - cant animate translate */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* line 194, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+  /* line 208, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
   #sliderImages {
     -webkit-animation-name: slider-ie;
     -webkit-animation-duration: 40s;
@@ -534,297 +511,157 @@ for normal slider just uncomment the second width*/
 /********** END AUTOMATIC PAGE ADVANCEMENT **********/
 /*advancement mode based on chosen size*/
 /*which mode to use*/
-@media screen and (min-width: 1001px) {
-  /*wide*/
-  /* line 47, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide1:checked ~ #sliderImages {
-    margin-left: 0;
+/*immersive mode*/
+/* line 55, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+#cssSlider > #slide1:checked ~ #sliderImages {
+  margin-left: 0;
+}
+
+/* line 58, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+#cssSlider > #slide2:checked ~ #sliderImages {
+  margin-left: -227.555555556vh;
+}
+
+/* line 61, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+#cssSlider > #slide3:checked ~ #sliderImages {
+  margin-left: -455.111111111vh;
+}
+
+/* line 64, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+#cssSlider > #slide4:checked ~ #sliderImages {
+  margin-left: -682.666666667vh;
+}
+
+/* line 67, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+#cssSlider > #slide5:checked ~ #sliderImages {
+  margin-left: -910.222222222vh;
+}
+
+/* line 70, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+#cssSlider > #slide6:checked ~ #sliderImages {
+  margin-left: -1137.77777778vh;
+}
+
+@keyframes slider {
+  0%,
+  10% {
+    transform: translateX(0);
   }
-  /* line 50, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide2:checked ~ #sliderImages {
-    margin-left: -227.555555556vh;
+  16.6666666667%,
+  26.6666666667% {
+    transform: translateX(-227.555555556vh);
   }
-  /* line 53, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide3:checked ~ #sliderImages {
-    margin-left: -455.111111112vh;
+  33.3333333333%,
+  43.3333333333% {
+    transform: translateX(-455.111111111vh);
   }
-  /* line 56, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide4:checked ~ #sliderImages {
-    margin-left: -682.666666668vh;
+  50%,
+  60% {
+    transform: translateX(-682.666666667vh);
   }
-  /* line 59, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide5:checked ~ #sliderImages {
-    margin-left: -910.222222224vh;
+  66.6666666667%,
+  76.6666666667% {
+    transform: translateX(-910.222222222vh);
   }
-  /* line 62, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide6:checked ~ #sliderImages {
-    margin-left: -1137.77777778vh;
+  83.3333333333%,
+  93.3333333333% {
+    transform: translateX(-1137.77777778vh);
   }
-  @keyframes slider {
-    0%,
-    10% {
-      transform: translateX(0);
-    }
-    16.6666666667%,
-    26.6666666667% {
-      transform: translateX(-227.555555556vh);
-    }
-    33.3333333333%,
-    43.3333333333% {
-      transform: translateX(-455.111111112vh);
-    }
-    50%,
-    60% {
-      transform: translateX(-682.666666668vh);
-    }
-    66.6666666667%,
-    76.6666666667% {
-      transform: translateX(-910.222222224vh);
-    }
-    83.3333333333%,
-    93.3333333333% {
-      transform: translateX(-1137.77777778vh);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  @-webkit-keyframes slider {
-    0%,
-    10% {
-      transform: translateX(0);
-    }
-    16.6666666667%,
-    26.6666666667% {
-      transform: translateX(-227.555555556vh);
-    }
-    33.3333333333%,
-    43.3333333333% {
-      transform: translateX(-455.111111112vh);
-    }
-    50%,
-    60% {
-      transform: translateX(-682.666666668vh);
-    }
-    66.6666666667%,
-    76.6666666667% {
-      transform: translateX(-910.222222224vh);
-    }
-    83.3333333333%,
-    93.3333333333% {
-      transform: translateX(-1137.77777778vh);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  /*IE FIX*/
-  @keyframes slider-ie {
-    0%,
-    10% {
-      margin-left: 0;
-    }
-    16.6666666667%,
-    26.6666666667% {
-      margin-left: -227.555555556vh;
-    }
-    33.3333333333%,
-    43.3333333333% {
-      margin-left: -455.111111112vh;
-    }
-    50%,
-    60% {
-      margin-left: -682.666666668vh;
-    }
-    66.6666666667%,
-    76.6666666667% {
-      margin-left: -910.222222224vh;
-    }
-    83.3333333333%,
-    93.3333333333% {
-      margin-left: -1137.77777778vh;
-    }
-    100% {
-      margin-left: -.1vw;
-      /*can't be 0, gives blank page*/
-    }
-  }
-  @-webkit-keyframes slider-ie {
-    0%,
-    10% {
-      margin-left: 0;
-    }
-    16.6666666667%,
-    26.6666666667% {
-      margin-left: -227.555555556vh;
-    }
-    33.3333333333%,
-    43.3333333333% {
-      margin-left: -455.111111112vh;
-    }
-    50%,
-    60% {
-      margin-left: -682.666666668vh;
-    }
-    66.6666666667%,
-    76.6666666667% {
-      margin-left: -910.222222224vh;
-    }
-    83.3333333333%,
-    93.3333333333% {
-      margin-left: -1137.77777778vh;
-    }
-    100% {
-      margin-left: -.1vw;
-      /*can't be 0, gives blank page*/
-    }
+  100% {
+    transform: translateX(0);
   }
 }
 
-@media screen and (max-width: 1000px) {
-  /*narrow*/
-  /* line 47, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide1:checked ~ #sliderImages {
+@-webkit-keyframes slider {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  16.6666666667%,
+  26.6666666667% {
+    transform: translateX(-227.555555556vh);
+  }
+  33.3333333333%,
+  43.3333333333% {
+    transform: translateX(-455.111111111vh);
+  }
+  50%,
+  60% {
+    transform: translateX(-682.666666667vh);
+  }
+  66.6666666667%,
+  76.6666666667% {
+    transform: translateX(-910.222222222vh);
+  }
+  83.3333333333%,
+  93.3333333333% {
+    transform: translateX(-1137.77777778vh);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*IE FIX*/
+@keyframes slider-ie {
+  0%,
+  10% {
     margin-left: 0;
   }
-  /* line 50, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide2:checked ~ #sliderImages {
-    margin-left: -100vw;
+  16.6666666667%,
+  26.6666666667% {
+    margin-left: -227.555555556vh;
   }
-  /* line 53, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide3:checked ~ #sliderImages {
-    margin-left: -200vw;
+  33.3333333333%,
+  43.3333333333% {
+    margin-left: -455.111111111vh;
   }
-  /* line 56, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide4:checked ~ #sliderImages {
-    margin-left: -300vw;
+  50%,
+  60% {
+    margin-left: -682.666666667vh;
   }
-  /* line 59, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide5:checked ~ #sliderImages {
-    margin-left: -400vw;
+  66.6666666667%,
+  76.6666666667% {
+    margin-left: -910.222222222vh;
   }
-  /* line 62, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
-  #cssSlider > #slide6:checked ~ #sliderImages {
-    margin-left: -500vw;
+  83.3333333333%,
+  93.3333333333% {
+    margin-left: -1137.77777778vh;
   }
-  @keyframes slider {
-    0%,
-    10% {
-      transform: translateX(0);
-    }
-    16.6666666667%,
-    26.6666666667% {
-      transform: translateX(-100vw);
-    }
-    33.3333333333%,
-    43.3333333333% {
-      transform: translateX(-200vw);
-    }
-    50%,
-    60% {
-      transform: translateX(-300vw);
-    }
-    66.6666666667%,
-    76.6666666667% {
-      transform: translateX(-400vw);
-    }
-    83.3333333333%,
-    93.3333333333% {
-      transform: translateX(-500vw);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  100% {
+    margin-left: -.1vw;
+    /*can't be 0, gives blank page*/
   }
-  @-webkit-keyframes slider {
-    0%,
-    10% {
-      transform: translateX(0);
-    }
-    16.6666666667%,
-    26.6666666667% {
-      transform: translateX(-100vw);
-    }
-    33.3333333333%,
-    43.3333333333% {
-      transform: translateX(-200vw);
-    }
-    50%,
-    60% {
-      transform: translateX(-300vw);
-    }
-    66.6666666667%,
-    76.6666666667% {
-      transform: translateX(-400vw);
-    }
-    83.3333333333%,
-    93.3333333333% {
-      transform: translateX(-500vw);
-    }
-    100% {
-      transform: translateX(0);
-    }
+}
+
+@-webkit-keyframes slider-ie {
+  0%,
+  10% {
+    margin-left: 0;
   }
-  /*IE FIX*/
-  @keyframes slider-ie {
-    0%,
-    10% {
-      margin-left: 0;
-    }
-    16.6666666667%,
-    26.6666666667% {
-      margin-left: -100vw;
-    }
-    33.3333333333%,
-    43.3333333333% {
-      margin-left: -200vw;
-    }
-    50%,
-    60% {
-      margin-left: -300vw;
-    }
-    66.6666666667%,
-    76.6666666667% {
-      margin-left: -400vw;
-    }
-    83.3333333333%,
-    93.3333333333% {
-      margin-left: -500vw;
-    }
-    100% {
-      margin-left: -.1vw;
-      /*can't be 0, gives blank page*/
-    }
+  16.6666666667%,
+  26.6666666667% {
+    margin-left: -227.555555556vh;
   }
-  @-webkit-keyframes slider-ie {
-    0%,
-    10% {
-      margin-left: 0;
-    }
-    16.6666666667%,
-    26.6666666667% {
-      margin-left: -100vw;
-    }
-    33.3333333333%,
-    43.3333333333% {
-      margin-left: -200vw;
-    }
-    50%,
-    60% {
-      margin-left: -300vw;
-    }
-    66.6666666667%,
-    76.6666666667% {
-      margin-left: -400vw;
-    }
-    83.3333333333%,
-    93.3333333333% {
-      margin-left: -500vw;
-    }
-    100% {
-      margin-left: -.1vw;
-      /*can't be 0, gives blank page*/
-    }
+  33.3333333333%,
+  43.3333333333% {
+    margin-left: -455.111111111vh;
+  }
+  50%,
+  60% {
+    margin-left: -682.666666667vh;
+  }
+  66.6666666667%,
+  76.6666666667% {
+    margin-left: -910.222222222vh;
+  }
+  83.3333333333%,
+  93.3333333333% {
+    margin-left: -1137.77777778vh;
+  }
+  100% {
+    margin-left: -.1vw;
+    /*can't be 0, gives blank page*/
   }
 }
 
@@ -943,7 +780,7 @@ for normal slider just uncomment the second width*/
 /********** END ANIMATIONS **********/
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px) {
-  /* line 349, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
+  /* line 34, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/cssSlider.scss */
   #cssSlider > #slideDesc > .slideText,
   #cssSlider > #pageIndicators {
     display: none;

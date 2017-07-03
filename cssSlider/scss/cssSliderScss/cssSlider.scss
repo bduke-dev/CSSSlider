@@ -27,3 +27,12 @@ body {
 @import '_slider';
 @import '_slideDesc';
 @import '_slideAdvancement';
+
+ /*FOR MOBILE*/
+    
+    @media screen and (max-width: 1000px) {
+        #cssSlider>#slideDesc>.slideText,
+        #cssSlider>#pageIndicators {
+            display: none;
+        }
+    }
