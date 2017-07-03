@@ -139,9 +139,9 @@
     }
 }
 
-@mixin automaticAdvancementIE($width, $MODE, $widthNarrow){
+@mixin automaticAdvancementIE($width, $widthNarrow){
 	/*IE FIX*/
-	@if($MODE !='wideOnly'){
+	@if($MODE !='mixed'){
 		@keyframes slider-ie {
 			0%,
 			10% {
@@ -249,10 +249,10 @@
     /*immersive mode*/
     @include manualAdvancement($IMMERSIVE_WIDTH);
     @include automaticAdvancement($IMMERSIVE_WIDTH);
-	@include automaticAdvancementIE($IMMERSIVE_WIDTH, $MODE, 0);
+	@include automaticAdvancementIE($IMMERSIVE_WIDTH, 0);
 }
 
-@else if($MODE=='wideOnly') {
+@else if($MODE=='mixed') {
     @media screen and (min-width: 1001px) {
         /*wide*/
         @include manualAdvancement($IMMERSIVE_WIDTH);
@@ -263,14 +263,14 @@
         @include manualAdvancement(100vw);
         @include automaticAdvancement(100vw);
     }
-	@include automaticAdvancementIE($IMMERSIVE_WIDTH, $MODE, 100vw);
+	@include automaticAdvancementIE($IMMERSIVE_WIDTH, 100vw);
 }
 
 @else {
     /*normal display*/
     @include manualAdvancement(100vw);
     @include automaticAdvancement(100vw);
-	@include automaticAdvancementIE(100vw, $MODE, 0);
+	@include automaticAdvancementIE(100vw, 0);
 }
 
 

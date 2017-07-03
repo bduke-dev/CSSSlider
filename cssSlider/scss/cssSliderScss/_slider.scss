@@ -52,7 +52,7 @@
 	#cssSlider>#sliderImages{
 		/* IE 10+ hack - cant animate translate */
 		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-			animation-name: slider-ie-#{$type};
+			animation-name: slider-ie#{$type};
 			animation-duration: 40s;
 			animation-timing-function: ease-in-out;
 			animation-iteration-count: infinite;
@@ -66,19 +66,19 @@
 @if($MODE=='immersive') {
     /*immersive mode*/
     @include immersive($IMMERSIVE_WIDTH);
-	@include animationMode();
+	@include animationMode('');
 }
 
-@else if($MODE=='wideOnly') {
+@else if($MODE=='mixed') {
     @media screen and (min-width: 1001px) {
         /*wide*/
         @include immersive($IMMERSIVE_WIDTH);
-		@include animationMode(wide);
+		@include animationMode(-wide);
     }
     @media screen and (max-width: 1000px) {
         /*narrow*/
         @include off(100vw);
-		@include animationMode(narrow);
+		@include animationMode(-narrow);
     }
 }
 
