@@ -137,86 +137,105 @@
             transform: translateX(0);
         }
     }
-    /*IE FIX*/
-    @keyframes slider-ie {
-        0%,
-        10% {
-            margin-left: 0;
-        }
-        16.6666666667%,
-        26.6666666667% {
-            margin-left: -$width;
-        }
-        33.3333333333%,
-        43.3333333333% {
-            margin-left: -$width * 2;
-        }
-        50%,
-        60% {
-            margin-left: -$width * 3;
-        }
-        66.6666666667%,
-        76.6666666667% {
-            margin-left: -$width * 4;
-        }
-        83.3333333333%,
-        93.3333333333% {
-            margin-left: -$width * 5;
-        }
-        100% {
-            margin-left: -.1vw;
-            /*can't be 0, gives blank page*/
-        }
-    }
-    @-webkit-keyframes slider-ie {
-        0%,
-        10% {
-            margin-left: 0;
-        }
-        16.6666666667%,
-        26.6666666667% {
-            margin-left: -$width;
-        }
-        33.3333333333%,
-        43.3333333333% {
-            margin-left: -$width * 2;
-        }
-        50%,
-        60% {
-            margin-left: -$width * 3;
-        }
-        66.6666666667%,
-        76.6666666667% {
-            margin-left: -$width * 4;
-        }
-        83.3333333333%,
-        93.3333333333% {
-            margin-left: -$width * 5;
-        }
-        100% {
-            margin-left: -.1vw;
-            /*can't be 0, gives blank page*/
-        }
-    }
 }
 
-
-/* IE 10+ hack - cant animate translate */
-
-@media screen and (-ms-high-contrast: active),
-(-ms-high-contrast: none) {
-    #sliderImages {
-        -webkit-animation-name: slider-ie;
-        -webkit-animation-duration: 40s;
-        -webkit-animation-timing-function: ease-in-out;
-        -webkit-animation-iteration-count: infinite;
-        animation-name: slider-ie;
-        animation-duration: 40s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-    }
+@mixin automaticAdvancementIE($width, $MODE, $widthNarrow){
+	/*IE FIX*/
+	@if($MODE !='wideOnly'){
+		@keyframes slider-ie {
+			0%,
+			10% {
+				margin-left: 0;
+			}
+			16.6666666667%,
+			26.6666666667% {
+				margin-left: -$width;
+			}
+			33.3333333333%,
+			43.3333333333% {
+				margin-left: -$width * 2;
+			}
+			50%,
+			60% {
+				margin-left: -$width * 3;
+			}
+			66.6666666667%,
+			76.6666666667% {
+				margin-left: -$width * 4;
+			}
+			83.3333333333%,
+			93.3333333333% {
+				margin-left: -$width * 5;
+			}
+			100% {
+				margin-left: -.1vw;
+				/*can't be 0, gives blank page*/
+			}
+		}
+	}
+	@else{
+		@keyframes slider-ie-wide {
+			0%,
+			10% {
+				margin-left: 0;
+			}
+			16.6666666667%,
+			26.6666666667% {
+				margin-left: -$width;
+			}
+			33.3333333333%,
+			43.3333333333% {
+				margin-left: -$width * 2;
+			}
+			50%,
+			60% {
+				margin-left: -$width * 3;
+			}
+			66.6666666667%,
+			76.6666666667% {
+				margin-left: -$width * 4;
+			}
+			83.3333333333%,
+			93.3333333333% {
+				margin-left: -$width * 5;
+			}
+			100% {
+				margin-left: -.1vw;
+				/*can't be 0, gives blank page*/
+			}
+		}
+		@keyframes slider-ie-narrow {
+			0%,
+			10% {
+				margin-left: 0;
+			}
+			16.6666666667%,
+			26.6666666667% {
+				margin-left: -$widthNarrow;
+			}
+			33.3333333333%,
+			43.3333333333% {
+				margin-left: -$widthNarrow * 2;
+			}
+			50%,
+			60% {
+				margin-left: -$widthNarrow * 3;
+			}
+			66.6666666667%,
+			76.6666666667% {
+				margin-left: -$widthNarrow * 4;
+			}
+			83.3333333333%,
+			93.3333333333% {
+				margin-left: -$widthNarrow * 5;
+			}
+			100% {
+				margin-left: -.1vw;
+				/*can't be 0, gives blank page*/
+			}
+		}
+	}
 }
-
 
 /********** END AUTOMATIC PAGE ADVANCEMENT **********/
 
@@ -230,6 +249,7 @@
     /*immersive mode*/
     @include manualAdvancement($IMMERSIVE_WIDTH);
     @include automaticAdvancement($IMMERSIVE_WIDTH);
+	@include automaticAdvancementIE($IMMERSIVE_WIDTH, $MODE, 0);
 }
 
 @else if($MODE=='wideOnly') {
@@ -243,12 +263,14 @@
         @include manualAdvancement(100vw);
         @include automaticAdvancement(100vw);
     }
+	@include automaticAdvancementIE($IMMERSIVE_WIDTH, $MODE, 100vw);
 }
 
 @else {
     /*normal display*/
     @include manualAdvancement(100vw);
     @include automaticAdvancement(100vw);
+	@include automaticAdvancementIE(100vw, $MODE, 0);
 }
 
 
