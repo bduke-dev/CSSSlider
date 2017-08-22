@@ -74,13 +74,13 @@
 
 /*ONLY DISPLAY IF ON SLIDER*/
 
+#cssSlider>#pageNav:hover>#playPause>.playPauseBtn {
+    opacity: 0.5;
+}
+
 #cssSlider>#pageNav:hover>#previousArrow>.slideL,
-#cssSlider>#pageNav:hover>#playPause>.playPauseBtn,
-#cssSlider>#pageNav:hover>#nextArrow>.slideR,
-#cssSlider #sliderImages:hover~#pageNav #previousArrow .slideL,
-#cssSlider>#sliderImages:hover~#pageNav>#playPause>.playPauseBtn,
-#cssSlider>#sliderImages:hover~#pageNav>#nextArrow>.slideR {
-    opacity: 1;
+#cssSlider>#pageNav:hover>#nextArrow>.slideR {
+    opacity: 0.1;
 }
 
 
