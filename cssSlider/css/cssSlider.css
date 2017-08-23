@@ -1,5 +1,4 @@
 /*CSS RESET*/
-/* line 3, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/cssSlider.scss */
 html,
 body {
   margin: 0;
@@ -22,13 +21,11 @@ for normal slider just uncomment the second width*/
 /*slider imports*/
 /********** NEXT SLIDE ARROW NAVIGATION **********/
 /*APPEARANCE*/
-/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > input {
   /*new wrapper to this*/
   display: none;
 }
 
-/* line 11, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav {
   position: absolute;
   top: 50%;
@@ -39,7 +36,6 @@ for normal slider just uncomment the second width*/
   height: 10vw;
 }
 
-/* line 21, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL,
 #cssSlider > #pageNav > #playPause > .playPauseBtn,
 #cssSlider > #pageNav > #nextArrow > .slideR {
@@ -50,7 +46,6 @@ for normal slider just uncomment the second width*/
   transition: opacity .5s ease-in-out;
 }
 
-/* line 42, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL {
   width: 10vw;
   height: 10vw;
@@ -61,7 +56,6 @@ for normal slider just uncomment the second width*/
   z-index: -1;
 }
 
-/* line 46, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #nextArrow > .slideR {
   width: 10vw;
   height: 10vw;
@@ -72,7 +66,6 @@ for normal slider just uncomment the second width*/
   z-index: -1;
 }
 
-/* line 50, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > #playBtn {
   width: 10vw;
   height: 10vw;
@@ -83,7 +76,6 @@ for normal slider just uncomment the second width*/
   z-index: -1;
 }
 
-/* line 54, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > #pauseBtn {
   width: 10vw;
   height: 10vw;
@@ -95,47 +87,39 @@ for normal slider just uncomment the second width*/
 }
 
 /*POSITION*/
-/* line 61, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL {
   left: 2vw;
 }
 
-/* line 65, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > .playPauseBtn {
   left: 50%;
   margin: 0 0 0 -5vw;
 }
 
-/* line 70, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #nextArrow > .slideR {
   right: 2vw;
 }
 
 /*ONLY DISPLAY IF ON SLIDER*/
-/* line 78, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav:hover > #playPause > .playPauseBtn {
   opacity: 0.7;
 }
 
-/* line 82, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #pageNav:hover > #previousArrow > .slideL,
 #cssSlider > #pageNav:hover > #nextArrow > .slideR {
   opacity: 0.116666666667;
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
-/* line 90, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:not(:checked) ~ #pageNav > #playPause > #pauseBtn {
   display: none;
 }
 
-/* line 94, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #playPause > #playBtn {
   display: none;
 }
 
 /*WHICH ARROW SHOULD BE ON TOP*/
-/* line 101, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #slide1:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #slide1:checked ~ #pageNav > #nextArrow > #slideR2,
 #cssSlider > #slide2:checked ~ #pageNav > #previousArrow > #slideL1,
@@ -152,42 +136,36 @@ for normal slider just uncomment the second width*/
 }
 
 /*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
-/* line 124, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR2 {
   -webkit-animation: arrows 40000ms infinite 0ms;
   animation: arrows 40000ms infinite 0ms;
 }
 
-/* line 129, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL1,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR3 {
   -webkit-animation: arrows 40000ms infinite 6666.66666667ms;
   animation: arrows 40000ms infinite 6666.66666667ms;
 }
 
-/* line 134, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL2,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR4 {
   -webkit-animation: arrows 40000ms infinite 13333.3333333ms;
   animation: arrows 40000ms infinite 13333.3333333ms;
 }
 
-/* line 139, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL3,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR5 {
   -webkit-animation: arrows 40000ms infinite 20000ms;
   animation: arrows 40000ms infinite 20000ms;
 }
 
-/* line 144, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL4,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR6 {
   -webkit-animation: arrows 40000ms infinite 26666.6666667ms;
   animation: arrows 40000ms infinite 26666.6666667ms;
 }
 
-/* line 149, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL5,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR1 {
   -webkit-animation: arrows 40000ms infinite 33333.3333333ms;
@@ -197,7 +175,6 @@ for normal slider just uncomment the second width*/
 /********** END NEXT SLIDE ARROW NAVIGATION **********/
 /********** SLIDE INDICATORS **********/
 /*PAGE INDICATORS APPEARANCE*/
-/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators {
   position: absolute;
   bottom: 0;
@@ -206,7 +183,6 @@ for normal slider just uncomment the second width*/
   z-index: 15;
 }
 
-/* line 14, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator {
   display: inline-block;
   height: 1.5em;
@@ -218,7 +194,6 @@ for normal slider just uncomment the second width*/
 }
 
 /*why can't i mix in or anything here?*/
-/* line 27, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator > .hoverPoint {
   margin: .5em;
   display: inline-block;
@@ -231,7 +206,6 @@ for normal slider just uncomment the second width*/
   z-index: 16;
 }
 
-/* line 39, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator > .hoverPoint > .point {
   margin-bottom: .5em;
   display: inline-block;
@@ -244,42 +218,36 @@ for normal slider just uncomment the second width*/
 }
 
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
-/* line 58, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
   -webkit-animation: point 40000ms infinite 0ms;
   animation: point 40000ms infinite 0ms;
 }
 
-/* line 63, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
   -webkit-animation: point 40000ms infinite 6666.66666667ms;
   animation: point 40000ms infinite 6666.66666667ms;
 }
 
-/* line 68, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
   -webkit-animation: point 40000ms infinite 13333.3333333ms;
   animation: point 40000ms infinite 13333.3333333ms;
 }
 
-/* line 73, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
   -webkit-animation: point 40000ms infinite 20000ms;
   animation: point 40000ms infinite 20000ms;
 }
 
-/* line 78, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
   -webkit-animation: point 40000ms infinite 26666.6666667ms;
   animation: point 40000ms infinite 26666.6666667ms;
 }
 
-/* line 83, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
   -webkit-animation: point 40000ms infinite 33333.3333333ms;
@@ -287,7 +255,6 @@ for normal slider just uncomment the second width*/
 }
 
 /*WHICH INDICATOR SHOULD BE LIT*/
-/* line 91, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #slide1:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
 #cssSlider > #slide2:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
 #cssSlider > #slide3:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
@@ -299,7 +266,6 @@ for normal slider just uncomment the second width*/
 }
 
 /*used to override the animation for lit indicator*/
-/* line 104, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator:hover > .hoverPoint {
   background: #F2F1EF;
   /*color of page indicator dot*/
@@ -308,7 +274,6 @@ for normal slider just uncomment the second width*/
 /********** END SLIDE INDICATORS **********/
 /**********IMAGE/SLIDER STYLING **********/
 /*don't show the other images*/
-/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider {
   position: relative;
   overflow: hidden;
@@ -317,21 +282,18 @@ for normal slider just uncomment the second width*/
 /*the size of the responsive slider*/
 /*which mode to use*/
 /*normal display*/
-/* line 33, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider {
   padding-bottom: 43.9453125%;
   /*to find % aspect ratio, (height/width)100*/
   height: 0;
 }
 
-/* line 37, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider #sliderImages {
   left: 0;
   width: 600vw;
   /*size of the images*/
 }
 
-/* line 41, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider #sliderImages img,
 #cssSlider #sliderImages a > img {
   width: 100vw;
@@ -339,13 +301,11 @@ for normal slider just uncomment the second width*/
   float: left;
 }
 
-/* line 52, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider > #sliderImages {
   /* IE 10+ hack - cant animate translate */
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* line 52, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
   #cssSlider > #sliderImages {
     animation-name: slider-ie !important;
     animation-duration: 40s;
@@ -357,7 +317,6 @@ for normal slider just uncomment the second width*/
 /*animation to use*/
 /*animation parameters*/
 /*not ie use these animations*/
-/* line 100, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider > #sliderImages {
   -webkit-animation-name: slider;
   -webkit-animation-duration: 40s;
@@ -369,7 +328,6 @@ for normal slider just uncomment the second width*/
   animation-iteration-count: infinite;
 }
 
-/* line 111, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slider.scss */
 #cssSlider > #sliderImages {
   position: absolute;
   margin: 0;
@@ -381,7 +339,6 @@ for normal slider just uncomment the second width*/
 
 /********** END IMAGE/SLIDER STYLING **********/
 /********** SLIDER TEXT **********/
-/* line 3, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #slideDesc > .slideText {
   position: absolute;
   bottom: 0;
@@ -399,7 +356,6 @@ for normal slider just uncomment the second width*/
   transition: 950ms opacity 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms -webkit-transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms visibility 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* line 20, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #slideDesc > .slideText > p {
   padding: .1em;
   margin: 0;
@@ -410,7 +366,6 @@ for normal slider just uncomment the second width*/
 }
 
 /*BRING THE TEXT FORWARD ON ITS PAGE*/
-/* line 32, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #slide1:checked ~ #slideDesc > #slideText1,
 #cssSlider > #slide2:checked ~ #slideDesc > #slideText2,
 #cssSlider > #slide3:checked ~ #slideDesc > #slideText3,
@@ -424,42 +379,36 @@ for normal slider just uncomment the second width*/
 }
 
 /*TEXT BOX ANIMATION*/
-/* line 52, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1 {
   -webkit-animation: textBoxBounce 40000ms infinite 0ms;
   animation: textBoxBounce 40000ms infinite 0ms;
 }
 
-/* line 57, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText2,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2 {
   -webkit-animation: textBoxBounce 40000ms infinite 6666.66666667ms;
   animation: textBoxBounce 40000ms infinite 6666.66666667ms;
 }
 
-/* line 62, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText3,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText3 {
   -webkit-animation: textBoxBounce 40000ms infinite 13333.3333333ms;
   animation: textBoxBounce 40000ms infinite 13333.3333333ms;
 }
 
-/* line 67, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText4,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText4 {
   -webkit-animation: textBoxBounce 40000ms infinite 20000ms;
   animation: textBoxBounce 40000ms infinite 20000ms;
 }
 
-/* line 72, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText5,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText5 {
   -webkit-animation: textBoxBounce 40000ms infinite 26666.6666667ms;
   animation: textBoxBounce 40000ms infinite 26666.6666667ms;
 }
 
-/* line 77, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText6,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText6 {
   -webkit-animation: textBoxBounce 40000ms infinite 33333.3333333ms;
@@ -469,7 +418,6 @@ for normal slider just uncomment the second width*/
 /********** END SLIDER TEXT **********/
 /********** PLAY PAUSE OF ALL ANIMATIONS **********/
 /*restart the show*/
-/* line 6, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide1:checked ~ #sliderImages,
 #cssSlider > #slide2:checked ~ #sliderImages,
 #cssSlider > #slide3:checked ~ #sliderImages,
@@ -481,7 +429,6 @@ for normal slider just uncomment the second width*/
 }
 
 /*pause all animations*/
-/* line 19, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #sliderImages,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2,
@@ -519,32 +466,26 @@ for normal slider just uncomment the second width*/
 /*advancement mode based on chosen size*/
 /*which mode to use*/
 /*normal display*/
-/* line 55, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide1:checked ~ #sliderImages {
   margin-left: 0;
 }
 
-/* line 58, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide2:checked ~ #sliderImages {
   margin-left: -100vw;
 }
 
-/* line 61, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide3:checked ~ #sliderImages {
   margin-left: -200vw;
 }
 
-/* line 64, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide4:checked ~ #sliderImages {
   margin-left: -300vw;
 }
 
-/* line 67, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide5:checked ~ #sliderImages {
   margin-left: -400vw;
 }
 
-/* line 70, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/_slideAdvancement.scss */
 #cssSlider > #slide6:checked ~ #sliderImages {
   margin-left: -500vw;
 }
@@ -756,11 +697,8 @@ for normal slider just uncomment the second width*/
 /********** END ANIMATIONS **********/
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px) {
-  /* line 34, /home/brandon/GitHub/CSS_Slider/cssSlider/scss/cssSliderScss/cssSlider.scss */
   #cssSlider > #slideDesc > .slideText,
   #cssSlider > #pageIndicators {
     display: none;
   }
 }
-
-/*# sourceMappingURL=../../css/cssSlider.map */
