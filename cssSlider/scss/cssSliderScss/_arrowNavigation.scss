@@ -74,13 +74,14 @@
 
 /*ONLY DISPLAY IF ON SLIDER*/
 
+$opacity: 0.7;
 #cssSlider>#pageNav:hover>#playPause>.playPauseBtn {
-    opacity: 0.5;
+    opacity: $opacity;
 }
 
 #cssSlider>#pageNav:hover>#previousArrow>.slideL,
 #cssSlider>#pageNav:hover>#nextArrow>.slideR {
-    opacity: 0.1;
+    opacity: $opacity/6;
 }
 
 
