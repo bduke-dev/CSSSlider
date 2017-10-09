@@ -140,6 +140,7 @@
 }
 
 @mixin automaticAdvancementIE($width, $widthNarrow){
+	/* AGAIN, PLEASE DIE IE */
 	/*IE FIX*/
 	@if($MODE !='mixed'){
 		@keyframes slider-ie {

@@ -49,6 +49,7 @@
 }
 
 @mixin animationMode($type) {
+	/* PLEASE DIE IE */
     #cssSlider>#sliderImages {
         /* IE 10+ hack - cant animate translate */
         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
