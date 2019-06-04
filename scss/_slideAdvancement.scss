@@ -1,0 +1,277 @@
+/********** PLAY PAUSE OF ALL ANIMATIONS **********/
+
+
+/*restart the show*/
+$i: 1;
+@while $i <= $SLIDE_COUNT{
+	#cssSlider>#slide#{$i}:checked~#sliderImages
+	{
+    -webkit-animation: none;
+    animation: none;
+	}
+
+	$i: $i + 1;
+}
+
+/*pause all animations*/
+#cssSlider>#pause:checked~#sliderImages {
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+}
+
+$i: 1;
+@while $i <= $SLIDE_COUNT{
+	#cssSlider>#pause:checked~#slideDesc>#slideText#{$i},
+	#cssSlider>#pause:checked~#pageNav #previousArrow>#slideL#{$i},
+	#cssSlider>#pause:checked~#pageNav>#nextArrow>#slideR#{$i},
+	#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point#{$i}
+	{
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+	}
+
+	$i: $i + 1;
+}
+
+/********** END PLAY PAUSE OF ALL ANIMATIONS **********/
+
+
+/********** MANUAL PAGE ADVANCEMENT **********/
+
+$i: 1;
+$c: 0;
+@while $i <= $SLIDE_COUNT{
+	#cssSlider>#slide#{$i}:checked~#sliderImages {
+		margin-left: -$SLIDER_WIDTH * $c;
+	}
+
+	$i: $i + 1;
+	$c: $c + 1;
+}
+
+/********** END MANUAL PAGE ADVANCEMENT **********/
+
+
+/********** AUTOMATIC PAGE ADVANCEMENT **********/
+@keyframes slider{
+	$gap: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT))/$SLIDE_COUNT;
+	$i: 0;
+	$c: 0;
+	@while $i < 100{
+		#{$i}%,
+		#{$i + $SLIDE_PAUSE_PERCENT}% {
+			transform: translateX($c * -$SLIDER_WIDTH/$SLIDE_COUNT);
+		}
+
+		$i: $i + $SLIDE_PAUSE_PERCENT + $gap;
+		$c: $c + 1;
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+
+@-webkit-keyframes slider {
+	$gap: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT))/$SLIDE_COUNT;
+	$i: 0;
+	$c: 0;
+	@while $i < 100{
+		#{$i}%,
+		#{$i + $SLIDE_PAUSE_PERCENT}% {
+			transform: translateX($c * -$SLIDER_WIDTH/$SLIDE_COUNT);
+		}
+
+		$i: $i + $SLIDE_PAUSE_PERCENT + $gap;
+		$c: $c + 1;
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+
+/* AGAIN, PLEASE DIE IE */
+/*IE FIX*/
+@keyframes slider-ie {
+	$total: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT));
+	$gap: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT))/$SLIDE_COUNT;
+	$i: 0;
+	$c: 0;
+	@while $i < 100{
+		#{$i}%,
+		#{$i + $SLIDE_PAUSE_PERCENT}% {
+			margin-left: ($c * -$SLIDER_WIDTH/$SLIDE_COUNT);
+		}
+
+		$i: $i + $SLIDE_PAUSE_PERCENT + $gap;
+		$c: $c + 1;
+	}
+
+	100% {
+		margin-left: -.1vw;
+	}
+}
+
+/********** END AUTOMATIC PAGE ADVANCEMENT **********/
+
+/********** ANIMATIONS **********/
+
+
+/*arrows*/
+$gap: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT))/$SLIDE_COUNT;
+
+@-webkit-keyframes arrows {
+    0%,
+		#{$SLIDE_PAUSE_PERCENT + $gap}% {
+        opacity: 0;
+        z-index: 15;
+    }
+    #{$SLIDE_PAUSE_PERCENT + $gap + 0.01}%,
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes arrows {
+    0%,
+		#{$SLIDE_PAUSE_PERCENT + $gap}% {
+        opacity: 0;
+        z-index: 15;
+    }
+    #{$SLIDE_PAUSE_PERCENT + $gap + 0.01}%,
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/*page indicators*/
+
+@keyframes point {
+    1%,
+    #{floor($SLIDE_PAUSE_PERCENT + $gap)}% {
+        background: $indicatorColor;
+        /*color of page indicator dot*/
+    }
+    #{ceil($SLIDE_PAUSE_PERCENT + $gap)}%,
+    100% {
+        background: transparent;
+    }
+}
+
+@-webkit-keyframes point {
+    0%,
+    #{floor($SLIDE_PAUSE_PERCENT + $gap)}% {
+        background: $indicatorColor;
+        /*color of page indicator dot*/
+    }
+    #{ceil($SLIDE_PAUSE_PERCENT + $gap)}%,
+    100% {
+        background: transparent;
+    }
+}
+
+
+/*text box*/
+@keyframes textBoxBounce{
+	$gap: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT))/$SLIDE_COUNT;
+	0.7%,
+	#{$SLIDE_PAUSE_PERCENT + $gap - 1}% {
+		opacity: 1;
+		z-index: 2;
+		visibility: visible;
+		-webkit-transform: translateY(10px);
+		transform: translateY(10px);
+	}
+	1%,
+	#{$SLIDE_PAUSE_PERCENT + $gap - 2}% {
+		opacity: 1;
+		z-index: 2;
+		visibility: visible;
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	#{$SLIDE_PAUSE_PERCENT + $gap + 1}% {
+		opacity: 0;
+		z-index: 2;
+		visibility: hidden;
+		-webkit-transform: translateY(-100px);
+		transform: translateY(-100px);
+	}
+	#{$SLIDE_PAUSE_PERCENT + $gap + 1.01}%,
+	100% {
+		z-index: 0;
+	}
+}
+
+
+@-webkit-keyframes textBoxBounce {
+    $gap: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT))/$SLIDE_COUNT;
+	0.7%,
+	#{$SLIDE_PAUSE_PERCENT + $gap - 1}% {
+		opacity: 1;
+		z-index: 2;
+		visibility: visible;
+		-webkit-transform: translateY(10px);
+		transform: translateY(10px);
+	}
+	1%,
+	#{$SLIDE_PAUSE_PERCENT + $gap - 2}% {
+		opacity: 1;
+		z-index: 2;
+		visibility: visible;
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	#{$SLIDE_PAUSE_PERCENT + $gap + 1}% {
+		opacity: 0;
+		z-index: 2;
+		visibility: hidden;
+		-webkit-transform: translateY(-100px);
+		transform: translateY(-100px);
+	}
+	#{$SLIDE_PAUSE_PERCENT + $gap + 1.01}%,
+	100% {
+		z-index: 0;
+	}
+}
+
+@keyframes textBoxBounce {
+    $gap: (100-($SLIDE_PAUSE_PERCENT*$SLIDE_COUNT))/$SLIDE_COUNT;
+	0.7%,
+	#{$SLIDE_PAUSE_PERCENT + $gap - 1}% {
+		opacity: 1;
+		z-index: 2;
+		visibility: visible;
+		-webkit-transform: translateY(10px);
+		transform: translateY(10px);
+	}
+	1%,
+	#{$SLIDE_PAUSE_PERCENT + $gap - 2}% {
+		opacity: 1;
+		z-index: 2;
+		visibility: visible;
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+	#{$SLIDE_PAUSE_PERCENT + $gap + 1}% {
+		opacity: 0;
+		z-index: 2;
+		visibility: hidden;
+		-webkit-transform: translateY(-100px);
+		transform: translateY(-100px);
+	}
+	#{$SLIDE_PAUSE_PERCENT + $gap + 1.01}%,
+	100% {
+		z-index: 0;
+	}
+}
+
+
+
+/********** END ANIMATIONS **********/

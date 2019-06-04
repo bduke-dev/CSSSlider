@@ -1,0 +1,92 @@
+/********** SLIDE INDICATORS **********/
+
+
+/*PAGE INDICATORS APPEARANCE*/
+
+#cssSlider>#pageIndicators {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 15;
+}
+
+#cssSlider>#pageIndicators>.indicator {
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 100%;
+    background-color: #ABB7B7;
+    /*color of page indicator*/
+    cursor: pointer;
+}
+
+
+/*why can't i mix in or anything here?*/
+
+#cssSlider>#pageIndicators>.indicator>.hoverPoint {
+    margin: .5em;
+    display: inline-block;
+    height: .5em;
+    width: .5em;
+    border-radius: 100%;
+    background: transparent;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    z-index: 16;
+}
+
+#cssSlider>#pageIndicators>.indicator>.hoverPoint>.point {
+    margin-bottom: .5em;
+    display: inline-block;
+    height: .5em;
+    width: .5em;
+    border-radius: 100%;
+    background: transparent;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+}
+
+
+/*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
+
+@mixin pointTime($time) {
+    -webkit-animation: point 40000ms infinite $time;
+    animation: point 40000ms infinite $time;
+}
+
+$i: 1;
+$t: 0;
+@while $i <= $SLIDE_COUNT{
+	
+	#cssSlider>#play:checked~#pageIndicators>.indicator>.hoverPoint>#point#{$i},
+	#cssSlider>#pause:checked~#pageIndicators>.indicator>.hoverPoint>#point#{$i} {
+		@include pointTime(#{$t}ms);
+	}
+
+	$i: $i + 1;
+  $t: $t + (($SLIDE_TIME * 1000) / $SLIDE_COUNT);
+}
+
+/*WHICH INDICATOR SHOULD BE LIT*/
+
+$i: 1;
+@while $i <= $SLIDE_COUNT{
+	
+	#cssSlider>#slide#{$i}:checked~#pageIndicators>.indicator>.hoverPoint>#point#{$i} {
+		background: $indicatorColor;
+    /*color of page indicator dot*/
+	}
+
+	$i: $i + 1;
+}
+
+/*used to override the animation for lit indicator*/
+
+#cssSlider>#pageIndicators>.indicator:hover>.hoverPoint {
+    background: $indicatorColor;
+    /*color of page indicator dot*/
+}
+
+
+/********** END SLIDE INDICATORS **********/

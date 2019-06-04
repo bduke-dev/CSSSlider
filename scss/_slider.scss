@@ -1,0 +1,85 @@
+/**********IMAGE/SLIDER STYLING **********/
+
+/*don't show the other images*/
+
+#cssSlider {
+	position: relative;
+	overflow: hidden;
+}
+
+#cssSlider {
+	@if($ASPECT_RATIO != 0) {
+		padding-bottom: ($ASPECT_RATIO)*100%;
+		/*to find % aspect ratio, (height/width)*100% 900/2048*/
+		height: 0;
+	}
+	@else{
+		height: $SLIDER_HEIGHT;
+	}
+	
+	width: $SLIDER_WIDTH;
+	//position: relative;
+	#sliderImages {
+		left: 0;
+		width: calc(100% * #{$SLIDE_COUNT});
+		height: 100%;
+		/*size of the images*/
+		div {
+			width: calc(100% / #{$SLIDE_COUNT});
+			height: 100%;
+			float: left;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			img {
+				@media all and (orientation:portrait) {
+					width: 100%;
+					height: auto;
+				}
+				@media all and (orientation:landscape) {
+					height: 100%;
+					width: auto;
+				}
+				
+			}
+		}
+	}
+}
+
+/*animation to use*/
+
+/*animation parameters*/
+
+/*not ie use these animations*/
+
+#cssSlider > #sliderImages {
+	-webkit-animation-name: slider;
+	-webkit-animation-duration: #{$SLIDE_TIME + 's'};
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+	animation-name: slider;
+	animation-duration: #{$SLIDE_TIME + 's'};
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+
+	/* IE 10+ hack - cant animate translate */
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		animation-name: slider-ie !important;
+		animation-duration: #{$SLIDE_TIME + 's'};
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+	}
+}
+
+#cssSlider > #sliderImages {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	/*this is the time to transition between images
+    when using the arrows*/
+	transition: #{$SLIDE_TIME * (($SLIDE_TIME / $SLIDE_COUNT) / 100) + 's'};
+}
+
+/********** END IMAGE/SLIDER STYLING **********/
