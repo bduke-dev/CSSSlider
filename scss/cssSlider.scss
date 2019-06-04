@@ -19,6 +19,7 @@ body {
 }
 
 @import '_variables';
+@import '_mixins';
 
 /*slider imports*/
 
@@ -31,8 +32,12 @@ body {
  /*FOR MOBILE*/
     
     @media screen and (max-width: 1000px) {
-        #cssSlider>#slideDesc>.slideText,
+        //#cssSlider>#slideDesc>.slideText,
+				#cssSlider>#slideDesc,
         #cssSlider>#pageIndicators {
-            display: none;
+            //display: none;
+					
+					opacity: 0;
+					visibility: hidden;
         }
     }
