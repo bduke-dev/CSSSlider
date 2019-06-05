@@ -5,15 +5,29 @@
 # CSS_Slider
 A simple image slider coded completely in CSS. This is done to achieve the most cross compatibility among browsers.
 By avoiding the use of JavaScript, the slider does not rely on the device having it, allowing it to work in about all browsers.
+The CSS Slider uses SCSS as a pre-processor, this allows users to easily change a few variables to have the slider suit their needs.
 
 ## Features
-* Automatic timed advancement, each slide is 4s long (described below is how to modify)
+* Automatic timed advancement
 * Play/Pause button
 * Forward/Previous arrow advancement
 * Page indicators that double as page advancement
+* Easy configuration through a variables scss file
 
 ## Framework
 #### Provides an explanation of how to add or subtract images and adjust the other pieces of the framework to accommodate the change
+## Declaration
+In the scss folder there is a file entitled "_variables.scss," this is where the magic happens. 
+Below are the configurable variables that allow you to match the slider to your needs.
+```
+$ASPECT_RATIO: 0;//9/16;
+$SLIDER_WIDTH: 100%;
+$SLIDER_HEIGHT: 100vh;
+$SLIDE_COUNT: 6;
+$SLIDE_TIME: 40; // in seconds
+$SLIDE_PAUSE_PERCENT: 10;
+$BTN_OPACITY: 0.7;
+```
 ### Radio Buttons
 
 ### Next/Previous Arrows
@@ -33,7 +47,7 @@ By avoiding the use of JavaScript, the slider does not rely on the device having
 ### Slider Text Box
 
 ### Author
-This image slider was created by [b.duke](https://bmduke1997.github.io/).
+This image slider was created by [b.duke](http://bduke.net/).
 
 #### Licenses
 - The slider itself is under the GPLv3 license. Do what you want with it, credit would be nice, but not necessary.
