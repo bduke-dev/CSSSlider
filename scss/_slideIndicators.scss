@@ -18,10 +18,11 @@
   background-color: #abb7b7;
   /*color of page indicator*/
   cursor: pointer;
+  position: relative;
 }
 
 /*why can't i mix in or anything here?*/
-
+/*
 #cssSlider > #pageIndicators > .indicator > .hoverPoint {
   margin: 0.5em;
   display: inline-block;
@@ -32,10 +33,9 @@
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
   z-index: 16;
-}
+}*/
 
-#cssSlider > #pageIndicators > .indicator > .hoverPoint > .point {
-  margin-bottom: 0.5em;
+#cssSlider > #pageIndicators > .indicator > .point {
   display: inline-block;
   height: 0.5em;
   width: 0.5em;
@@ -43,6 +43,10 @@
   background: transparent;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
@@ -55,18 +59,8 @@
 $i: 1;
 $t: 0;
 @while $i <= $SLIDE_COUNT {
-  #cssSlider
-    > #play:checked
-    ~ #pageIndicators
-    > .indicator
-    > .hoverPoint
-    > #point#{$i},
-  #cssSlider
-    > #pause:checked
-    ~ #pageIndicators
-    > .indicator
-    > .hoverPoint
-    > #point#{$i} {
+  #cssSlider > #play:checked ~ #pageIndicators > .indicator > #point#{$i},
+  #cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point#{$i} {
     @include pointTime(#{$t}ms);
   }
 
@@ -82,7 +76,6 @@ $i: 1;
     > #slide#{$i}:checked
     ~ #pageIndicators
     > .indicator
-    > .hoverPoint
     > #point#{$i} {
     background: $indicatorColor;
     /*color of page indicator dot*/
@@ -93,7 +86,7 @@ $i: 1;
 
 /*used to override the animation for lit indicator*/
 
-#cssSlider > #pageIndicators > .indicator:hover > .hoverPoint {
+#cssSlider > #pageIndicators > .indicator:hover > .point {
   background: $indicatorColor;
   /*color of page indicator dot*/
 }

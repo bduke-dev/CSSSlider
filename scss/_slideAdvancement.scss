@@ -22,12 +22,7 @@ $i: 1;
   #cssSlider > #pause:checked ~ #slideDesc > #slideText#{$i},
   #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL#{$i},
   #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR#{$i},
-  #cssSlider
-    > #pause:checked
-    ~ #pageIndicators
-    > .indicator
-    > .hoverPoint
-    > #point#{$i} {
+  #cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point#{$i} {
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
   }

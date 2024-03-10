@@ -197,9 +197,11 @@ for normal slider just uncomment the second width*/
   background-color: #abb7b7;
   /*color of page indicator*/
   cursor: pointer;
+  position: relative;
 }
 
 /*why can't i mix in or anything here?*/
+/*
 #cssSlider > #pageIndicators > .indicator > .hoverPoint {
   margin: 0.5em;
   display: inline-block;
@@ -210,10 +212,8 @@ for normal slider just uncomment the second width*/
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
   z-index: 16;
-}
-
-#cssSlider > #pageIndicators > .indicator > .hoverPoint > .point {
-  margin-bottom: 0.5em;
+}*/
+#cssSlider > #pageIndicators > .indicator > .point {
   display: inline-block;
   height: 0.5em;
   width: 0.5em;
@@ -221,72 +221,76 @@ for normal slider just uncomment the second width*/
   background: transparent;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point1,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point1 {
   animation: point 40000ms infinite 0ms;
 }
 
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point2,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point2 {
   animation: point 40000ms infinite 6666.6666666667ms;
 }
 
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point3,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point3 {
   animation: point 40000ms infinite 13333.3333333333ms;
 }
 
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point4,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point4 {
   animation: point 40000ms infinite 20000ms;
 }
 
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point5,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point5 {
   animation: point 40000ms infinite 26666.6666666667ms;
 }
 
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point6,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point6 {
   animation: point 40000ms infinite 33333.3333333333ms;
 }
 
 /*WHICH INDICATOR SHOULD BE LIT*/
-#cssSlider > #slide1:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
+#cssSlider > #slide1:checked ~ #pageIndicators > .indicator > #point1 {
   background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-#cssSlider > #slide2:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
+#cssSlider > #slide2:checked ~ #pageIndicators > .indicator > #point2 {
   background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-#cssSlider > #slide3:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
+#cssSlider > #slide3:checked ~ #pageIndicators > .indicator > #point3 {
   background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-#cssSlider > #slide4:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
+#cssSlider > #slide4:checked ~ #pageIndicators > .indicator > #point4 {
   background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-#cssSlider > #slide5:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
+#cssSlider > #slide5:checked ~ #pageIndicators > .indicator > #point5 {
   background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-#cssSlider > #slide6:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
+#cssSlider > #slide6:checked ~ #pageIndicators > .indicator > #point6 {
   background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
 /*used to override the animation for lit indicator*/
-#cssSlider > #pageIndicators > .indicator:hover > .hoverPoint {
+#cssSlider > #pageIndicators > .indicator:hover > .point {
   background: #f2f1ef;
   /*color of page indicator dot*/
 }
@@ -494,42 +498,42 @@ for normal slider just uncomment the second width*/
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL1,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR1,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point1 {
   animation-play-state: paused;
 }
 
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL2,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR2,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point2 {
   animation-play-state: paused;
 }
 
 #cssSlider > #pause:checked ~ #slideDesc > #slideText3,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL3,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR3,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point3 {
   animation-play-state: paused;
 }
 
 #cssSlider > #pause:checked ~ #slideDesc > #slideText4,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL4,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR4,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point4 {
   animation-play-state: paused;
 }
 
 #cssSlider > #pause:checked ~ #slideDesc > #slideText5,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL5,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR5,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point5 {
   animation-play-state: paused;
 }
 
 #cssSlider > #pause:checked ~ #slideDesc > #slideText6,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL6,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR6,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point6 {
   animation-play-state: paused;
 }
 
@@ -686,11 +690,5 @@ for normal slider just uncomment the second width*/
   #cssSlider > #pageIndicators > .indicator {
     width: 1em;
     height: 1em;
-  }
-  #cssSlider > #pageIndicators > .indicator .hoverPoint {
-    margin: 0;
-  }
-  #cssSlider > #pageIndicators > .indicator .hoverPoint .point {
-    margin-bottom: 0.25em;
   }
 }/*# sourceMappingURL=cssSlider.css.map */
