@@ -1,65 +1,66 @@
 /********** SLIDER TEXT **********/
 
-#cssSlider>#slideDesc>.slideText {
-    position: absolute;
-    bottom: 0;
-    padding: .6em;
-    margin: 2em;
-    max-width: calc(100vw - 4em);
-    background-color: $blurbBox;
-    /*color of blurb box*/
-    border-radius: .5em;
-    z-index: -1;
-    opacity: 0;
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
-    -webkit-transition: 950ms opacity 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms -webkit-transform 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms visibility 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
-    transition: 950ms opacity 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms -webkit-transform 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms transform 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550), 950ms visibility 850ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+#cssSlider > #slideDesc > .slideText {
+  position: absolute;
+  bottom: 0;
+  padding: 0.6em;
+  margin: 2em;
+  max-width: calc(100vw - 4em);
+  background-color: $blurbBox;
+  /*color of blurb box*/
+  border-radius: 0.5em;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+  transform: translateY(-100px);
+  -webkit-transition: 950ms opacity 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    950ms -webkit-transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    950ms visibility 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: 950ms opacity 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    950ms -webkit-transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    950ms transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    950ms visibility 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-#cssSlider>#slideDesc>.slideText>p {
-    padding: .1em;
-    margin: 0;
-    color: $descTextColor;
-    /*color of blurb box text*/
-    font-size: 2em;
-    font-family: timeburner;
+#cssSlider > #slideDesc > .slideText > p {
+  padding: 0.1em;
+  margin: 0;
+  color: $descTextColor;
+  /*color of blurb box text*/
+  font-size: 2em;
+  font-family: timeburner;
 }
-
 
 /*BRING THE TEXT FORWARD ON ITS PAGE*/
 
 $i: 1;
-@while $i <= $SLIDE_COUNT{
-	
-	#cssSlider>#slide#{$i}:checked~#slideDesc>#slideText#{$i} {
-		z-index: 2;
+@while $i <= $SLIDE_COUNT {
+  #cssSlider > #slide#{$i}:checked ~ #slideDesc > #slideText#{$i} {
+    z-index: 2;
     opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
-	}
+  }
 
-	$i: $i + 1;
+  $i: $i + 1;
 }
-
 
 /*TEXT BOX ANIMATION*/
 
 @mixin pointTime($time) {
-    -webkit-animation: textBoxBounce #{($SLIDE_TIME * 1000) + 'ms'} infinite $time;
-    animation: textBoxBounce #{($SLIDE_TIME * 1000) + 'ms'} infinite $time;
+  -webkit-animation: textBoxBounce #{($SLIDE_TIME * 1000) + "ms"} infinite $time;
+  animation: textBoxBounce #{($SLIDE_TIME * 1000) + "ms"} infinite $time;
 }
 
 $i: 1;
 $t: 0;
-@while $i <= $SLIDE_COUNT{
-	
-	#cssSlider>#play:checked~#slideDesc>#slideText#{$i},
-	#cssSlider>#pause:checked~#slideDesc>#slideText#{$i} {
-		@include pointTime(#{$t}ms);
-	}
+@while $i <= $SLIDE_COUNT {
+  #cssSlider > #play:checked ~ #slideDesc > #slideText#{$i},
+  #cssSlider > #pause:checked ~ #slideDesc > #slideText#{$i} {
+    @include pointTime(#{$t}ms);
+  }
 
-	$i: $i + 1;
+  $i: $i + 1;
   $t: $t + (($SLIDE_TIME * 1000) / $SLIDE_COUNT);
 }
 

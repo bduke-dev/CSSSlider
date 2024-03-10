@@ -1,16 +1,15 @@
-$sliderBackground: #5B5B5B;
-$indicatorColor: #F2F1EF;
+$sliderBackground: #5b5b5b;
+$indicatorColor: #f2f1ef;
 $descTextColor: black;
-$blurbBox: #ABB7B7;
+$blurbBox: #abb7b7;
 
 /*sizing*/
-
 
 /*for full screen calculate (desired height of slider in vh * width of img) / height of img with vh as units
 for normal slider just uncomment the second width*/
 
-$ASPECT_RATIO: 0;//9/16;
-$SLIDER_WIDTH: 100%;
+$ASPECT_RATIO: 9/16;
+$SLIDER_WIDTH: 50%;
 $SLIDER_HEIGHT: 100vh;
 $SLIDE_COUNT: 6;
 $SLIDE_TIME: 40; // in seconds

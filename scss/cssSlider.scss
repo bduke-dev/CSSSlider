@@ -2,42 +2,50 @@
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
 
 /*FONT IMPORT*/
 
 @font-face {
-    font-family: timeburner;
-    src: url(timeburner.ttf);
+  font-family: timeburner;
+  src: url(timeburner.ttf);
 }
 
-@import '_variables';
-@import '_mixins';
+@import "_variables";
+@import "_mixins";
 
 /*slider imports*/
 
-@import '_arrowNavigation';
-@import '_slideIndicators';
-@import '_slider';
-@import '_slideDesc';
-@import '_slideAdvancement';
+@import "_arrowNavigation";
+@import "_slideIndicators";
+@import "_slider";
+@import "_slideDesc";
+@import "_slideAdvancement";
 
- /*FOR MOBILE*/
-    
-    @media screen and (max-width: 1000px) {
-        //#cssSlider>#slideDesc>.slideText,
-				#cssSlider>#slideDesc,
-        #cssSlider>#pageIndicators {
-            //display: none;
-					
-					opacity: 0;
-					visibility: hidden;
-        }
+/*FOR MOBILE*/
+
+@media screen and (max-width: 1000px) {
+  #cssSlider > #slideDesc > .slideText {
+    //#cssSlider > #pageIndicators {
+    display: none;
+  }
+
+  #cssSlider > #pageIndicators > .indicator {
+    width: 1em;
+    height: 1em;
+
+    .hoverPoint {
+      margin: 0;
+
+      .point {
+        margin-bottom: 0.25em;
+      }
     }
+  }
+}
