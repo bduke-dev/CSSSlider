@@ -1,11 +1,11 @@
-/*FONT IMPORT*/
-@font-face {
-  font-family: timeburner;
-  src: url(timeburner.ttf);
-}
 /*sizing*/
 /*for full screen calculate (desired height of slider in vh * width of img) / height of img with vh as units
 for normal slider just uncomment the second width*/
+/*FONT IMPORT*/
+@font-face {
+  font-family: timeburner;
+  src: url("timeburner.ttf");
+}
 /*slider imports*/
 /********** NEXT SLIDE ARROW NAVIGATION **********/
 /*APPEARANCE*/
@@ -35,7 +35,6 @@ for normal slider just uncomment the second width*/
 #cssSlider > #pageNav > #previousArrow > .slideL {
   width: 10vw;
   height: 10vw;
-  background: url(./icons/previous.png);
   background-image: url(./icons/previous.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -45,7 +44,6 @@ for normal slider just uncomment the second width*/
 #cssSlider > #pageNav > #nextArrow > .slideR {
   width: 10vw;
   height: 10vw;
-  background: url(./icons/next.png);
   background-image: url(./icons/next.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -55,7 +53,6 @@ for normal slider just uncomment the second width*/
 #cssSlider > #pageNav > #playPause > #playBtn {
   width: 10vw;
   height: 10vw;
-  background: url(./icons/play.png);
   background-image: url(./icons/play.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -65,7 +62,6 @@ for normal slider just uncomment the second width*/
 #cssSlider > #pageNav > #playPause > #pauseBtn {
   width: 10vw;
   height: 10vw;
-  background: url(./icons/pause.png);
   background-image: url(./icons/pause.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;

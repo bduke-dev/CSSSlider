@@ -1,14 +1,15 @@
 @use "sass:math";
 
+@import "_variables";
+
 /*FONT IMPORT*/
 
 @font-face {
   font-family: timeburner;
-  src: url(timeburner.ttf);
+  src: url($FONT_PATH);
 }
 
-@import "_variables";
-@import "_mixins";
+//@import "_mixins";
 
 /*slider imports*/
 
