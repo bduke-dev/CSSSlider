@@ -80,7 +80,8 @@
   padding: 0;
   /*this is the time to transition between images
     when using the arrows*/
-  transition: #{$SLIDE_TIME * (($SLIDE_TIME / $SLIDE_COUNT) / 100) + "s"};
+  transition: #{$SLIDE_TIME * math.div(math.div($SLIDE_TIME, $SLIDE_COUNT), 100) +
+    "s"};
 }
 
 /********** END IMAGE/SLIDER STYLING **********/

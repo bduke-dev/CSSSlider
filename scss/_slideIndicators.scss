@@ -65,7 +65,7 @@ $t: 0;
   }
 
   $i: $i + 1;
-  $t: $t + (($SLIDE_TIME * 1000) / $SLIDE_COUNT);
+  $t: $t + math.div(($SLIDE_TIME * 1000), $SLIDE_COUNT);
 }
 
 /*WHICH INDICATOR SHOULD BE LIT*/

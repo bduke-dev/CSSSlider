@@ -76,7 +76,7 @@
 
 #cssSlider > #pageNav:hover > #previousArrow > .slideL,
 #cssSlider > #pageNav:hover > #nextArrow > .slideR {
-  opacity: $BTN_OPACITY/$SLIDE_COUNT;
+  opacity: math.div($BTN_OPACITY, $SLIDE_COUNT);
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
@@ -144,7 +144,7 @@ $t: 0;
 
   $l: $l + 1;
   $r: $r + 1;
-  $t: $t + (($SLIDE_TIME * 1000) / $SLIDE_COUNT);
+  $t: $t + math.div(($SLIDE_TIME * 1000), $SLIDE_COUNT);
 }
 
 /********** END NEXT SLIDE ARROW NAVIGATION **********/
