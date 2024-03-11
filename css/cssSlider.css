@@ -304,10 +304,8 @@ for normal slider just uncomment the second width*/
 }
 
 #cssSlider {
-  padding-bottom: 56.25%;
-  /*to find % aspect ratio, (height/width)*100% 900/2048*/
-  height: 0;
-  width: 50%;
+  height: 100%;
+  width: 100%;
 }
 #cssSlider #sliderImages {
   left: 0;
@@ -324,17 +322,19 @@ for normal slider just uncomment the second width*/
   align-items: center;
   justify-content: center;
 }
-@media all and (orientation: portrait) {
-  #cssSlider #sliderImages div img {
-    width: 100%;
-    height: auto;
+#cssSlider #sliderImages div img {
+  height: 100%;
+  width: auto;
+  /*
+  @media all and (orientation:portrait) {
+  	width: 100%;
+  	height: auto;
   }
-}
-@media all and (orientation: landscape) {
-  #cssSlider #sliderImages div img {
-    height: 100%;
-    width: auto;
+  @media all and (orientation:landscape) {
+  	height: 100%;
+  	width: auto;
   }
+  */
 }
 
 /*animation to use*/
@@ -365,12 +365,18 @@ for normal slider just uncomment the second width*/
   margin: 0;
   padding: 0;
   /*this is the time to transition between images
-     when using the arrows*/
+    when using the arrows*/
   transition: 2.6666666667s;
 }
 
 /********** END IMAGE/SLIDER STYLING **********/
 /********** SLIDER TEXT **********/
+#slideDesc {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 #cssSlider > #slideDesc > .slideText {
   position: absolute;
   bottom: 0;
@@ -691,4 +697,7 @@ for normal slider just uncomment the second width*/
     width: 1em;
     height: 1em;
   }
+}
+#cssSliderTestWrapper {
+  height: 100vh;
 }/*# sourceMappingURL=cssSlider.css.map */
