@@ -12,9 +12,6 @@ The CSS Slider uses SCSS as a pre-processor, this allows users to easily change 
 * Page indicators that double as page advancement
 * Easy configuration through a variables scss file
 
-## Framework
-
-#### Provides an explanation of how to add or subtract images and adjust the other pieces of the framework to accommodate the change
 
 ## Declaration
 
@@ -44,23 +41,91 @@ $BTN_OPACITY: 0.7; // opacity of play/pause and advancement buttons
 
 ```
 
-### Radio Buttons
+## Update HTML to include your images and descriptions
 
-### Next/Previous Arrows
+Each image needs its own radio button entry, left and right arrow, and indicator as shown below.
 
-### Page Indicators
-
-### Slider Text Box
-
-## Animations and Manual Advancement
-
-### Slider
-
-### Next/Previous Arrows
-
-### Page Indicators
-
-### Slider Text Box
+```html
+<div id="cssSlider">
+            <!--radio button to control going to each page-->
+            <input type="radio" name="slider" id="slide1">
+            <input type="radio" name="slider" id="slide2">
+            <input type="radio" name="slider" id="slide3">
+            <input type="radio" name="slider" id="slide4">
+            <input type="radio" name="slider" id="slide5">
+            <input type="radio" name="slider" id="slide6">
+            <input type="radio" name="slider" id="play" checked>
+            <input type="radio" name="slider" id="pause">
+            <!--each image in the slider-->
+            <div id="sliderImages">
+                <div><img src="./contents/sliderImages/slide1.png" alt="pure"></div>
+                <div><img src="./contents/sliderImages/slide2.png" alt="css"></div>
+                <div><img src="./contents/sliderImages/slide3.png" alt="image"></div>
+                <div><img src="./contents/sliderImages/slide4.png" alt="slider"></div>
+                <div><img src="./contents/sliderImages/slide5.png" alt="no"></div>
+                <div><img src="./contents/sliderImages/slide6.png" alt="JavaScript"></div>
+            </div>
+            <!--optional description for each slide, comment out individually or whole section-->
+            <div id="slideDesc">
+                <span class="slideText" id="slideText1">
+                    <p>Pure</p>
+                </span>
+                <span class="slideText" id="slideText2">
+                    <p>CSS</p>
+                </span>
+                <span class="slideText" id="slideText3">
+                    <p>Image</p>
+                </span>
+                <span class="slideText" id="slideText4">
+                    <p>Slider</p>
+                </span>
+                <span class="slideText" id="slideText5">
+                    <p>No</p>
+                </span>
+                <span class="slideText" id="slideText6">
+                    <p>Java Script</p>
+                </span>
+            </div>
+            <!--each slide needs a left and right arrow-->
+            <div id="pageNav">
+                <div id="previousArrow">
+                    <label for="slide6" class="slideL" id="slideL6"></label>
+                    <label for="slide1" class="slideL" id="slideL1"></label>
+                    <label for="slide2" class="slideL" id="slideL2"></label>
+                    <label for="slide3" class="slideL" id="slideL3"></label>
+                    <label for="slide4" class="slideL" id="slideL4"></label>
+                    <label for="slide5" class="slideL" id="slideL5"></label>
+                </div>
+                <div id="playPause">
+                    <label for="play" class="playPauseBtn" id="playBtn"></label>
+                    <label for="pause" class="playPauseBtn" id="pauseBtn"></label>
+                </div>
+                <div id="nextArrow">
+                    <label for="slide2" class="slideR" id="slideR2"></label>
+                    <label for="slide3" class="slideR" id="slideR3"></label>
+                    <label for="slide4" class="slideR" id="slideR4"></label>
+                    <label for="slide5" class="slideR" id="slideR5"></label>
+                    <label for="slide6" class="slideR" id="slideR6"></label>
+                    <label for="slide1" class="slideR" id="slideR1"></label>
+                </div>
+            </div>
+            <!--indicator to show which page is active-->
+            <div id="pageIndicators">
+                <label for="slide1" class="indicator"><span class="point" id="point1"></span>
+                </label>
+                <label for="slide2" class="indicator"><span class="point" id="point2"></span>
+                </label>
+                <label for="slide3" class="indicator"><span class="point" id="point3"></span>
+                </label>
+                <label for="slide4" class="indicator"><span class="point" id="point4"></span>
+                </label>
+                <label for="slide5" class="indicator"><span class="point" id="point5"></span>
+                </label>
+                <label for="slide6" class="indicator"><span class="point" id="point6"></span>
+                </label>
+            </div>
+        </div>
+```
 
 ### Author
 
