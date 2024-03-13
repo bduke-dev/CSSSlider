@@ -52,8 +52,8 @@
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
 
 @mixin pointTime($time) {
-  -webkit-animation: point 40000ms infinite $time;
-  animation: point 40000ms infinite $time;
+  -webkit-animation: point #{$SLIDE_TIME * 1000 + "ms"} infinite $time;
+  animation: point #{$SLIDE_TIME * 1000 + "ms"} infinite $time;
 }
 
 $i: 1;

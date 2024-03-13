@@ -114,7 +114,7 @@ $c: 0;
 /********** ANIMATIONS **********/
 
 /*arrows*/
-$gap: math.div((100-($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT)), $SLIDE_COUNT);
+$gap: math.div((100 - ($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT)), $SLIDE_COUNT);
 
 @-webkit-keyframes arrows {
   0%,
@@ -150,7 +150,7 @@ $gap: math.div((100-($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT)), $SLIDE_COUNT);
     background: $INDICATOR_COLOR;
     /*color of page indicator dot*/
   }
-  #{ceil($SLIDE_PAUSE_PERCENT + $gap)}%,
+  #{floor($SLIDE_PAUSE_PERCENT + $gap) + 1}%,
   100% {
     background: transparent;
   }
@@ -162,7 +162,7 @@ $gap: math.div((100-($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT)), $SLIDE_COUNT);
     background: $INDICATOR_COLOR;
     /*color of page indicator dot*/
   }
-  #{ceil($SLIDE_PAUSE_PERCENT + $gap)}%,
+  #{floor($SLIDE_PAUSE_PERCENT + $gap) + 1}%,
   100% {
     background: transparent;
   }
