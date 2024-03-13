@@ -1,223 +1,168 @@
-/*CSS RESET*/
-/* line 3, ../../Git/CSS_Slider/scss/cssSlider.scss */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
 /*FONT IMPORT*/
 @font-face {
   font-family: timeburner;
-  src: url(timeburner.ttf);
+  src: url("timeburner.ttf");
 }
-
-/*sizing*/
-/*for full screen calculate (desired height of slider in vh * width of img) / height of img with vh as units
-for normal slider just uncomment the second width*/
 /*slider imports*/
 /********** NEXT SLIDE ARROW NAVIGATION **********/
 /*APPEARANCE*/
-/* line 6, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > input {
   /*new wrapper to this*/
   display: none;
 }
 
-/* line 11, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 15;
   width: 100%;
   height: 10vw;
 }
 
-/* line 21, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL,
 #cssSlider > #pageNav > #playPause > .playPauseBtn,
 #cssSlider > #pageNav > #nextArrow > .slideR {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  -webkit-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* line 42, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL {
   width: 10vw;
   height: 10vw;
-  background: url(http://bduke.net/css/icons/previous.png);
-  background-image: url(http://bduke.net/css/icons/previous.svg), none;
+  background-image: url(./icons/previous.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: -1;
 }
 
-/* line 46, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #nextArrow > .slideR {
   width: 10vw;
   height: 10vw;
-  background: url(http://bduke.net/css/icons/next.png);
-  background-image: url(http://bduke.net/css/icons/next.svg), none;
+  background-image: url(./icons/next.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: -1;
 }
 
-/* line 50, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > #playBtn {
   width: 10vw;
   height: 10vw;
-  background: url(http://bduke.net/css/icons/play.png);
-  background-image: url(http://bduke.net/css/icons/play.svg), none;
+  background-image: url(./icons/play.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: -1;
 }
 
-/* line 54, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > #pauseBtn {
   width: 10vw;
   height: 10vw;
-  background: url(http://bduke.net/css/icons/pause.png);
-  background-image: url(http://bduke.net/css/icons/pause.svg), none;
+  background-image: url(./icons/pause.svg), none;
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: -1;
 }
 
 /*POSITION*/
-/* line 61, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #previousArrow > .slideL {
   left: 2vw;
 }
 
-/* line 65, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #playPause > .playPauseBtn {
   left: 50%;
   margin: 0 0 0 -5vw;
 }
 
-/* line 70, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav > #nextArrow > .slideR {
   right: 2vw;
 }
 
 /*ONLY DISPLAY IF ON SLIDER*/
-/* line 78, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav:hover > #playPause > .playPauseBtn {
   opacity: 0.7;
 }
 
-/* line 82, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #pageNav:hover > #previousArrow > .slideL,
 #cssSlider > #pageNav:hover > #nextArrow > .slideR {
-  opacity: 0.11667;
+  opacity: 0.1166666667;
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
-/* line 90, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:not(:checked) ~ #pageNav > #playPause > #pauseBtn {
   display: none;
 }
 
-/* line 94, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #playPause > #playBtn {
   display: none;
 }
 
 /*WHICH ARROW SHOULD BE ON TOP*/
-/* line 107, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #slide1:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #slide1:checked ~ #pageNav > #nextArrow > #slideR2 {
   z-index: 15;
 }
 
-/* line 107, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #slide2:checked ~ #pageNav > #previousArrow > #slideL1,
 #cssSlider > #slide2:checked ~ #pageNav > #nextArrow > #slideR3 {
   z-index: 15;
 }
 
-/* line 107, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #slide3:checked ~ #pageNav > #previousArrow > #slideL2,
 #cssSlider > #slide3:checked ~ #pageNav > #nextArrow > #slideR4 {
   z-index: 15;
 }
 
-/* line 107, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #slide4:checked ~ #pageNav > #previousArrow > #slideL3,
 #cssSlider > #slide4:checked ~ #pageNav > #nextArrow > #slideR5 {
   z-index: 15;
 }
 
-/* line 107, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #slide5:checked ~ #pageNav > #previousArrow > #slideL4,
 #cssSlider > #slide5:checked ~ #pageNav > #nextArrow > #slideR6 {
   z-index: 15;
 }
 
-/* line 107, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #slide6:checked ~ #pageNav > #previousArrow > #slideL5,
 #cssSlider > #slide6:checked ~ #pageNav > #nextArrow > #slideR1 {
   z-index: 15;
 }
 
 /*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
-/* line 139, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR2 {
-  -webkit-animation: arrows 40000ms infinite 0ms;
   animation: arrows 40000ms infinite 0ms;
 }
 
-/* line 139, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL1,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR3 {
-  -webkit-animation: arrows 40000ms infinite 6666.66667ms;
-  animation: arrows 40000ms infinite 6666.66667ms;
+  animation: arrows 40000ms infinite 6666.6666666667ms;
 }
 
-/* line 139, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL2,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR4 {
-  -webkit-animation: arrows 40000ms infinite 13333.33333ms;
-  animation: arrows 40000ms infinite 13333.33333ms;
+  animation: arrows 40000ms infinite 13333.3333333333ms;
 }
 
-/* line 139, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL3,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR5 {
-  -webkit-animation: arrows 40000ms infinite 20000ms;
   animation: arrows 40000ms infinite 20000ms;
 }
 
-/* line 139, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL4,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR6 {
-  -webkit-animation: arrows 40000ms infinite 26666.66667ms;
-  animation: arrows 40000ms infinite 26666.66667ms;
+  animation: arrows 40000ms infinite 26666.6666666667ms;
 }
 
-/* line 139, ../../Git/CSS_Slider/scss/_arrowNavigation.scss */
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL5,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR1 {
-  -webkit-animation: arrows 40000ms infinite 33333.33333ms;
-  animation: arrows 40000ms infinite 33333.33333ms;
+  animation: arrows 40000ms infinite 33333.3333333333ms;
 }
 
 /********** END NEXT SLIDE ARROW NAVIGATION **********/
 /********** SLIDE INDICATORS **********/
 /*PAGE INDICATORS APPEARANCE*/
-/* line 6, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
 #cssSlider > #pageIndicators {
   position: absolute;
   bottom: 0;
@@ -226,154 +171,115 @@ for normal slider just uncomment the second width*/
   z-index: 15;
 }
 
-/* line 14, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
 #cssSlider > #pageIndicators > .indicator {
   display: inline-block;
   height: 1.5em;
   width: 1.5em;
   border-radius: 100%;
-  background-color: #ABB7B7;
+  background-color: #abb7b7;
   /*color of page indicator*/
   cursor: pointer;
+  position: relative;
 }
 
-/*why can't i mix in or anything here?*/
-/* line 27, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #pageIndicators > .indicator > .hoverPoint {
-  margin: .5em;
+#cssSlider > #pageIndicators > .indicator > .point {
   display: inline-block;
-  height: .5em;
-  width: .5em;
+  height: 0.5em;
+  width: 0.5em;
   border-radius: 100%;
   background: transparent;
-  transition: .3s ease-in-out;
-  -webkit-transition: .3s ease-in-out;
-  z-index: 16;
-}
-
-/* line 39, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #pageIndicators > .indicator > .hoverPoint > .point {
-  margin-bottom: .5em;
-  display: inline-block;
-  height: .5em;
-  width: .5em;
-  border-radius: 100%;
-  background: transparent;
-  transition: .3s ease-in-out;
-  -webkit-transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*STARTING PAGE INDICATOR WHICH TO BE LIT ANIMATION*/
-/* line 62, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
-  -webkit-animation: point 40000ms infinite 0ms;
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point1,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point1 {
   animation: point 40000ms infinite 0ms;
 }
 
-/* line 62, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
-  -webkit-animation: point 40000ms infinite 6666.66667ms;
-  animation: point 40000ms infinite 6666.66667ms;
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point2,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point2 {
+  animation: point 40000ms infinite 6666.6666666667ms;
 }
 
-/* line 62, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
-  -webkit-animation: point 40000ms infinite 13333.33333ms;
-  animation: point 40000ms infinite 13333.33333ms;
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point3,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point3 {
+  animation: point 40000ms infinite 13333.3333333333ms;
 }
 
-/* line 62, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
-  -webkit-animation: point 40000ms infinite 20000ms;
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point4,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point4 {
   animation: point 40000ms infinite 20000ms;
 }
 
-/* line 62, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
-  -webkit-animation: point 40000ms infinite 26666.66667ms;
-  animation: point 40000ms infinite 26666.66667ms;
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point5,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point5 {
+  animation: point 40000ms infinite 26666.6666666667ms;
 }
 
-/* line 62, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #play:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
-  -webkit-animation: point 40000ms infinite 33333.33333ms;
-  animation: point 40000ms infinite 33333.33333ms;
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point6,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point6 {
+  animation: point 40000ms infinite 33333.3333333333ms;
 }
 
 /*WHICH INDICATOR SHOULD BE LIT*/
-/* line 76, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #slide1:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
-  background: #F2F1EF;
+#cssSlider > #slide1:checked ~ #pageIndicators > .indicator > #point1 {
+  background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-/* line 76, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #slide2:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
-  background: #F2F1EF;
+#cssSlider > #slide2:checked ~ #pageIndicators > .indicator > #point2 {
+  background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-/* line 76, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #slide3:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
-  background: #F2F1EF;
+#cssSlider > #slide3:checked ~ #pageIndicators > .indicator > #point3 {
+  background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-/* line 76, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #slide4:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
-  background: #F2F1EF;
+#cssSlider > #slide4:checked ~ #pageIndicators > .indicator > #point4 {
+  background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-/* line 76, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #slide5:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
-  background: #F2F1EF;
+#cssSlider > #slide5:checked ~ #pageIndicators > .indicator > #point5 {
+  background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
-/* line 76, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #slide6:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
-  background: #F2F1EF;
+#cssSlider > #slide6:checked ~ #pageIndicators > .indicator > #point6 {
+  background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
 /*used to override the animation for lit indicator*/
-/* line 86, ../../Git/CSS_Slider/scss/_slideIndicators.scss */
-#cssSlider > #pageIndicators > .indicator:hover > .hoverPoint {
-  background: #F2F1EF;
+#cssSlider > #pageIndicators > .indicator:hover > .point {
+  background: #f2f1ef;
   /*color of page indicator dot*/
 }
 
 /********** END SLIDE INDICATORS **********/
 /**********IMAGE/SLIDER STYLING **********/
 /*don't show the other images*/
-/* line 5, ../../Git/CSS_Slider/scss/_slider.scss */
 #cssSlider {
+  height: 100%;
+  width: 100%;
   position: relative;
   overflow: hidden;
+  background-color: #5b5b5b;
 }
-
-/* line 10, ../../Git/CSS_Slider/scss/_slider.scss */
-#cssSlider {
-  height: 100vh;
-  width: 100%;
-}
-
-/* line 22, ../../Git/CSS_Slider/scss/_slider.scss */
 #cssSlider #sliderImages {
   left: 0;
   width: calc(100% * 6);
   height: 100%;
   /*size of the images*/
 }
-
-/* line 27, ../../Git/CSS_Slider/scss/_slider.scss */
 #cssSlider #sliderImages div {
   width: calc(100% / 6);
   height: 100%;
@@ -383,27 +289,24 @@ for normal slider just uncomment the second width*/
   align-items: center;
   justify-content: center;
 }
-
-@media all and (orientation: portrait) {
-  /* line 36, ../../Git/CSS_Slider/scss/_slider.scss */
-  #cssSlider #sliderImages div img {
-    width: 100%;
-    height: auto;
+#cssSlider #sliderImages div img {
+  height: 100%;
+  width: auto;
+  /*
+  @media all and (orientation:portrait) {
+  	width: 100%;
+  	height: auto;
   }
-}
-
-@media all and (orientation: landscape) {
-  /* line 36, ../../Git/CSS_Slider/scss/_slider.scss */
-  #cssSlider #sliderImages div img {
-    height: 100%;
-    width: auto;
+  @media all and (orientation:landscape) {
+  	height: 100%;
+  	width: auto;
   }
+  */
 }
 
 /*animation to use*/
 /*animation parameters*/
 /*not ie use these animations*/
-/* line 57, ../../Git/CSS_Slider/scss/_slider.scss */
 #cssSlider > #sliderImages {
   -webkit-animation-name: slider;
   -webkit-animation-duration: 40s;
@@ -415,9 +318,7 @@ for normal slider just uncomment the second width*/
   animation-iteration-count: infinite;
   /* IE 10+ hack - cant animate translate */
 }
-
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  /* line 57, ../../Git/CSS_Slider/scss/_slider.scss */
   #cssSlider > #sliderImages {
     animation-name: slider-ie !important;
     animation-duration: 40s;
@@ -426,39 +327,40 @@ for normal slider just uncomment the second width*/
   }
 }
 
-/* line 76, ../../Git/CSS_Slider/scss/_slider.scss */
 #cssSlider > #sliderImages {
   position: absolute;
   margin: 0;
   padding: 0;
   /*this is the time to transition between images
     when using the arrows*/
-  transition: 2.66667s;
+  transition: 2.6666666667s;
 }
 
 /********** END IMAGE/SLIDER STYLING **********/
 /********** SLIDER TEXT **********/
-/* line 3, ../../Git/CSS_Slider/scss/_slideDesc.scss */
+#slideDesc {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 #cssSlider > #slideDesc > .slideText {
   position: absolute;
   bottom: 0;
-  padding: .6em;
+  padding: 0.6em;
   margin: 2em;
   max-width: calc(100vw - 4em);
-  background-color: #ABB7B7;
+  background-color: #abb7b7;
   /*color of blurb box*/
-  border-radius: .5em;
+  border-radius: 0.5em;
   z-index: -1;
   opacity: 0;
-  -webkit-transform: translateY(-100px);
   transform: translateY(-100px);
-  -webkit-transition: 950ms opacity 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms -webkit-transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms visibility 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: 950ms opacity 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms -webkit-transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms visibility 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: 950ms opacity 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms transform 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55), 950ms visibility 850ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* line 20, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #slideDesc > .slideText > p {
-  padding: .1em;
+  padding: 0.1em;
   margin: 0;
   color: black;
   /*color of blurb box text*/
@@ -467,225 +369,169 @@ for normal slider just uncomment the second width*/
 }
 
 /*BRING THE TEXT FORWARD ON ITS PAGE*/
-/* line 35, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #slide1:checked ~ #slideDesc > #slideText1 {
   z-index: 2;
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 35, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #slide2:checked ~ #slideDesc > #slideText2 {
   z-index: 2;
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 35, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #slide3:checked ~ #slideDesc > #slideText3 {
   z-index: 2;
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 35, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #slide4:checked ~ #slideDesc > #slideText4 {
   z-index: 2;
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 35, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #slide5:checked ~ #slideDesc > #slideText5 {
   z-index: 2;
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
-/* line 35, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #slide6:checked ~ #slideDesc > #slideText6 {
   z-index: 2;
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
 /*TEXT BOX ANIMATION*/
-/* line 57, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1 {
-  -webkit-animation: textBoxBounce 40000ms infinite 0ms;
   animation: textBoxBounce 40000ms infinite 0ms;
 }
 
-/* line 57, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText2,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2 {
-  -webkit-animation: textBoxBounce 40000ms infinite 6666.66667ms;
-  animation: textBoxBounce 40000ms infinite 6666.66667ms;
+  animation: textBoxBounce 40000ms infinite 6666.6666666667ms;
 }
 
-/* line 57, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText3,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText3 {
-  -webkit-animation: textBoxBounce 40000ms infinite 13333.33333ms;
-  animation: textBoxBounce 40000ms infinite 13333.33333ms;
+  animation: textBoxBounce 40000ms infinite 13333.3333333333ms;
 }
 
-/* line 57, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText4,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText4 {
-  -webkit-animation: textBoxBounce 40000ms infinite 20000ms;
   animation: textBoxBounce 40000ms infinite 20000ms;
 }
 
-/* line 57, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText5,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText5 {
-  -webkit-animation: textBoxBounce 40000ms infinite 26666.66667ms;
-  animation: textBoxBounce 40000ms infinite 26666.66667ms;
+  animation: textBoxBounce 40000ms infinite 26666.6666666667ms;
 }
 
-/* line 57, ../../Git/CSS_Slider/scss/_slideDesc.scss */
 #cssSlider > #play:checked ~ #slideDesc > #slideText6,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText6 {
-  -webkit-animation: textBoxBounce 40000ms infinite 33333.33333ms;
-  animation: textBoxBounce 40000ms infinite 33333.33333ms;
+  animation: textBoxBounce 40000ms infinite 33333.3333333333ms;
 }
 
 /********** END SLIDER TEXT **********/
 /********** PLAY PAUSE OF ALL ANIMATIONS **********/
 /*restart the show*/
-/* line 7, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide1:checked ~ #sliderImages {
-  -webkit-animation: none;
   animation: none;
 }
 
-/* line 7, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide2:checked ~ #sliderImages {
-  -webkit-animation: none;
   animation: none;
 }
 
-/* line 7, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide3:checked ~ #sliderImages {
-  -webkit-animation: none;
   animation: none;
 }
 
-/* line 7, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide4:checked ~ #sliderImages {
-  -webkit-animation: none;
   animation: none;
 }
 
-/* line 7, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide5:checked ~ #sliderImages {
-  -webkit-animation: none;
   animation: none;
 }
 
-/* line 7, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide6:checked ~ #sliderImages {
-  -webkit-animation: none;
   animation: none;
 }
 
 /*pause all animations*/
-/* line 17, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #sliderImages {
-  -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
 
-/* line 24, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL1,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR1,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point1 {
-  -webkit-animation-play-state: paused;
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point1 {
   animation-play-state: paused;
 }
 
-/* line 24, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL2,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR2,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point2 {
-  -webkit-animation-play-state: paused;
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point2 {
   animation-play-state: paused;
 }
 
-/* line 24, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #slideDesc > #slideText3,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL3,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR3,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point3 {
-  -webkit-animation-play-state: paused;
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point3 {
   animation-play-state: paused;
 }
 
-/* line 24, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #slideDesc > #slideText4,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL4,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR4,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point4 {
-  -webkit-animation-play-state: paused;
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point4 {
   animation-play-state: paused;
 }
 
-/* line 24, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #slideDesc > #slideText5,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL5,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR5,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point5 {
-  -webkit-animation-play-state: paused;
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point5 {
   animation-play-state: paused;
 }
 
-/* line 24, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #pause:checked ~ #slideDesc > #slideText6,
 #cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL6,
 #cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR6,
-#cssSlider > #pause:checked ~ #pageIndicators > .indicator > .hoverPoint > #point6 {
-  -webkit-animation-play-state: paused;
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point6 {
   animation-play-state: paused;
 }
 
 /********** END PLAY PAUSE OF ALL ANIMATIONS **********/
 /********** MANUAL PAGE ADVANCEMENT **********/
-/* line 44, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide1:checked ~ #sliderImages {
   margin-left: 0%;
 }
 
-/* line 44, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide2:checked ~ #sliderImages {
   margin-left: -100%;
 }
 
-/* line 44, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide3:checked ~ #sliderImages {
   margin-left: -200%;
 }
 
-/* line 44, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide4:checked ~ #sliderImages {
   margin-left: -300%;
 }
 
-/* line 44, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide5:checked ~ #sliderImages {
   margin-left: -400%;
 }
 
-/* line 44, ../../Git/CSS_Slider/scss/_slideAdvancement.scss */
 #cssSlider > #slide6:checked ~ #sliderImages {
   margin-left: -500%;
 }
@@ -693,251 +539,133 @@ for normal slider just uncomment the second width*/
 /********** END MANUAL PAGE ADVANCEMENT **********/
 /********** AUTOMATIC PAGE ADVANCEMENT **********/
 @keyframes slider {
-  0%,
-  10% {
+  0%, 10% {
     transform: translateX(0%);
   }
-  16.66667%,
-  26.66667% {
-    transform: translateX(-16.66667%);
+  16.6666666667%, 26.6666666667% {
+    transform: translateX(-16.6666666667%);
   }
-  33.33333%,
-  43.33333% {
-    transform: translateX(-33.33333%);
+  33.3333333333%, 43.3333333333% {
+    transform: translateX(-33.3333333333%);
   }
-  50%,
-  60% {
+  50%, 60% {
     transform: translateX(-50%);
   }
-  66.66667%,
-  76.66667% {
-    transform: translateX(-66.66667%);
+  66.6666666667%, 76.6666666667% {
+    transform: translateX(-66.6666666667%);
   }
-  83.33333%,
-  93.33333% {
-    transform: translateX(-83.33333%);
+  83.3333333333%, 93.3333333333% {
+    transform: translateX(-83.3333333333%);
   }
   100% {
     transform: translateX(0);
   }
 }
-
-@-webkit-keyframes slider {
-  0%,
-  10% {
-    transform: translateX(0%);
-  }
-  16.66667%,
-  26.66667% {
-    transform: translateX(-16.66667%);
-  }
-  33.33333%,
-  43.33333% {
-    transform: translateX(-33.33333%);
-  }
-  50%,
-  60% {
-    transform: translateX(-50%);
-  }
-  66.66667%,
-  76.66667% {
-    transform: translateX(-66.66667%);
-  }
-  83.33333%,
-  93.33333% {
-    transform: translateX(-83.33333%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 /* AGAIN, PLEASE DIE IE */
-/*IE FIX*/
+/* IE IS FINALLY DEAD*/
+/*IE FIX
 @keyframes slider-ie {
-  0%,
-  10% {
-    margin-left: 0%;
+  $total: (100-($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT));
+  $gap: (100-($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT)) / $SLIDE_COUNT;
+  $i: 0;
+  $c: 0;
+  @while $i < 100 {
+    7%,
+    17% {
+      margin-left: ($c * -$SLIDER_WIDTH/$SLIDE_COUNT);
+    }
+
+    $i: $i + $SLIDE_PAUSE_PERCENT + $gap;
+    $c: $c + 1;
   }
-  16.66667%,
-  26.66667% {
-    margin-left: -16.66667%;
-  }
-  33.33333%,
-  43.33333% {
-    margin-left: -33.33333%;
-  }
-  50%,
-  60% {
-    margin-left: -50%;
-  }
-  66.66667%,
-  76.66667% {
-    margin-left: -66.66667%;
-  }
-  83.33333%,
-  93.33333% {
-    margin-left: -83.33333%;
-  }
+
   100% {
-    margin-left: -.1vw;
+    margin-left: -0.1vw;
   }
 }
 
 /********** END AUTOMATIC PAGE ADVANCEMENT **********/
 /********** ANIMATIONS **********/
 /*arrows*/
-@-webkit-keyframes arrows {
-  0%,
-  16.66667% {
-    opacity: 0;
-    z-index: 15;
-  }
-  16.67667%,
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-
 @keyframes arrows {
-  0%,
-  16.66667% {
+  0%, 16.6666666667% {
     opacity: 0;
     z-index: 15;
   }
-  16.67667%,
-  100% {
+  16.6766666667%, 100% {
     opacity: 0;
     z-index: -1;
   }
 }
-
 /*page indicators*/
 @keyframes point {
-  1%,
-  16% {
-    background: #F2F1EF;
+  1%, 16% {
+    background: #f2f1ef;
     /*color of page indicator dot*/
   }
-  17%,
-  100% {
+  17%, 100% {
     background: transparent;
   }
 }
-
-@-webkit-keyframes point {
-  0%,
-  16% {
-    background: #F2F1EF;
-    /*color of page indicator dot*/
-  }
-  17%,
-  100% {
-    background: transparent;
-  }
-}
-
 /*text box*/
 @keyframes textBoxBounce {
-  0.7%,
-  15.66667% {
+  0.7%, 15.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
-    -webkit-transform: translateY(10px);
     transform: translateY(10px);
   }
-  1%,
-  14.66667% {
+  1%, 14.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
-    -webkit-transform: translateY(0px);
     transform: translateY(0px);
   }
-  17.66667% {
+  17.6666666667% {
     opacity: 0;
     z-index: 2;
     visibility: hidden;
-    -webkit-transform: translateY(-100px);
     transform: translateY(-100px);
   }
-  17.67667%,
-  100% {
+  17.6766666667%, 100% {
     z-index: 0;
   }
 }
-
-@-webkit-keyframes textBoxBounce {
-  0.7%,
-  15.66667% {
-    opacity: 1;
-    z-index: 2;
-    visibility: visible;
-    -webkit-transform: translateY(10px);
-    transform: translateY(10px);
-  }
-  1%,
-  14.66667% {
-    opacity: 1;
-    z-index: 2;
-    visibility: visible;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-  17.66667% {
-    opacity: 0;
-    z-index: 2;
-    visibility: hidden;
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
-  }
-  17.67667%,
-  100% {
-    z-index: 0;
-  }
-}
-
 @keyframes textBoxBounce {
-  0.7%,
-  15.66667% {
+  0.7%, 15.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
-    -webkit-transform: translateY(10px);
     transform: translateY(10px);
   }
-  1%,
-  14.66667% {
+  1%, 14.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
-    -webkit-transform: translateY(0px);
     transform: translateY(0px);
   }
-  17.66667% {
+  17.6666666667% {
     opacity: 0;
     z-index: 2;
     visibility: hidden;
-    -webkit-transform: translateY(-100px);
     transform: translateY(-100px);
   }
-  17.67667%,
-  100% {
+  17.6766666667%, 100% {
     z-index: 0;
   }
 }
-
 /********** END ANIMATIONS **********/
+/* Checks before we compile*/
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px) {
-  /* line 36, ../../Git/CSS_Slider/scss/cssSlider.scss */
-  #cssSlider > #slideDesc,
-  #cssSlider > #pageIndicators {
-    opacity: 0;
-    visibility: hidden;
+  #cssSlider > #slideDesc > .slideText {
+    display: none;
+  }
+  #cssSlider > #pageIndicators > .indicator {
+    width: 1em;
+    height: 1em;
   }
 }
-
-/*# sourceMappingURL=cssSlider.css.map */
+#cssSliderTestWrapper {
+  height: 100vh;
+}/*# sourceMappingURL=cssSlider.css.map */

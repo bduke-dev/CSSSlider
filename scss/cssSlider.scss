@@ -1,43 +1,44 @@
-/*CSS RESET*/
+@use "sass:math";
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
+@import "_variables";
 
 /*FONT IMPORT*/
 
 @font-face {
-    font-family: timeburner;
-    src: url(timeburner.ttf);
+  font-family: timeburner;
+  src: url($FONT_PATH);
 }
 
-@import '_variables';
-@import '_mixins';
+//@import "_mixins";
 
 /*slider imports*/
 
-@import '_arrowNavigation';
-@import '_slideIndicators';
-@import '_slider';
-@import '_slideDesc';
-@import '_slideAdvancement';
+@import "_arrowNavigation";
+@import "_slideIndicators";
+@import "_slider";
+@import "_slideDesc";
+@import "_slideAdvancement";
 
- /*FOR MOBILE*/
-    
-    @media screen and (max-width: 1000px) {
-        //#cssSlider>#slideDesc>.slideText,
-				#cssSlider>#slideDesc,
-        #cssSlider>#pageIndicators {
-            //display: none;
-					
-					opacity: 0;
-					visibility: hidden;
-        }
-    }
+/* Checks before we compile*/
+
+@if ($SLIDE_COUNT * $SLIDE_PAUSE_PERCENT > 100) {
+  @error "Slider can't take up more than 100% of the time.";
+}
+
+/*FOR MOBILE*/
+
+@media screen and (max-width: 1000px) {
+  #cssSlider > #slideDesc > .slideText {
+    //#cssSlider > #pageIndicators {
+    display: none;
+  }
+
+  #cssSlider > #pageIndicators > .indicator {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+#cssSliderTestWrapper {
+  height: 100vh;
+}
