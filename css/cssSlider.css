@@ -89,7 +89,7 @@ for normal slider just uncomment the second width*/
 
 #cssSlider > #pageNav:hover > #previousArrow > .slideL,
 #cssSlider > #pageNav:hover > #nextArrow > .slideR {
-  opacity: 0.14;
+  opacity: 0.1166666667;
 }
 
 /*DON'T SHOW PLAY AND PAUSE*/
@@ -102,7 +102,7 @@ for normal slider just uncomment the second width*/
 }
 
 /*WHICH ARROW SHOULD BE ON TOP*/
-#cssSlider > #slide1:checked ~ #pageNav > #previousArrow > #slideL5,
+#cssSlider > #slide1:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #slide1:checked ~ #pageNav > #nextArrow > #slideR2 {
   z-index: 15;
 }
@@ -123,34 +123,44 @@ for normal slider just uncomment the second width*/
 }
 
 #cssSlider > #slide5:checked ~ #pageNav > #previousArrow > #slideL4,
-#cssSlider > #slide5:checked ~ #pageNav > #nextArrow > #slideR1 {
+#cssSlider > #slide5:checked ~ #pageNav > #nextArrow > #slideR6 {
+  z-index: 15;
+}
+
+#cssSlider > #slide6:checked ~ #pageNav > #previousArrow > #slideL5,
+#cssSlider > #slide6:checked ~ #pageNav > #nextArrow > #slideR1 {
   z-index: 15;
 }
 
 /*STARTING ARROW ANIMATION, FOR WHICH TO BE ON TOP*/
-#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL5,
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL6,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR2 {
   animation: arrows 40000ms infinite 0ms;
 }
 
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL1,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR3 {
-  animation: arrows 40000ms infinite 8000ms;
+  animation: arrows 40000ms infinite 6666.6666666667ms;
 }
 
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL2,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR4 {
-  animation: arrows 40000ms infinite 16000ms;
+  animation: arrows 40000ms infinite 13333.3333333333ms;
 }
 
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL3,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR5 {
-  animation: arrows 40000ms infinite 24000ms;
+  animation: arrows 40000ms infinite 20000ms;
 }
 
 #cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL4,
+#cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR6 {
+  animation: arrows 40000ms infinite 26666.6666666667ms;
+}
+
+#cssSlider > #play:checked ~ #pageNav > #previousArrow > #slideL5,
 #cssSlider > #play:checked ~ #pageNav > #nextArrow > #slideR1 {
-  animation: arrows 40000ms infinite 32000ms;
+  animation: arrows 40000ms infinite 33333.3333333333ms;
 }
 
 /********** END NEXT SLIDE ARROW NAVIGATION **********/
@@ -210,22 +220,27 @@ for normal slider just uncomment the second width*/
 
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > #point2,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point2 {
-  animation: point 40000ms infinite 8000ms;
+  animation: point 40000ms infinite 6666.6666666667ms;
 }
 
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > #point3,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point3 {
-  animation: point 40000ms infinite 16000ms;
+  animation: point 40000ms infinite 13333.3333333333ms;
 }
 
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > #point4,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point4 {
-  animation: point 40000ms infinite 24000ms;
+  animation: point 40000ms infinite 20000ms;
 }
 
 #cssSlider > #play:checked ~ #pageIndicators > .indicator > #point5,
 #cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point5 {
-  animation: point 40000ms infinite 32000ms;
+  animation: point 40000ms infinite 26666.6666666667ms;
+}
+
+#cssSlider > #play:checked ~ #pageIndicators > .indicator > #point6,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point6 {
+  animation: point 40000ms infinite 33333.3333333333ms;
 }
 
 /*WHICH INDICATOR SHOULD BE LIT*/
@@ -254,6 +269,11 @@ for normal slider just uncomment the second width*/
   /*color of page indicator dot*/
 }
 
+#cssSlider > #slide6:checked ~ #pageIndicators > .indicator > #point6 {
+  background: #f2f1ef;
+  /*color of page indicator dot*/
+}
+
 /*used to override the animation for lit indicator*/
 #cssSlider > #pageIndicators > .indicator:hover > .point {
   background: #f2f1ef;
@@ -272,12 +292,12 @@ for normal slider just uncomment the second width*/
 }
 #cssSlider #sliderImages {
   left: 0;
-  width: calc(100% * 5);
+  width: calc(100% * 6);
   height: 100%;
   /*size of the images*/
 }
 #cssSlider #sliderImages div {
-  width: calc(100% / 5);
+  width: calc(100% / 6);
   height: 100%;
   float: left;
   overflow: hidden;
@@ -329,7 +349,7 @@ for normal slider just uncomment the second width*/
   padding: 0;
   /*this is the time to transition between images
     when using the arrows*/
-  transition: 3.2s;
+  transition: 2.6666666667s;
 }
 
 /********** END IMAGE/SLIDER STYLING **********/
@@ -395,6 +415,12 @@ for normal slider just uncomment the second width*/
   transform: translateY(0);
 }
 
+#cssSlider > #slide6:checked ~ #slideDesc > #slideText6 {
+  z-index: 2;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*TEXT BOX ANIMATION*/
 #cssSlider > #play:checked ~ #slideDesc > #slideText1,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText1 {
@@ -403,22 +429,27 @@ for normal slider just uncomment the second width*/
 
 #cssSlider > #play:checked ~ #slideDesc > #slideText2,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText2 {
-  animation: textBoxBounce 40000ms infinite 8000ms;
+  animation: textBoxBounce 40000ms infinite 6666.6666666667ms;
 }
 
 #cssSlider > #play:checked ~ #slideDesc > #slideText3,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText3 {
-  animation: textBoxBounce 40000ms infinite 16000ms;
+  animation: textBoxBounce 40000ms infinite 13333.3333333333ms;
 }
 
 #cssSlider > #play:checked ~ #slideDesc > #slideText4,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText4 {
-  animation: textBoxBounce 40000ms infinite 24000ms;
+  animation: textBoxBounce 40000ms infinite 20000ms;
 }
 
 #cssSlider > #play:checked ~ #slideDesc > #slideText5,
 #cssSlider > #pause:checked ~ #slideDesc > #slideText5 {
-  animation: textBoxBounce 40000ms infinite 32000ms;
+  animation: textBoxBounce 40000ms infinite 26666.6666666667ms;
+}
+
+#cssSlider > #play:checked ~ #slideDesc > #slideText6,
+#cssSlider > #pause:checked ~ #slideDesc > #slideText6 {
+  animation: textBoxBounce 40000ms infinite 33333.3333333333ms;
 }
 
 /********** END SLIDER TEXT **********/
@@ -441,6 +472,10 @@ for normal slider just uncomment the second width*/
 }
 
 #cssSlider > #slide5:checked ~ #sliderImages {
+  animation: none;
+}
+
+#cssSlider > #slide6:checked ~ #sliderImages {
   animation: none;
 }
 
@@ -484,6 +519,13 @@ for normal slider just uncomment the second width*/
   animation-play-state: paused;
 }
 
+#cssSlider > #pause:checked ~ #slideDesc > #slideText6,
+#cssSlider > #pause:checked ~ #pageNav #previousArrow > #slideL6,
+#cssSlider > #pause:checked ~ #pageNav > #nextArrow > #slideR6,
+#cssSlider > #pause:checked ~ #pageIndicators > .indicator > #point6 {
+  animation-play-state: paused;
+}
+
 /********** END PLAY PAUSE OF ALL ANIMATIONS **********/
 /********** MANUAL PAGE ADVANCEMENT **********/
 #cssSlider > #slide1:checked ~ #sliderImages {
@@ -506,23 +548,30 @@ for normal slider just uncomment the second width*/
   margin-left: -400%;
 }
 
+#cssSlider > #slide6:checked ~ #sliderImages {
+  margin-left: -500%;
+}
+
 /********** END MANUAL PAGE ADVANCEMENT **********/
 /********** AUTOMATIC PAGE ADVANCEMENT **********/
 @keyframes slider {
   0%, 10% {
     transform: translateX(0%);
   }
-  20%, 30% {
-    transform: translateX(-20%);
+  16.6666666667%, 26.6666666667% {
+    transform: translateX(-16.6666666667%);
   }
-  40%, 50% {
-    transform: translateX(-40%);
+  33.3333333333%, 43.3333333333% {
+    transform: translateX(-33.3333333333%);
   }
-  60%, 70% {
-    transform: translateX(-60%);
+  50%, 60% {
+    transform: translateX(-50%);
   }
-  80%, 90% {
-    transform: translateX(-80%);
+  66.6666666667%, 76.6666666667% {
+    transform: translateX(-66.6666666667%);
+  }
+  83.3333333333%, 93.3333333333% {
+    transform: translateX(-83.3333333333%);
   }
   100% {
     transform: translateX(0);
@@ -537,8 +586,8 @@ for normal slider just uncomment the second width*/
   $i: 0;
   $c: 0;
   @while $i < 100 {
-    6%,
-    16% {
+    7%,
+    17% {
       margin-left: ($c * -$SLIDER_WIDTH/$SLIDE_COUNT);
     }
 
@@ -555,73 +604,74 @@ for normal slider just uncomment the second width*/
 /********** ANIMATIONS **********/
 /*arrows*/
 @keyframes arrows {
-  0%, 20% {
+  0%, 16.6666666667% {
     opacity: 0;
     z-index: 15;
   }
-  20.01%, 100% {
+  16.6766666667%, 100% {
     opacity: 0;
     z-index: -1;
   }
 }
 /*page indicators*/
 @keyframes point {
-  1%, 20% {
+  1%, 16% {
     background: #f2f1ef;
     /*color of page indicator dot*/
   }
-  21%, 100% {
+  17%, 100% {
     background: transparent;
   }
 }
 /*text box*/
 @keyframes textBoxBounce {
-  0.7%, 19% {
+  0.7%, 15.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
     transform: translateY(10px);
   }
-  1%, 18% {
+  1%, 14.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
     transform: translateY(0px);
   }
-  21% {
+  17.6666666667% {
     opacity: 0;
     z-index: 2;
     visibility: hidden;
     transform: translateY(-100px);
   }
-  21.01%, 100% {
+  17.6766666667%, 100% {
     z-index: 0;
   }
 }
 @keyframes textBoxBounce {
-  0.7%, 19% {
+  0.7%, 15.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
     transform: translateY(10px);
   }
-  1%, 18% {
+  1%, 14.6666666667% {
     opacity: 1;
     z-index: 2;
     visibility: visible;
     transform: translateY(0px);
   }
-  21% {
+  17.6666666667% {
     opacity: 0;
     z-index: 2;
     visibility: hidden;
     transform: translateY(-100px);
   }
-  21.01%, 100% {
+  17.6766666667%, 100% {
     z-index: 0;
   }
 }
 /********** END ANIMATIONS **********/
+/* Checks before we compile*/
 /*FOR MOBILE*/
 @media screen and (max-width: 1000px) {
   #cssSlider > #slideDesc > .slideText {

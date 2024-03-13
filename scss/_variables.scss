@@ -16,8 +16,8 @@ for normal slider just uncomment the second width*/
 
 $ASPECT_RATIO: 0; // either set this or height
 $SLIDER_WIDTH: 100%;
-$SLIDER_HEIGHT: 100%; // aspect ration takes precedence to height
-$SLIDE_COUNT: 5;
+$SLIDER_HEIGHT: 100%; // aspect ration takes precedence over height
+$SLIDE_COUNT: 6;
 $SLIDE_TIME: 40; // in seconds
-$SLIDE_PAUSE_PERCENT: 10; // percent of time paused on each image
+$SLIDE_PAUSE_PERCENT: 10; // percent of time paused on each image; $SLIDE_COUNT * $SLIDE_PAUSE_PERCENT !> 100
 $BTN_OPACITY: 0.7;
