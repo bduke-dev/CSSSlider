@@ -147,7 +147,7 @@ $gap: math.div((100 - ($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT)), $SLIDE_COUNT);
 @keyframes point {
   1%,
   #{floor($SLIDE_PAUSE_PERCENT + $gap)}% {
-    background: $INDICATOR_COLOR;
+    background: $INDICATOR_POINT_COLOR;
     /*color of page indicator dot*/
   }
   #{floor($SLIDE_PAUSE_PERCENT + $gap) + 1}%,
@@ -159,7 +159,7 @@ $gap: math.div((100 - ($SLIDE_PAUSE_PERCENT * $SLIDE_COUNT)), $SLIDE_COUNT);
 @-webkit-keyframes point {
   0%,
   #{floor($SLIDE_PAUSE_PERCENT + $gap)}% {
-    background: $INDICATOR_COLOR;
+    background: $INDICATOR_POINT_COLOR;
     /*color of page indicator dot*/
   }
   #{floor($SLIDE_PAUSE_PERCENT + $gap) + 1}%,

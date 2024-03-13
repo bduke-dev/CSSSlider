@@ -1,7 +1,3 @@
-# Documentation Under Construction.
-## This new version has SCSS!!!! More details to come, but if you want to get started now head to the _variables.scss file to see which to change!
-
-
 # CSS_Slider
 A simple image slider coded completely in CSS. This is done to achieve the most cross compatibility among browsers.
 By avoiding the use of JavaScript, the slider does not rely on the device having it, allowing it to work in about all browsers.

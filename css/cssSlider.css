@@ -1,6 +1,3 @@
-/*sizing*/
-/*for full screen calculate (desired height of slider in vh * width of img) / height of img with vh as units
-for normal slider just uncomment the second width*/
 /*FONT IMPORT*/
 @font-face {
   font-family: timeburner;
@@ -185,19 +182,6 @@ for normal slider just uncomment the second width*/
   position: relative;
 }
 
-/*why can't i mix in or anything here?*/
-/*
-#cssSlider > #pageIndicators > .indicator > .hoverPoint {
-  margin: 0.5em;
-  display: inline-block;
-  height: 0.5em;
-  width: 0.5em;
-  border-radius: 100%;
-  background: transparent;
-  transition: 0.3s ease-in-out;
-  -webkit-transition: 0.3s ease-in-out;
-  z-index: 16;
-}*/
 #cssSlider > #pageIndicators > .indicator > .point {
   display: inline-block;
   height: 0.5em;
